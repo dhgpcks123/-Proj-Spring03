@@ -1,7 +1,8 @@
 package jeju.increpas.www.vo;
 
 public class FileVO {
-	private int rpno, rpsize;
+	private int rpno;
+	private long rpsize;
 	private String rponame, rpsname, rpdir, rtno;
 	public int getRpno() {
 		return rpno;
@@ -21,10 +22,10 @@ public class FileVO {
 	public void setRpsname(String rpsname) {
 		this.rpsname = rpsname;
 	}
-	public int getRpsize() {
+	public long getRpsize() {
 		return rpsize;
 	}
-	public void setRpsize(int rpsize) {
+	public void setRpsize(long rpsize) {
 		this.rpsize = rpsize;
 	}
 	public String getRpdir() {

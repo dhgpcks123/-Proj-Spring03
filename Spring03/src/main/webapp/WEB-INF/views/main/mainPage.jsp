@@ -244,7 +244,7 @@
 					</section>
 					<!--  사용자 리뷰 글쓰기 -->
 					<footer style="display: flex; flex-direction: column; margin-top: 50px; margin-left: 60px; margin-right: 40px;">
-						<form method="POST" encType="multipart/form-data" action="/Team03Proj/wReviewProc.cls" id="wReviewfrm" name="wReviewfrm">
+						<form method="POST" encType="multipart/form-data" action="/www/wReviewProc.jeju" id="wReviewfrm" name="wReviewfrm">
 						<!-- 비 로그인 시 -->
 						<c:if test="${empty sessionScope.SID}">
 							<div style="margin: 30px;">*로그인 하셔야 리뷰를 작성할 수 있습니다</div>
@@ -259,17 +259,18 @@
 								</p>
 							</div>
 							<!-- 글쓰기 데이터 넘기기 input 태그 -->
-							<input type="hidden" id="reviewId" name="reviewId" value="${SID}">
-							<input type="hidden" id="reviewStar" name="reviewStar">
-							<input type="hidden" id="reviewRtno" name="reviewRtno" value="${STORE.get(0).atno}">
-							<input type="hidden" id="reviewX" name="reviewX" value="${REVIEW.get(0).rx}">
-							<input type="hidden" id="reviewY" name="reviewY" value="${REVIEW.get(0).ry}">
+							<input type="hidden" id="reviewId" name="id" value="${SID}">d
+							<input type="hidden" id="reviewStar" name="rgrade">d
+							<input type="hidden" id="reviewX" name="rx" value="${REVIEW.get(0).rx}">d
+							<input type="hidden" id="reviewY" name="ry" value="${REVIEW.get(0).ry}">d
+							<input type="hidden" id="reviewRtno" name="rtno" value="${STORE.get(0).atno}">d
+							
 							<input type="hidden" id="rpno" name="rpno" value="${REVIEW.get(0).rpno}">
 							<!-- 글쓰기 제목 -->
-							<input type="text" placeholder="글 제목" style="margin-top: 40px; border: none; padding: 5px; border-top: 1px solid gray;" name="reviewTitle" id="reviewTitle">
+							<input type="text" placeholder="글 제목" style="margin-top: 40px; border: none; padding: 5px; border-top: 1px solid gray;" name="rtitle" id="reviewTitle">
 							<!-- 글쓰기 본문 -->
 							<textarea style="width: 100%; height: 200px; margin-bottom: 5px; padding: 20px;"
-								placeholder="이 곳에 리뷰를 작성하세요 :)" id="reviewBody" name="reviewBody">
+								placeholder="이 곳에 리뷰를 작성하세요 :)" id="reviewBody" name="rbody">
 							</textarea>
 							<!-- 글쓰기 버튼 '리뷰 작성' -->
 							<div class="w3-button w3-amber w3-right" id="wsend" style="margin-bottom: 30px; width: 150px;">리뷰 작성</div>
@@ -309,7 +310,7 @@
 	      	<!-- 비로그인 시 보이는 화면 -->
 	        <c:if test="${empty sessionScope.SID}">
 	        <!-- 로그인 창 -->
-	        <form method="POST" action="/Team03Proj/memberLoginProc.cls" id="loginFrm" name="loginFrm">
+	        <form method="POST" action="/www/loginProc.jeju" id="loginFrm" name="loginFrm">
 	            <input type="text" style="width: 15%; padding-left: 10px; padding-left: 10px" placeholder="회원아이디" name="id" id="id">
 	            <input type="password" style="width: 15%; padding-left: 10px;" placeholder="비밀번호" name="pw" id="pw">
 		        <!-- 로그인 버튼 -->
@@ -376,10 +377,10 @@
 	        level: 6 // 지도의 확대 레벨
 	    };
 	
-	// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+	// 지도를 표시할 div와 지도 옵션으로  지도를 생성합니다
 	var map = new kakao.maps.Map(mapContainer, mapOption); 
 	$.ajax({
-		url: '/Team03Proj/markerlist.cls',
+		url: '/www/markerlist.jeju',
 		type: 'POST',
 		dataType: 'json',
 		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',

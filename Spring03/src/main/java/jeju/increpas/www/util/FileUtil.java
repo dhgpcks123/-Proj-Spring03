@@ -1,14 +1,19 @@
 package jeju.increpas.www.util;
 
 import java.io.File;
+import java.util.ArrayList;
+
+import org.springframework.web.multipart.MultipartFile;
+
+import jeju.increpas.www.vo.FileVO;
 
 
 /**
- * < 해당 클래스를 사용하기 위해서는 내용변경을 요함 >
+ * < Spring03 - jeju의 FileVO에 맞게 수정하였음 >
  * 파일업로드에 필요한 기능을 처리하기 위해 만든 클래스( feat.fileUpload 라이브러리 )
  * @author dhgpcks
- * @since 2020/12/10
- * @version v.1.0
+ * @since 2020/12/15
+ * @version v.1.2
  */
 
 public class FileUtil {
@@ -56,7 +61,6 @@ public class FileUtil {
 		: 파일을 입력받으면 ArrayList<FileVO>로 만들어 반환해주는 함수
 	 */
 	
-	/*
 	public ArrayList<FileVO> saveProc(MultipartFile[] file, String dir){
 		// 파일들 정보를 기억할 리스트르 만들고
 		ArrayList<FileVO> list = new ArrayList<FileVO>();
@@ -82,10 +86,10 @@ public class FileUtil {
 				// 그리고 이 이름은 데이터베이스에 등록할 때 사용해야 한다.
 				
 				// 저장해봅시다.
-				fVO.setOriname(oriName);
-				fVO.setSavename(savename);
-				fVO.setLen(file[i].getSize());
-				fVO.setDir(dir);
+				fVO.setRponame(oriName);
+				fVO.setRpsname(savename);
+				fVO.setRpsize(file[i].getSize());
+				fVO.setRpdir(dir);
 				
 				list.add(fVO);
 				
@@ -100,6 +104,6 @@ public class FileUtil {
 		}
 		return list;
 	}
-	*/
+	
 	
 }

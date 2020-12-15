@@ -10,5 +10,6 @@
 
 	<!-- Service Bean처리 -->
 	<bean id="mService" class="jeju.increpas.www.service.MainService" />
+	<bean id="reviewService" class="jeju.increpas.www.service.ReviewService" />
 	
 </beans>

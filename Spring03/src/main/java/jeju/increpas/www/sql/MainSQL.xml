@@ -42,11 +42,28 @@
 		    AND ay= #{ay}
 		    AND isshow='Y'  		
 	</select>
-	<!-- 맵 정보 가져오기 -->
-	<select id="getMapInfo" resultType="mVO">
+	
+<!--  < 메인 페이지 - 로그인 Proc 요청 > 질의명령 -->
+	<!-- 로그인 체크-->
+	<select id="loginProc" resultType="int" parameterType="memberVO">
+		SELECT
+			COUNT(*) cnt
+		FROM
+			member
+		WHERE
+			id = #{id}
+			AND pw = #{pw}
+			AND isshow = 'Y'
+	</select>
+	
+<!--  <메인 페이지 - 지도 marklist 요청 > 질의명령 -->
+	<!--  markerlist 데이터 받기 -->
+	<select id="getMarklist" resultType="mVO">
 		SELECT
 			ano, aname, ax, ay
 		FROM
 			areainfo
+		WHERE
+			isshow='Y'
 	</select>
 </mapper>
