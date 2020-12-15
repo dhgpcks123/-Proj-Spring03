@@ -297,29 +297,29 @@
 <div class="w3-main" style="margin-left: 420px;">
 	<div class="w3-col" style="margin-top: 20px;">
 		<div class="w3-col" style="text-align: right;">
-        <!-- 내 정보보기 -->
-        <div class="w3-col m12 l12 s12" style="padding-right: 60px;"> 내 정보보기 <i class="fas fa-user-cog"></i></div>
-      	<!-- 로그인 시 보이는 화면 -->
-      	<c:if test="${not empty sessionScope.SID}">
-        <div style="padding-right: 60px;">
-        	<div style="padding-right: 10px; display:inline-block;">[ ${sessionScope.SID} ] 님 환영합니다.</div>
-        	<div class="w3-button w3-amber" id="logoutbtn" style="display:inline-block;">로그아웃</div>
-        </div>
-      	</c:if>
-      	<!-- 비로그인 시 보이는 화면 -->
-        <c:if test="${empty sessionScope.SID}">
-        <!-- 로그인 창 -->
-        <form method="POST" action="/Team03Proj/memberLoginProc.cls" id="loginFrm" name="loginFrm">
-               <input type="text" style="width: 15%; padding-left: 10px; padding-left: 10px" placeholder="회원아이디" name="id" id="id">
-               <input type="password" style="width: 15%; padding-left: 10px;" placeholder="비밀번호" name="pw" id="pw">
-        </form>   
-        <!-- 로그인 버튼 -->
-        <div class="w3-button w3-amber" id="loginbtn">로그인</div>
-        <!--  회원가입 버튼 -->
-        <div class="w3-button w3-amber w3-hover-lime" style="margin-right: 50px;" id="member">
-        	<a href="/Team03Proj/memberJoin.cls">회원가입</a>
-        </div>
-        </c:if>
+	        <!-- 내 정보보기 -->
+	        <div class="w3-col m12 l12 s12" style="padding-right: 60px;"> 내 정보보기 <i class="fas fa-user-cog"></i></div>
+	      	<!-- 로그인 시 보이는 화면 -->
+	      	<c:if test="${not empty sessionScope.SID}">
+	        <div style="padding-right: 60px;">
+	        	<div style="padding-right: 10px; display:inline-block;">[ ${sessionScope.SID} ] 님 환영합니다.</div>
+	        	<div class="w3-button w3-amber" id="logoutbtn" style="display:inline-block;">로그아웃</div>
+	        </div>
+	      	</c:if>
+	      	<!-- 비로그인 시 보이는 화면 -->
+	        <c:if test="${empty sessionScope.SID}">
+	        <!-- 로그인 창 -->
+	        <form method="POST" action="/Team03Proj/memberLoginProc.cls" id="loginFrm" name="loginFrm">
+	            <input type="text" style="width: 15%; padding-left: 10px; padding-left: 10px" placeholder="회원아이디" name="id" id="id">
+	            <input type="password" style="width: 15%; padding-left: 10px;" placeholder="비밀번호" name="pw" id="pw">
+		        <!-- 로그인 버튼 -->
+		        <div class="w3-button w3-amber" id="loginbtn">로그인</div>
+		        <!--  회원가입 버튼 -->
+		        <div class="w3-button w3-amber w3-hover-lime" style="margin-right: 50px;" id="member">
+		        	<a href="/Team03Proj/memberJoin.cls">회원가입</a>
+		        </div>
+	        </form>   
+	        </c:if>
 		</div>
 	</div>
     <!-- 주소 정보 -->
