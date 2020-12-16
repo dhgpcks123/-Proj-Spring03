@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import jeju.increpas.www.vo.InfoVO;
 import jeju.increpas.www.vo.MapVO;
+import jeju.increpas.www.vo.MemberVO;
 import jeju.increpas.www.vo.ReviewVO;
 import jeju.increpas.www.vo.RphotoVO;
 
@@ -25,6 +26,10 @@ public class MainDao {
 	public List<RphotoVO> getReviewPhoto(MapVO mVO){
 		return sqlSession.selectList("mSQL.getReviewPhoto", mVO);
 	}
+	// 리뷰 조회수 업데이트
+	public int setReviewHit(int rno) {
+		return sqlSession.selectOne("mSQL.setReviewHit", rno);
+	}
 	// 자세히보기 가져오기
 	public List<InfoVO> getStoreInfo(MapVO mVO){
 		return sqlSession.selectList("mSQL.getStoreInfo", mVO);
@@ -33,5 +38,8 @@ public class MainDao {
 	public List<MapVO> getMapInfo(){
 		return sqlSession.selectList("mSQL.getMapInfo");
 	}
-	
+	// 로그인처리
+	public int LoginProc(MemberVO meVO) {
+		return sqlSession.selectOne("mSQL.Login", meVO);
+	}
 }

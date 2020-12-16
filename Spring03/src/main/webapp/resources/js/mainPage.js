@@ -32,4 +32,15 @@ $(document).ready(function(){
 		$('#wReviewfrm').submit();
 	});
 
+	// 찜하기 버튼 눌렀을때
+	$('#favor').click(function(){
+		var ano = $(this).attr('name');
+		/*$(this).attr('method' , 'POST');
+		$(this).attr('action' , '/www/rhitupdate.jeju');
+		$(this).submit();*/
+		$(this).text(
+			'<form method="POST" action="/www/AddFavorite.jeju"> <input type="hidden" id="ano"> </form>')
+		$('#ano').val(ano);
+		$('#favor').submit();
+	});
 });

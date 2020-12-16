@@ -15,6 +15,6 @@ $(document).ready(function(){
 	});
 //		로그아웃 버튼 클릭
 	$('#logoutbtn').click(function(){
-		$(location).attr('href',"/Team03Proj/memberLogoutProc.cls");
+		$(location).attr('href',"/www/LogoutProc.jeju");
 	});
 });

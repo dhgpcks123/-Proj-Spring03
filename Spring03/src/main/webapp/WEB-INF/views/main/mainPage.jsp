@@ -168,9 +168,11 @@
 							<div class="w3-button" style="font-size: 15pt;">
 								<i class="fas fa-pencil-alt"></i><a href="#wReviewfrm"> 리뷰 쓰기</a>
 							</div>
-							<div class="w3-button" style="font-size: 15pt;">
-								<i class="fas fa-bookmark"></i> 찜 하기
-							</div>
+							<c:if test="${not empty sessionScope.SID}">
+								<div class="w3-button" style="font-size: 15pt;" id="favor" name=${STORE.get(0).ano}>
+									<i class="fas fa-bookmark"></i> 찜 하기
+								</div>
+							</c:if>
 						</div>
 					</nav>
 					<!-- 슬라이드 이미지 -->
@@ -209,7 +211,7 @@
 					<c:forEach var="data" items="${REVIEW}">
 						<!-- 리뷰 타이틀 & 평점-->
 						<div style="background-color: #F6F6F6; margin-top: 10px; display: flex; justify-content: space-between; border-bottom: 1px solid #ECEAEB; padding: 0px 20px;">
-							<h3 style="cursor: pointer; margin-top: 15px;">${data.rtitle}</h3>
+							</form>
 							<h3	style="color: yellow; margin-left: 3%; text-shadow: 2px 2px 2px gray;">
 								<c:if test="${data.rgrade==5}">★★★★★</c:if>
 								<c:if test="${data.rgrade==4}">★★★★☆</c:if>
@@ -224,6 +226,8 @@
 							<div>${data.id}</div>
 							<div style="margin-left: 45px;">작성일 :</div>
 							<div>${data.rdate }</div>
+							<div style="margin-left: 45px;">조회수 :</div>
+							<div>${data.rhit }</div>
 						</div>
 						<!-- 리뷰 본문글 및 사진 -->
 						<div style="border-bottom: 1px solid #ECEAEB;">
@@ -309,16 +313,16 @@
       	<!-- 비로그인 시 보이는 화면 -->
         <c:if test="${empty sessionScope.SID}">
         <!-- 로그인 창 -->
-        <form method="POST" action="/Team03Proj/memberLoginProc.cls" id="loginFrm" name="loginFrm">
-               <input type="text" style="width: 15%; padding-left: 10px; padding-left: 10px" placeholder="회원아이디" name="id" id="id">
-               <input type="password" style="width: 15%; padding-left: 10px;" placeholder="비밀번호" name="pw" id="pw">
+        <form method="POST" action="/www/LoginProc.jeju" id="loginFrm" name="loginFrm">
+            <input type="text" style="width: 15%; padding-left: 10px; padding-left: 10px" placeholder="회원아이디" name="id" id="id">
+            <input type="password" style="width: 15%; padding-left: 10px;" placeholder="비밀번호" name="pw" id="pw">
+	        <!-- 로그인 버튼 -->
+	        <div class="w3-button w3-amber" id="loginbtn">로그인</div>
+	        <!--  회원가입 버튼 -->
+	        <div class="w3-button w3-amber w3-hover-lime" style="margin-right: 50px;" id="member">
+	        	<a href="/Team03Proj/memberJoin.cls">회원가입</a>
+	        </div>
         </form>   
-        <!-- 로그인 버튼 -->
-        <div class="w3-button w3-amber" id="loginbtn">로그인</div>
-        <!--  회원가입 버튼 -->
-        <div class="w3-button w3-amber w3-hover-lime" style="margin-right: 50px;" id="member">
-        	<a href="/Team03Proj/memberJoin.cls">회원가입</a>
-        </div>
         </c:if>
 		</div>
 	</div>
