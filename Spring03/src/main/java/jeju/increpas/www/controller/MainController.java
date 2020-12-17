@@ -23,7 +23,8 @@ public class MainController {
 	// < 메인 페이지 - 메인 폼 요청 >
 	@RequestMapping("/main.jeju")
 	public ModelAndView getMain(ModelAndView mv, MapVO mVO) {
-			mService.getMain(mv, mVO);
+		System.out.println("메이 폼 요청 실행?");
+		mService.getMain(mv, mVO);
 		return mv;
 	}
 	// < 메인 페이지 - 

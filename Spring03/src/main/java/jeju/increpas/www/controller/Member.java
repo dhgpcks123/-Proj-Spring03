@@ -41,7 +41,7 @@ public class Member {
 									HttpSession session, MemberVO mVO) {
 		int cnt = mbDao.loginCnt(mVO);
 		if(cnt == 0) {
-			rd.setUrl("/www/member/login.jeju");
+			rd.setUrl("/www/main.jeju");
 		} else {
 			session.setAttribute("SID", mVO.getId());
 //			logger.info(mVO.getId() + " ] - *** Login ***");
@@ -63,10 +63,9 @@ public class Member {
 		}
 		if(id != null) {
 			mv.addObject("ID",id);
-			
 		}
 		if(id == null || id=="") {
-			rv.setUrl("/www/member/login.jeju");
+			rv.setUrl("/www/main.jeju");
 			mv.setView(rv);	// redirect 로 뷰를 호출하는 경우
 		} else {
 

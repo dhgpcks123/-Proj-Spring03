@@ -2,9 +2,9 @@ INSERT INTO review
 VALUES(
     (SELECT (MAX(NVL(rno+1, 1))) FROM review ),
     (SELECT mno FROM member WHERE id = 'jang' ),
-    'JEJU~ ÇÑ¶ó±¹½´', 'Á¦ÁÖ ³î·¯ °¬´Ù°¡ ±¹¼ö ¸Ô°í ½Í¾î¼­ ´Ù³à¿Ô´Âµ¥
-    Å· °« °¡¼ººñ ¸À ±Â±Â ´Ôµéµµ ²À ´Ù³à¿Íº¸¼¼¿ä. 3¸íÀÌ¼­ µÎ ±×¸© ½ÃÄÑ¼­ ¹èÅÍÁö°Ô ¸ÔÀ½
-    ±Ùµ¥ ¹è°¡ »¡¸® ²¨Áø´Ù´Â °Ô ÇÔ¤»Á¤¤»',
+    'JEJU~ í•œë¼êµ­ìŠˆ', 'ì œì£¼ ë†€ëŸ¬ ê°”ë‹¤ê°€ êµ­ìˆ˜ ë¨¹ê³  ì‹¶ì–´ì„œ ë‹¤ë…€ì™”ëŠ”ë°
+    í‚¹ ê°“ ê°€ì„±ë¹„ ë§› êµ¿êµ¿ ë‹˜ë“¤ë„ ê¼­ ë‹¤ë…€ì™€ë³´ì„¸ìš”. 3ëª…ì´ì„œ ë‘ ê·¸ë¦‡ ì‹œì¼œì„œ ë°°í„°ì§€ê²Œ ë¨¹ìŒ
+    ê·¼ë° ë°°ê°€ ë¹¨ë¦¬ êº¼ì§„ë‹¤ëŠ” ê²Œ í•¨ã…‹ì •ã…‹',
     (SELECT (MAX(NVL(rpno+1,1))) FROM review ),
     sysdate, 5, 0, 'Y', 33.250525250847936, 126.42445768114317
     )
@@ -14,7 +14,7 @@ INSERT INTO review
 VALUES(
     (SELECT (MAX(NVL(rno+1, 1))) FROM review ),
     (SELECT mno FROM member WHERE id = 'chan' ),
-    'Áý ¾Õ ³»°úÀÓ', '¾ÆÄ§¿¡ ¹è ¾ÆÆÄ¼­ °¡±î¿î °÷ Ã£´Ù°¡ ´Ù³à¿È ±×³ÉÀú³É ³»°úÀÓ',
+    'ì§‘ ì•ž ë‚´ê³¼ìž„', 'ì•„ì¹¨ì— ë°° ì•„íŒŒì„œ ê°€ê¹Œìš´ ê³³ ì°¾ë‹¤ê°€ ë‹¤ë…€ì˜´ ê·¸ëƒ¥ì €ëƒ¥ ë‚´ê³¼ìž„',
     (SELECT (MAX(NVL(rpno+1,1))) FROM review ),
     sysdate, 3, 0, 'Y', 33.51307971275873, 126.52142654066962
     )
@@ -24,8 +24,8 @@ INSERT INTO review
 VALUES(
     (SELECT (MAX(NVL(rno+1, 1))) FROM review ),
     (SELECT mno FROM member WHERE id = 'wook' ),
-    '¿©±â ÀßÇØÁÜ', '¾Æ ´Ù¸¥µ¥ °¡¼­ ÀÌ ÃæÄ¡ 4°³ÀÖ´Ù°í ¹«½¼ Å©¶ó¿î ÇØ¾ßµÈ´Ù´Â °Å ¾Æ´Ô?
-    °³ ºñ½Î¼­ ÀÎ»çÇÏ°í ³ª¿Í¼­ ¾Õ¿¡ Ä¡°ú ¶Ç ÀÖ±æ·¡ °¬´Âµ¥ ÇÑ °³¸¸ ·¹ÁøÄ¡·áÇÏ°í ¿È ¤»',
+    'ì—¬ê¸° ìž˜í•´ì¤Œ', 'ì•„ ë‹¤ë¥¸ë° ê°€ì„œ ì´ ì¶©ì¹˜ 4ê°œìžˆë‹¤ê³  ë¬´ìŠ¨ í¬ë¼ìš´ í•´ì•¼ëœë‹¤ëŠ” ê±° ì•„ë‹˜?
+    ê°œ ë¹„ì‹¸ì„œ ì¸ì‚¬í•˜ê³  ë‚˜ì™€ì„œ ì•žì— ì¹˜ê³¼ ë˜ ìžˆê¸¸ëž˜ ê°”ëŠ”ë° í•œ ê°œë§Œ ë ˆì§„ì¹˜ë£Œí•˜ê³  ì˜´ ã…‹',
     (SELECT (MAX(NVL(rpno+1,1))) FROM review ),
     sysdate, 4, 0, 'Y', 33.251745497098426, 126.42565332716656
     )
@@ -35,7 +35,7 @@ INSERT INTO review
 VALUES(
     (SELECT (MAX(NVL(rno+1, 1))) FROM review ),
     (SELECT mno FROM member WHERE id = 'joseph' ),
-    '¾à ÁöÀ¸·¯ ´Ù³à¿Ô¾î¿ä', 'º¸¾à Áö¾î¸Ô¾ú¾î¿ä.. È¿°ú´Â Àß ¸ð¸£°Ú¾î¿ä ¤Ð¤Ð',
+    'ì•½ ì§€ìœ¼ëŸ¬ ë‹¤ë…€ì™”ì–´ìš”', 'ë³´ì•½ ì§€ì–´ë¨¹ì—ˆì–´ìš”.. íš¨ê³¼ëŠ” ìž˜ ëª¨ë¥´ê² ì–´ìš” ã… ã… ',
     (SELECT (MAX(NVL(rpno+1,1))) FROM review ),
     sysdate, 2, 0, 'Y', 33.518037668945176, 126.52284210749815
     )
@@ -45,7 +45,7 @@ INSERT INTO review
 VALUES(
     (SELECT (MAX(NVL(rno+1, 1))) FROM review ),
     (SELECT mno FROM member WHERE id = 'jiwoo' ),
-    'À¸...', '»ç°í ³ª¼­ Á×À»»·ÇÔ.. ÀÀ±Þ½Ç ½Ç·Á¿Ô´Âµ¥ ÀÇ»ç½ÜÀÌ¶û °£È£»ç½ÜÀÌ Ä£ÀýÈ÷ ´ëÇØÁÜ',
+    'ìœ¼...', 'ì‚¬ê³  ë‚˜ì„œ ì£½ì„ë»”í•¨.. ì‘ê¸‰ì‹¤ ì‹¤ë ¤ì™”ëŠ”ë° ì˜ì‚¬ìŒ¤ì´ëž‘ ê°„í˜¸ì‚¬ìŒ¤ì´ ì¹œì ˆížˆ ëŒ€í•´ì¤Œ',
     (SELECT (MAX(NVL(rpno+1,1))) FROM review ),
     sysdate, 4, 0, 'Y', 33.49019207658534, 126.48501679464566
     )
@@ -55,8 +55,8 @@ INSERT INTO review
 VALUES(
     (SELECT (MAX(NVL(rno+1, 1))) FROM review ),
     (SELECT mno FROM member WHERE id = 'jjang' ),
-    '´ÜÇ³ÀÌ Áö´Â ÀÌ °¡À»...', '¾Æ´Ï ÇÑ¶ó»ê µî¹ÝÇÏ·¯ °¬´Ù°¡ ¿©±â ´Ù³à¿Ô´Âµ¥ °³Â¾´Ù
-    ÇÑ¶ó»êµµ ÁÁÁö¸¸ ¼Û¾Ç»ê °³ÂÀ',
+    'ë‹¨í’ì´ ì§€ëŠ” ì´ ê°€ì„...', 'ì•„ë‹ˆ í•œë¼ì‚° ë“±ë°˜í•˜ëŸ¬ ê°”ë‹¤ê°€ ì—¬ê¸° ë‹¤ë…€ì™”ëŠ”ë° ê°œì©ë‹¤
+    í•œë¼ì‚°ë„ ì¢‹ì§€ë§Œ ì†¡ì•…ì‚° ê°œì©œ',
     (SELECT (MAX(NVL(rpno+1,1))) FROM review ),
     sysdate, 4, 0, 'Y', 33.199804357744014, 126.29243666800144
     )
@@ -66,7 +66,7 @@ INSERT INTO review
 VALUES(
     (SELECT (MAX(NVL(rno+1, 1))) FROM review ),
     (SELECT mno FROM member WHERE id = 'sun' ),
-    'Á¦´ë¿¡ ÀÌ·±°÷ÀÌ?', 'Á¦´ë¿¡µµ º´¿øÀÖÀ½ ÀÀ±ÞÇÑ °æ¿ì ÀÖÀ¸¸é ÀÏ·ç¿À¼À',
+    'ì œëŒ€ì— ì´ëŸ°ê³³ì´?', 'ì œëŒ€ì—ë„ ë³‘ì›ìžˆìŒ ì‘ê¸‰í•œ ê²½ìš° ìžˆìœ¼ë©´ ì¼ë£¨ì˜¤ì…ˆ',
     (SELECT (MAX(NVL(rpno+1,1))) FROM review ),
     sysdate, 3, 0, 'Y', 33.46714133094259, 126.5457129811507
     )
@@ -75,7 +75,7 @@ INSERT INTO review
 VALUES(
     (SELECT (MAX(NVL(rno+1, 1))) FROM review ),
     (SELECT mno FROM member WHERE id = 'sun' ),
-    '¼·Áö¼·ÁöÄÚÁö', '¼·ÁöÄÚÁö À¯¸íÇÏ´Ù ±×·¡¼­ µ¥ÀÌÆ® °â ´Ù³à¿Ô´Âµ¥ ¹¹ ±×³É °ü±¤Áö´õ¶ó',
+    'ì„­ì§€ì„­ì§€ì½”ì§€', 'ì„­ì§€ì½”ì§€ ìœ ëª…í•˜ë‹¤ ê·¸ëž˜ì„œ ë°ì´íŠ¸ ê²¸ ë‹¤ë…€ì™”ëŠ”ë° ë­ ê·¸ëƒ¥ ê´€ê´‘ì§€ë”ë¼',
     (SELECT (MAX(NVL(rpno+1,1))) FROM review ),
     sysdate, 3, 0, 'Y', 33.42437961506556, 126.93110026765497
     )
@@ -84,7 +84,7 @@ INSERT INTO review
 VALUES(
     (SELECT (MAX(NVL(rno+1, 1))) FROM review ),
     (SELECT mno FROM member WHERE id = 'sun' ),
-    '¿ÁÅ¾', 'Àß ¹¬°í °©´Ï´Ù~~ ¿ÁÅ¾ºä°¡ À¯¸íÇÏ´Ù´øµ¥ Àú´Â ºñ ¿Í¼­ ±×³É ½Ç³»¿¡ ÀÖ¾ú¾î¿ä¤Ð¤Ð',
+    'ì˜¥íƒ‘', 'ìž˜ ë¬µê³  ê°‘ë‹ˆë‹¤~~ ì˜¥íƒ‘ë·°ê°€ ìœ ëª…í•˜ë‹¤ë˜ë° ì €ëŠ” ë¹„ ì™€ì„œ ê·¸ëƒ¥ ì‹¤ë‚´ì— ìžˆì—ˆì–´ìš”ã… ã… ',
     (SELECT (MAX(NVL(rpno+1,1))) FROM review ),
     sysdate, 3, 0, 'Y', 33.46164828897533, 126.9346003676563
     )
@@ -93,7 +93,7 @@ INSERT INTO review
 VALUES(
     (SELECT (MAX(NVL(rno+1, 1))) FROM review ),
     (SELECT mno FROM member WHERE id = 'sun' ),
-    'À¯Å¾À¯ºí·¹½º', 'Àß ¹¬°í °©´Ï´Ù~~ °¡°Ý´ëºñ ¹«³­',
+    'ìœ íƒ‘ìœ ë¸”ë ˆìŠ¤', 'ìž˜ ë¬µê³  ê°‘ë‹ˆë‹¤~~ ê°€ê²©ëŒ€ë¹„ ë¬´ë‚œ',
     (SELECT (MAX(NVL(rpno+1,1))) FROM review ),
     sysdate, 3, 0, 'Y', 33.54252580986714, 126.66618655416492
     )
@@ -102,7 +102,7 @@ INSERT INTO review
 VALUES(
     (SELECT (MAX(NVL(rno+1, 1))) FROM review ),
     (SELECT mno FROM member WHERE id = 'chan' ),
-    'jhÈ£ÅÚ', '°øÇ×ÀÌ¶û °¡±î¿ö¼­ ÁÁ³×¿ä~ ´ÙÀ½¿¡µµ ¹¬À» ÀÇÇâ ÀÕÀ½',
+    'jhí˜¸í…”', 'ê³µí•­ì´ëž‘ ê°€ê¹Œì›Œì„œ ì¢‹ë„¤ìš”~ ë‹¤ìŒì—ë„ ë¬µì„ ì˜í–¥ ìž‡ìŒ',
     (SELECT (MAX(NVL(rpno+1,1))) FROM review ),
     sysdate, 4, 0, 'Y', 33.47555396363046, 126.41899092409558
     )

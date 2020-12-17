@@ -10,7 +10,6 @@ $(document).ready(function(){
 		//@@@@@
 	});
 
-	
 /*############################# Slider 관련 js #########################*/
 		//current position
 		var pos = 0;
@@ -157,21 +156,30 @@ $(document).ready(function(){
 		
 /*############################# 리뷰 수정 작업 관련 js #########################*/	
 // 리뷰 수정 별점주기 관련 js
-		let Rebyul =0
-		$('#Rebyul1').click(function(){
-			Rebyul = 1
+		$('.Rebyul1').click(function(){
+		    var Rebyul1Rno = $(this).attr('id');
+			var rebyul1rno = Rebyul1Rno.substring(7);
+			$('.RewriteRgrade'+rebyul1rno).val('1');
 		});
-		$('#Rebyul2').click(function(){
-			Rebyul = 2
+		$('.Rebyul2').click(function(){
+			var Rebyul1Rno = $(this).attr('id');
+			var rebyul1rno = Rebyul1Rno.substring(7);
+			$('.RewriteRgrade'+rebyul1rno).val('2');
 		});
-		$('#Rebyul3').click(function(){
-			Rebyul = 3
+		$('.Rebyul3').click(function(){
+			var Rebyul1Rno = $(this).attr('id');
+			var rebyul1rno = Rebyul1Rno.substring(7);
+			$('.RewriteRgrade'+rebyul1rno).val('3');
 		});
-		$('#Rebyul4').click(function(){
-			Rebyul = 4
+		$('.Rebyul4').click(function(){
+			var Rebyul1Rno = $(this).attr('id');
+			var rebyul1rno = Rebyul1Rno.substring(7);
+			$('.RewriteRgrade'+rebyul1rno).val('4');
 		});
-		$('#Rebyul5').click(function(){
-			Rebyul = 5
+		$('.Rebyul5').click(function(){
+			var Rebyul1Rno = $(this).attr('id');
+			var rebyul1rno = Rebyul1Rno.substring(7);
+			$('.RewriteRgrade'+rebyul1rno).val('5');
 		}); 
 
 		$('#star_Regrade a').click(function(){
@@ -205,7 +213,7 @@ $(document).ready(function(){
 		$(this).parent().next().slideDown();
 		$(this).css('display', 'none');
 		
-		$('#RewriteRno').val(rno);
+		$('#RewriteRno'+rno).val(rno);
 		var imgrno = $('#img'+rno + ' .delImg');
 		$(imgrno).css('display','inline-block');
 	});
@@ -228,38 +236,46 @@ $(document).ready(function(){
 		$('#rewriteRtitle'+resetrno).val('');
 		$('#rewriteRtitle'+resetrno).text('');
 	});
+	
 	// *리뷰 다시쓰기 취소 버튼
 	$('.rewriteCancelBtn').click(function(){
+		// 올린 리뷰의 내용을 rbody와 rtitle 변수에 담아둔다.
 		var rbody = $(this).parent().parent().children().eq(0).text().trim();
 		var rtitle = $(this).parent().parent().prev().prev().children().eq(0).text().trim();
+		// 리뷰 수정 폼을 없앤다.
 		$(this).parent().stop().slideUp();
-		var tmp = $(this).parent().prev().children().eq(0);
+		// 취소버튼에서 id값을 가져오고 rno 알아내기
 		var RewriteRno = $(this).attr('id');
 		var rewriterno = RewriteRno.substring(16);
+		var tmp = $(this).parent().prev().children().eq(0);
 		setTimeout(function() {
+			//취소 버튼을 보여주고, 수정 title과 body를 복구시켜준다
 			tmp.css('display','inline-block');
 			$('#rewriteRtitle'+rewriterno).val(rtitle);
-			$('#rewriteRbody'+rewriterno).text(rbody);
+			$('#rewriteRbody'+rewriterno).val(rbody);
 		}, 450);
-		$('#img'+rewriterno+' .delImg').css('display','none');
-		$('#img'+rewriterno+' .reviewImg').css('display','inline-block');
-		//수정요망
-		$('.delInput').remove();
+		// 버튼을 display: none처리해준다
+		$('.delImg'+rewriterno).css('display','none');
+		// display: none처리한 이미지들을 보여준다.
+		$('.reviewIMG'+rewriterno).css('display','inline-block');
+		// 삭제버튼 클릭했을 때 만든 input type="hidden" 태그를 없애준다.
+		$('.delfile'+rewriterno).remove();
 	});
-	// 리뷰 다시쓰기 작성 버튼
+	
+	//* 리뷰 다시쓰기 작성 버튼
 	$('.rewriteBtn').click(function(){
+		// 클릭 된 버튼의 id에 담긴 rno값을 구해온다.
 		var RewriteBtn = $(this).attr('id');
 		var rewritebtn = RewriteBtn.substring(10);
 		
+		// form태그에 action 속성을 부여한다.
 		$('#fr'+rewritebtn).attr('action','/www/reWriteProc.jeju');
 		
 		
+		// 데이터가 입력되었는지 확인한다...
 		var rtitle = $('#rewriteRtitle'+rewritebtn).val();
 		var rbody = $('#rewriteRbody'+rewritebtn).val(); 
-
-		$('#RewriteRgrade').val(Rebyul);
-		
-		// 데이터가 입력되었는지 확인하고...
+		var Rebyul = $('.RewriteRgrade'+rewritebtn).val();
 		if((rtitle.trim() == '') || (rbody.trim() == '') || Rebyul == 0 ){
 			alert('모든 정보를 작성해주세요');
 			return;
@@ -267,14 +283,14 @@ $(document).ready(function(){
 		$('#fr'+rewritebtn).submit();
 	})
 	
-	// 사진 삭제시 input태그 만들고, 사진 보이지 않도록 하기
+	// *사진 삭제시 input태그 만들고, 사진 보이지 않도록 하기
 	$('.delImg').click(function(){
 		var pno = $(this).prev().attr('id');
 		$(this).prev().css('display','none');
 		$(this).css('display','none');
 		var DelImgRno = $(this).attr('id');
 		var delimgrno = DelImgRno.substring(6);
-		$('#fr'+delimgrno).append('<input type="hidden" class="delfile" name="delfile" value="'+pno+'">')
+		$('#fr'+delimgrno).append('<input type="hidden" class="delfile delfile'+delimgrno+'" name="delfile" value="'+pno+'">')
 	})
 });
 

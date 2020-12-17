@@ -18,6 +18,7 @@
 <script type="text/javascript" src="/www/js/mainPage.js"></script>
 <script type="text/javascript" src="/www/js/memberLogin.js"></script>
 <script src="https://kit.fontawesome.com/e6e9b86680.js"	crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -41,7 +42,7 @@
 		<!-- 타이틀 & 이미지 -->
 		<div>
 			<!--  title  -->
-			<div style="background-color: #FFCD36">
+			<div class="Panel__title">
 				<h2 class="w3-center" style="margin-top: 0px; margin-bottom: 30px;">
 					<i class="fas fa-store-alt"></i><strong> ${STORE.get(0).aname}</strong>
 				</h2>
@@ -63,8 +64,8 @@
 			</ul>
            </div> 
            
-           <!-- 사이드패널 가게정보 -->
-		<div style="font-size: 9pt;  padding-left: 15px; margin-top: 15px;">
+        <!-- 사이드패널 가게정보 -->
+		<div class="tbFont" style="font-size: 9pt;  padding-left: 15px; margin-top: 15px;">
 			<!-- location bar -->
             <b>현재 위치</b> 
             <div id="text" style="font-size: 9pt;">지도를 클릭하세요</div>
@@ -76,7 +77,7 @@
 				<i class="fas fa-phone-volume"></i> ${STORE.get(0).atel}
 			</div>
 			<!-- 가게 소개 -->
-			<div style="border-top: 1px dashed gray; border-bottom: 1px dashed gray; padding: 15px 30px; margin: 30px 5px 15px 5px;">
+			<div class="tbFont" style="border-top: 1px dashed gray; border-bottom: 1px dashed gray; padding: 15px 30px; margin: 30px 5px 15px 5px;">
 				<div>
 					<i class="fas fa-info-circle"></i> ${STORE.get(0).abody}
 				</div>
@@ -84,7 +85,7 @@
 		</div>
 		
 		<!-- 사이드패널 최근리뷰 -->
-		<div style="padding: 15px; margin-top: 20px;">
+		<div class="tbFont" style="padding: 15px; margin-top: 20px;">
 			<div style="text-align: center; margin-bottom: 9px; background-color: #DEDEDE;">이 가게의 가장 최근리뷰</div>
 			<div style="margin-bottom: 10px;">
 				<!-- 리뷰 타이틀 및 본문 -->
@@ -109,13 +110,13 @@
 			</c:forEach>
 			</div>
 			<!-- 리뷰 본문 -->
-			<div style="padding: 3px; margin-top: 5px;">${REVIEW.get(0).rbody}</div>
+			<div class="tbFont" style="padding: 3px; margin-top: 5px;">${REVIEW.get(0).rbody}</div>
 		</div>
 	</section>
 	
 	<!-- 푸더 : 후기 더 보기 -->
 	<footer>
-		<div class="w3-right" style=" margin-bottom: 30px;  margin-top :15px">
+		<div class="w3-right tbFont" style=" margin-bottom: 30px;  margin-top :15px">
 			<a href="javascript:void(0)" class="w3-bar-item" style="font-size: 10pt;" onclick="document.getElementById('id01').style.display='block'">
 				<Strong>> 후기 더보기.. </Strong>
 			</a>
@@ -222,14 +223,14 @@
 							</h3>
 						</div>
 						<!-- 리뷰 작성자 아이디 및 작성일 -->
-						<div style="display: flex; border-bottom: 1px solid #ECEAEB; padding-right: 20px;">
+						<div class="tbFont" style="display: flex; border-bottom: 1px solid #ECEAEB; padding-right: 20px;">
 							<div style="margin-left: 45px;">작성자 :</div>
 							<div>${data.id}</div>
 							<div style="margin-left: 45px;">작성일 :</div>
 							<div>${data.rdate }</div>
 						</div>
 						<!-- 리뷰 본문글 및 사진 -->
-						<div style="border-bottom: 1px solid #ECEAEB; margin-bottom: 10px;">
+						<div class="tbFont" style="border-bottom: 1px solid #ECEAEB; margin-bottom: 10px;">
 							<!-- 본문 글 -->
 							<div style="margin-top: 20px; padding-right: 33px; display: inline-block;">
 								${data.rbody}
@@ -240,8 +241,8 @@
 							<c:forEach var="data1" items="${REVIEW.get(0).rphotovoList}">
 							<c:if test="${data.rno == data1.rno}">
 								<div style="position: relative;">
-									<img class="reviewIMG" id="${data1.pno}" src="${data1.rpdir}${data1.rponame}"></img>
-									<div class="w3-button w3-amber delImg" id="delImg${data.rno}"style="display: none; position: absolute; top:110px; right: 5px;">사진삭제</div>
+									<img class="reviewIMG reviewIMG${data.rno}" id="${data1.pno}" src="img/review/${data1.rponame}"></img>
+									<div class="w3-button w3-amber delImg delImg${data.rno} " id="delImg${data.rno}"style="display: none; position: absolute; top:110px; right: 5px;">사진삭제</div>
 								</div>								
 							</c:if>
 							</c:forEach>
@@ -252,21 +253,21 @@
 								<div class="w3-right reviewRebtn" style=" padding-right: 10px; cursor: pointer; display: inline-block;" id="${data.rno}"> 수정 <i class="far fa-edit"></i></div>
 							</div>
 								
-								<form style="display: none;" class="RewriteForm" method="POST" encType="multipart/form-data" id="fr${data.rno}">
+								<form style="display: none;" class="RewriteForm tbFont" method="POST" encType="multipart/form-data" id="fr${data.rno}">
 									<!-- 별점주기 -->
 									<div class="starRev w3-right" style="display: inline-block; margin-left: 15px;">
-										<p id="star_Regrade">
-											<a href="#" id="Rebyul1">★</a> <a href="#" id="Rebyul2">★</a> <a href="#" id="Rebyul3">★</a>
-											<a href="#" id="Rebyul4">★</a> <a href="#" id="Rebyul5">★</a>
+										<p class="star_Regrade" id="star_Regrade">
+											<a href="#" class="Rebyul1" id="Rebyul1${data.rno}">★</a> <a href="#"  class="Rebyul2" id="Rebyul2${data.rno}">★</a> <a href="#"  class="Rebyul3" id="Rebyul3${data.rno}">★</a>
+											<a href="#" class="Rebyul4" id="Rebyul4${data.rno}">★</a> <a href="#"  class="Rebyul5" id="Rebyul5${data.rno}">★</a>
 										</p>
 									</div>
 									<!-- 글쓰기 데이터 넘기기 input 태그 -->
 									<input type="hidden" id="RewriteRid" name="id" value="${SID}">
-									<input type="hidden" id="RewriteRgrade" name="rgrade">
-									<input type="hidden" id="RewriteRx" name="rx" value="${REVIEW.get(0).rx}">
-									<input type="hidden" id="RewriteRy" name="ry" value="${REVIEW.get(0).ry}">
+									<input type="hidden" class="RewriteRgrade${data.rno}" id="RewriteRgrade" name="rgrade">
+									<input type="hidden" id="RewriteRx" name="ax" value="${REVIEW.get(0).rx}">
+									<input type="hidden" id="RewriteRy" name="ay" value="${REVIEW.get(0).ry}">
 									<input type="hidden" id="RewriteRtno" name="rtno" value="${STORE.get(0).atno}">
-									<input type="hidden" id="RewriteRno" name="rno" value="">
+									<input type="hidden" id="RewriteRno${data.rno}" name="rno" value="">
 									<!-- 글쓰기 제목 -->
 									<input type="text" placeholder="글 제목" style="margin-top: 40px; border: none; padding: 5px; border-top: 1px solid gray;" name="rtitle" id="rewriteRtitle${data.rno}" value="${data.rtitle}">
 									<!-- 글쓰기 본문 -->
@@ -293,7 +294,7 @@
 					</section>
 					<!--  사용자 리뷰 글쓰기 -->
 					<footer style="display: flex; flex-direction: column; margin-top: 50px; margin-left: 60px; margin-right: 40px;">
-						<form method="POST" encType="multipart/form-data" action="/www/wReviewProc.jeju" id="wReviewfrm" name="wReviewfrm">
+						<form class="tbFont" method="POST" encType="multipart/form-data" action="/www/wReviewProc.jeju" id="wReviewfrm" name="wReviewfrm">
 						<!-- 비 로그인 시 -->
 						<c:if test="${empty sessionScope.SID}">
 							<div style="margin: 30px;">*로그인 하셔야 리뷰를 작성할 수 있습니다</div>
@@ -310,8 +311,8 @@
 							<!-- 글쓰기 데이터 넘기기 input 태그 -->
 							<input type="hidden" id="reviewId" name="id" value="${SID}">
 							<input type="hidden" id="reviewStar" name="rgrade">
-							<input type="hidden" id="reviewX" name="rx" value="${REVIEW.get(0).rx}">
-							<input type="hidden" id="reviewY" name="ry" value="${REVIEW.get(0).ry}">
+							<input type="hidden" id="reviewX" name="ax" value="${REVIEW.get(0).rx}">
+							<input type="hidden" id="reviewY" name="ay" value="${REVIEW.get(0).ry}">
 							<input type="hidden" id="reviewRtno" name="rtno" value="${STORE.get(0).atno}">
 							
 							<!-- 글쓰기 제목 -->
@@ -344,10 +345,10 @@
 <div class="w3-main" style="margin-left: 420px;">
 	<div class="w3-col" style="margin-top: 20px;">
 		<div class="w3-col" style="text-align: right;">
-	        <!-- 내 정보보기 -->
-	        <div class="w3-col m12 l12 s12" style="padding-right: 60px;" id="infoBtn"> 내 정보보기 <i class="fas fa-user-cog"></i></div>
 	      	<!-- 로그인 시 보이는 화면 -->
 	      	<c:if test="${not empty sessionScope.SID}">
+	        <!-- 내 정보보기 -->
+	        <div class="w3-col m12 l12 s12" style="padding-right: 60px;" id="infoBtn"> 내 정보보기 <i class="fas fa-user-cog"></i></div>
 	        <div style="padding-right: 60px;">
 	        	<div style="padding-right: 10px; display:inline-block;">[ ${sessionScope.SID} ] 님 환영합니다.</div>
 	        	<div class="w3-button w3-amber" id="logoutbtn" style="display:inline-block;">로그아웃</div>
