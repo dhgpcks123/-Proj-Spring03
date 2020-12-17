@@ -16,6 +16,7 @@
 
 	<!-- .java의 Alias선언 -->
 	<typeAliases>
+ 		<typeAlias alias="mbVO" type="jeju.increpas.www.vo.MemberVO" />
  		<typeAlias alias="fVO" type="jeju.increpas.www.vo.FileVO" />
  		<typeAlias alias="iVO" type="jeju.increpas.www.vo.InfoVO" />
  		<typeAlias alias="mVO" type="jeju.increpas.www.vo.MapVO" />
@@ -27,6 +28,7 @@
 	<!-- SQL.xml mapper -->
 	<mappers>
  		<mapper resource="jeju/increpas/www/sql/MainSQL.xml" />
+ 		<mapper resource="jeju/increpas/www/sql/MemberSQL.xml" />
  		<mapper resource="jeju/increpas/www/sql/ReviewSQL.xml" />
 	</mappers>
 </configuration>

@@ -86,15 +86,13 @@ public class MemberVO {
    public void setSos(String sos) {
       this.sos = sos;
    }
-   
-   
-   public String getMsg() {
-	return msg;
-}
-public void setMsg(String msg) {
-	this.msg = msg;
-}
-public Date getJoinDate() {
+	   public String getMsg() {
+		return msg;
+	}
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+	public Date getJoinDate() {
       return joinDate;
    }
    public void setJoinDate(Date joinDate) {
@@ -107,3 +105,4 @@ public Date getJoinDate() {
    public void setBirth(Date birth) {
       this.birth = birth;
    }
+}

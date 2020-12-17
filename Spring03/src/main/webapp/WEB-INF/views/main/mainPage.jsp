@@ -22,7 +22,7 @@
 
 <body>
 <form method="POST" action="/www/member/memberInfo.jeju" id="frm" name="frm">
-		<input type="hidden" id="id" name="id" value="${SID}">
+		<input type="hidden" name="id" value="${SID}">
 </form>
 <!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
 <!--	#				  사이드패널 					#	-->
@@ -345,7 +345,7 @@
 	<div class="w3-col" style="margin-top: 20px;">
 		<div class="w3-col" style="text-align: right;">
 	        <!-- 내 정보보기 -->
-	        <div class="w3-col m12 l12 s12" style="padding-right: 60px;"> 내 정보보기 <i class="fas fa-user-cog"></i></div>
+	        <div class="w3-col m12 l12 s12" style="padding-right: 60px;" id="infoBtn"> 내 정보보기 <i class="fas fa-user-cog"></i></div>
 	      	<!-- 로그인 시 보이는 화면 -->
 	      	<c:if test="${not empty sessionScope.SID}">
 	        <div style="padding-right: 60px;">
