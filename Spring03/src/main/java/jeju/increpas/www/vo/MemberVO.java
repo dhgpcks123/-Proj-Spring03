@@ -6,9 +6,8 @@ import java.text.*;
 
 public class MemberVO {
    private int mno;
-   private String id, mname, pw, mail, tel, gen, isshow, joindate, blood1, blood2, sos,msg ;	// msg 추가
+   private String id, mname, pw, mail, tel, gen, isshow, joindate, blood1, blood2, sos, msg, birth, rel;	// msg 추가
    private Date joinDate;
-   private Date birth;
    
    public int getMno() {
       return mno;
@@ -86,25 +85,42 @@ public class MemberVO {
    public void setSos(String sos) {
       this.sos = sos;
    }
-   
-   
    public String getMsg() {
-	return msg;
-}
-public void setMsg(String msg) {
-	this.msg = msg;
-}
-public Date getJoinDate() {
-      return joinDate;
+	   return msg;
+   }
+   public void setMsg(String msg) {
+	   this.msg = msg;
+   }
+   public Date getJoinDate() {
+	   return joinDate;
    }
    public void setJoinDate(Date joinDate) {
       this.joinDate = joinDate;
       setJoindate();
    }
-   public Date getBirth() {
-      return birth;
-   }
-   public void setBirth(Date birth) {
-      this.birth = birth;
-   }
+	public String getBirth() {
+		return birth;
+	}
+	public void setBirth(String birth) {
+		this.birth = birth;
+	}
+	public String getRel() {
+		return rel;
+	}
+	public void setRel(String rel) {
+		this.rel = rel;
+	}
+@Override
+public String toString() {
+	return "MemberVO [mno=" + mno + ", id=" + id + ", mname=" + mname + ", pw=" + pw + ", mail=" + mail + ", tel=" + tel
+			+ ", gen=" + gen + ", isshow=" + isshow + ", joindate=" + joindate + ", blood1=" + blood1 + ", blood2="
+			+ blood2 + ", sos=" + sos + ", msg=" + msg + ", joinDate=" + joinDate + ", birth=" + birth + ", getMno()="
+			+ getMno() + ", getId()=" + getId() + ", getMname()=" + getMname() + ", getPw()=" + getPw() + ", getMail()="
+			+ getMail() + ", getTel()=" + getTel() + ", getGen()=" + getGen() + ", getIsshow()=" + getIsshow()
+			+ ", getJoindate()=" + getJoindate() + ", getBlood1()=" + getBlood1() + ", getBlood2()=" + getBlood2()
+			+ ", getSos()=" + getSos() + ", getMsg()=" + getMsg() + ", getJoinDate()=" + getJoinDate() + ", getBirth()="
+			+ getBirth() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
+			+ super.toString() + "]";
+}
+   
 }

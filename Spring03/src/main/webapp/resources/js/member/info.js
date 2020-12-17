@@ -13,9 +13,22 @@ $(document).ready(function(){
 		var sno = $('#no').text();
 		// 원데이터
 		var omail = $('#cMail').text();
-
+		var otel = $('#cTel').text();
+		var osos = $('#cSos').text();
+		var obl1 = $('#cBl1').text();
+		var obl2 = $('#cBl2').text();
 		// 수정데이터
 		var tmail = $('#mail').val();
+		var ttel = $('#tel').val();
+		var tsos = $('#sos').val();
+		var tbl1 = $('.bl1:checked').val();
+		var tbl2 = $('.bl2:checked').val();
+
+		if(!tbl1){
+			tbl1 = obl1;
+		} else if(!tbl2){
+			tbl2 = obl2;
+		}
 		
 		$('#frm').attr('method','POST');
 		$('#frm').attr('action','/www/member/memberEditProc.jeju');

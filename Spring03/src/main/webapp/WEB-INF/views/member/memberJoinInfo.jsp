@@ -4,13 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="/Team03Proj/css/w3.css">
-<link rel="stylesheet" type="text/css" href="/Team03Proj/css/member/member.css">
+<title>***** 정보입력  *****</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/member/member.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script type="text/javascript" src="/Team03Proj/js/jquery-3.5.1.min.js"></script>
-<script type="text/javascript" src="/Team03Proj/js/memberjoin.js"></script>
+<script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="../js/memberjoin.js"></script>
 
 </head>
 <body>
@@ -54,8 +54,8 @@
 				 		<span class="w3-col w3-center" id="mailmsg" style="display: none;"></span>
 				   	</div>
 			
-				     <button class="w3-button w3-red w3-left" id="reset1">reset</button>
-				     <button class="w3-button w3-yellow w3-right" id="next1">다음</button>
+				     <div class="w3-button w3-red w3-left" id="reset1">reset</div>
+				     <div class="w3-button w3-yellow w3-right" id="next1">다음</div>
 		  		</div>
 			</div>
 		
@@ -75,17 +75,17 @@
 					   
 					<!-- 이름  -->
 					<div class="w3-col  pb20">
-						<input class="w3-input w3-padding-16 w3-border" type="text" placeholder="이름" name="name" required id="name">
+						<input class="w3-input w3-padding-16 w3-border" type="text" placeholder="이름" name="mname" required id="mname">
 						<span class="w3-col w3-center" id="namemsg" style="display: none;"></span>
 					</div>
 					<!-- 생년월일  -->
 					<div class="w3-col brith pb20">
-						<input class="w3-third  w3-input w3-padding-16  w3-border" type="number" name="year" id="year" value="1988" min="1900", max="2020">
-						<input class="w3-third  w3-input w3-padding-16  w3-border" type="number" name="mouth" id="mouth" value="6" min="1", max="12">
-						<input class="w3-third  w3-input w3-padding-16  w3-border" type="number" name="day" id="day" value="15" min="1", max="31">
+						<input class="w3-third  w3-input w3-padding-16  w3-border" type="number" name="year" id="year" value="1988" min="1900" max="2020">
+						<input class="w3-third  w3-input w3-padding-16  w3-border" type="number" name="mouth" id="mouth" value="6" min="1" max="12">
+						<input class="w3-third  w3-input w3-padding-16  w3-border" type="number" name="day" id="day" value="15" min="1" max="31">
 					</div>
 					<!-- 전화번호 -->
-					<div class="w3-col  pb20">
+					<div class="w3-col pb20">
 						<input class="w3-input w3-padding-16 w3-border" type="text" placeholder="숫자만 입력하세요." required id="tel" name="tel">
 						<span class="w3-col w3-center" id="telmsg" style="display: none;"></span>
 					</div>
@@ -101,8 +101,8 @@
 						</div>
 					</div>
 					
-					<button class="w3-button w3-yellow w3-left "id="pre2">이전</button>
-				    <button class="w3-button w3-red w3-left" id="reset2">reset</button>
+					<div class="w3-button w3-yellow w3-left "id="pre2">이전</div>
+				    <div class="w3-button w3-red w3-left" id="reset2">reset</div>
 					<div class="w3-button w3-yellow w3-right" id="next2">다음</div>
 				</div>
 			</div>
@@ -124,8 +124,8 @@
 					<div class="w3-col  pb20">
 						<span class="w3-col m12 w3-border" id="blood"  >혈액형</span>
 						<div class="w3-col m5 mt5  w3-border w3-left">
-							<input type="radio" class="w3-radio-medium ph" id="phP" name="ph" value="plus"><span>&nbsp;RH+</span><br>
-							<input type="radio" class="w3-radio-medium ph" id="phM" name="ph" value="minus"><span>&nbsp;RH-</span>
+							<input type="radio" class="w3-radio-medium ph" id="phP" name="ph" value="RH+"><span>&nbsp;RH+</span><br>
+							<input type="radio" class="w3-radio-medium ph" id="phM" name="ph" value="RH-"><span>&nbsp;RH-</span>
 						</div>
 						<div class="w3-col m5 mt5 w3-border w3-right">
 							<input type="radio" class="w3-radio-medium abo" id="aboA" name="abo" value="A"><span>&nbsp;A</span>
@@ -136,24 +136,30 @@
 					</div>
 					<!-- 긴급연락처 -->
 					<div class="w3-col  pb20">
-						<input class="w3-input w3-padding-16 w3-border" type="text" placeholder="긴급연락처"  name="stel" id="stel">
+						<input class="w3-input w3-padding-16 w3-border" type="text" placeholder="긴급연락처"  name="sos" id="stel">
 					</div>
+					<!-- DB에 없어서 연동 불가 -->
 					<!-- 긴급연락처와의 관계  -->
 					<div class="w3-col  pb20">
-						<input class="w3-input w3-padding-16 w3-border" type="text" placeholder="긴급연락처와의 관계"  name="stel_name" id="stel_name">
+						<input class="w3-input w3-padding-16 w3-border" type="text" placeholder="긴급연락처와의 관계"  name="rel" id="stel_name">
 					</div>
 					<!-- 추가설명 -->
 					<div class="w3-col pb20">
-						<textarea class="w3-input w3-padding-16 w3-border"  placeholder="참고사항을 입력하세요." name="text" id="text" >
+						<textarea class="w3-input w3-padding-16 w3-border"  placeholder="참고사항을 입력하세요." name="msg" id="text" >
 						</textarea>
 					</div>
+
 							
-					<button class="w3-button w3-yellow w3-left " id="pre3">이전</button>
-				    <button class="w3-button w3-red w3-left" id="reset3">reset</button>
-					<button class="w3-button w3-yellow w3-right" id="next3">가입완료</button>
+					<div class="w3-button w3-yellow w3-left " id="pre3">이전</div>
+				    <div class="w3-button w3-red w3-left" id="reset3">reset</div>
+					<div class="w3-button w3-yellow w3-right" id="next3">가입완료</div>
 				</div>
 			</div>
 		</div>
+		<input type="hidden" name="blood1" id="blood1"/>
+		<input type="hidden" name="blood2" id="blood2"/>
+		<input type="hidden" name="birth" id="birth"/>
+		
  	</form>
 </body>
 </html>

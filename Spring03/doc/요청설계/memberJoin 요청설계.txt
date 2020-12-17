@@ -1,27 +1,27 @@
 ------------------------------------------------------------
 # 회원가입 약관동의 페이지 폼보기 요청
-요청내용 : /Team03Proj/memberJoin.cls
+요청내용 : /member/memberJoin.jeju
 파라미터 : checked
-컨트롤러 : com.increpas.cls.controller.member.MemberJoin
-뷰	  : /WEB-INF/views/com/increpas/cls/member/MemberJoin.jsp
+컨트롤러 : jeju.increpas.www.controller.Member.memberJoin()
+뷰	  : /WEB-INF/views/member/memberJoin.jsp
 ------------------------------------------------------------
 # 회원가입 개인정보 페이지 폼보기 요청
-요청내용 : /Team03Proj/memberJoinProc.cls
+요청내용 : /member/memberJoinProc.jeju
 파라미터 : 아이디, 비밀번호, 메일
-컨트롤러 : com.increpas.cls.controller.member.MemberJoinInfo
-뷰	  : /WEB-INF/views/com/increpas/cls/member/MemberJoinInfo.jsp
+컨트롤러 : jeju.increpas.www.controller.Member.memberJoinInfo()
+뷰	  : /WEB-INF/views/member/memberJoinInfo.jsp
 ------------------------------------------------------------
 # 회원가입 가입완료 페이지 폼보기 요청
-요청내용 : /Team03Proj/memberJoinEnd.cls
+요청내용 : /member/memberJoinEnd.jeju
 파라미터 : 무
-컨트롤러 : com.increpas.cls.controller.member.MemberJoinEnd
-뷰	  : /WEB-INF/views/com/increpas/cls/member/MemberJoinEnd.jsp
+컨트롤러 : jeju.increpas.www.controller.Member.memberJoinEnd()
+뷰	  : /WEB-INF/views/member/memberJoinEnd.jsp
 ------------------------------------------------------------
 
 id check============================================
 # 아이디 체크
-요청내용 : /Team03Proj/memberIdCheck
+요청내용 : /member/memberIdCheck
 파라미터 : id
-컨트롤러 : com.increpas.cls.controller.member.MemberIdCheck
+컨트롤러 : jeju.increpas.www.controller.Member.idCheck()
 뷰(redirect) : ajax
 ------------------------------------------------------------

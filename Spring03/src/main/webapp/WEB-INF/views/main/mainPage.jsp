@@ -364,7 +364,7 @@
 		        <div class="w3-button w3-amber" id="loginbtn">로그인</div>
 		        <!--  회원가입 버튼 -->
 		        <div class="w3-button w3-amber w3-hover-lime" style="margin-right: 50px;" id="member">
-		        	<a href="/Team03Proj/memberJoin.cls">회원가입</a>
+		        	<a href="/www/member/memberJoin.jeju">회원가입</a>
 		        </div>
 	        </form>   
 	        </c:if>
