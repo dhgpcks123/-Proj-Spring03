@@ -1,12 +1,5 @@
 $(document).ready(function(){
-/*	case 'ibtn':
-				$('#frm').submit();
-				return;
-				break;
-	$('#infoBtn').click(function(){
-		$(location).attr('href','/www/member/memberInfo.jeju');
-	});
-	*/
+
 	$('#infoBtn').click(function(){
 		$('#frm').submit();
 				return;
