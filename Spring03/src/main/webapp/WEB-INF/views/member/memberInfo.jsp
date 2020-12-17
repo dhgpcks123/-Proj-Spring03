@@ -86,9 +86,9 @@
 				<div class="w3-col w3-margin-bottom">
 					<label class="w3-col l3 m3 w3-right-align w3-padding clslbl">혈액형 선택 : </label>
 					<div class="w3-col l9 m12 w3-padding">
-						<div class="w3-col" id="bl1fr">
+						<div class="w3-col " id="bl1fr">
 		<c:forEach var="data" items="${LIST1}">
-				<div class="w3-third w3-center w3-padding">
+				<div class="w3-quarter w3-center w3-padding">
 					<input type="radio" class="w3-col w3-radio-medium blood1" name="blood1" value="${data.blood1}">
 						<span class="w3-twothird w3-center chkbl1">${data.blood1}</span>
 				</div>
@@ -103,7 +103,7 @@
 					<div class="w3-col l9 m12 w3-padding">
 						<div class="w3-col" id="bl2fr">
 		<c:forEach var="data" items="${LIST2}">
-				<div class="w3-third w3-center w3-padding">
+				<div class="w3-half w3-center w3-padding">
 					<input type="radio" class="w3-col w3-radio-medium blood2" name="blood2" value="${data.blood2}">
 						<span class="w3-twothird w3-center chkbl2">${data.blood2}</span>
 				</div>
