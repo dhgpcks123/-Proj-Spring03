@@ -6,6 +6,7 @@ import org.mybatis.spring.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.transaction.annotation.Transactional;
 
+
 import jeju.increpas.www.vo.*;
 
 
@@ -59,5 +60,14 @@ public class MemberDao {
 	// 회원정보 수정 전담 처리함수
 	public int editMember(MemberVO mbVO) {
 		return sqlSession.update("mbSQL.editMember",mbVO);
+	}
+	
+	// 혈액형 리스트 가져오기 전담 처리함수
+	public List<MemberVO> bloodList1(){
+		return sqlSession.selectList("mbSQL.bloodList1");
+	}
+	// 혈액형 리스트 가져오기 전담 처리함수
+	public List<MemberVO> bloodList2(){
+		return sqlSession.selectList("mbSQL.bloodList2");
 	}
 }

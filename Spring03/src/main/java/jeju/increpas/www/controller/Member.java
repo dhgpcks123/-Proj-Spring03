@@ -72,8 +72,11 @@ public class Member {
 
 			mv.setViewName("member/memberInfo");	//  forward로 뷰 를 부르는 경우 
 			MemberVO mbVO = mbDao.getInfo(id);
-			
+			List<MemberVO> list1 = mbDao.bloodList1();	// 혈액형 리스트 불러오기
+			List<MemberVO> list2 = mbDao.bloodList2();	// 혈액형 리스트 불러오기
 			mv.addObject("DATA", mbVO);
+			mv.addObject("LIST1",list1);
+			mv.addObject("LIST2",list2);
 		}
 		
 		return mv;

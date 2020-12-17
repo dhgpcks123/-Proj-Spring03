@@ -39,10 +39,11 @@
 							<div class="w3-col w3-text-grey ft18px mh3"><span class="w3-third w3-right-align">아 이 디 : </span><span class="w3-twothird w3-center">${DATA.id}</span></div>
 							<div class="w3-col w3-text-grey ft18px mh3"><span class="w3-third w3-right-align">회원이름 : </span><span class="w3-twothird w3-center">${DATA.mname}</span></div>
 							<div class="w3-col w3-text-grey ft18px mh3"><span class="w3-third w3-right-align">회원메일 : </span><span class="w3-twothird w3-center" id="cMail">${DATA.mail}</span></div>
-							<div class="w3-col w3-text-grey ft18px mh3"><span class="w3-third w3-right-align">전화번호 : </span><span class="w3-twothird w3-center">${DATA.tel}</span></div>
-							<div class="w3-col w3-text-grey ft18px mh3"><span class="w3-third w3-right-align">혈 액 형 : </span><span class="w3-twothird w3-center">${DATA.blood1} / ${DATA.blood2} 형</span></div>
+							<div class="w3-col w3-text-grey ft18px mh3"><span class="w3-third w3-right-align">전화번호 : </span><span class="w3-twothird w3-center" id="cTel">${DATA.tel}</span></div>
+							<div class="w3-col w3-text-grey ft18px mh3"><span class="w3-third w3-right-align">혈 액 형 : </span><span class="w3-twothird w3-center" id="cBl1">${DATA.blood1} 형</span></div>
+							<div class="w3-col w3-text-grey ft18px mh3"><span class="w3-third w3-right-align">RH Type : </span><span class="w3-twothird w3-center" id="cBl2">${DATA.blood2}</span></div>
 							<div class="w3-col w3-text-grey ft18px mh3"><span class="w3-third w3-right-align">생년월일 : </span><span class="w3-twothird w3-center">${DATA.birth}</span></div>
-							<div class="w3-col w3-text-grey ft18px mh3"><span class="w3-third w3-right-align">긴급연락 : </span><span class="w3-twothird w3-center">${DATA.sos}</span></div>
+							<div class="w3-col w3-text-grey ft18px mh3"><span class="w3-third w3-right-align">긴급연락 : </span><span class="w3-twothird w3-center" id="cSos">${DATA.sos}</span></div>
 							<div class="w3-col w3-text-grey ft18px mh3"><span class="w3-third w3-right-align">회원성별 : </span>
 								<span class="w3-twothird w3-center">
 									<c:if test="${DATA.gen == 'M'}">남 자</c:if>
@@ -68,7 +69,48 @@
 						<input type="text" class="w3-input w3-border" id="mail" name="mail" value="${DATA.mail}">
 					</div>
 				</div>
+				<div class="w3-col">
+					<label for="mail" class="w3-col l3 m3 w3-right-align w3-padding clslbl">회원 전화번호 : </label>
+					<div class="w3-col l9 m12 w3-padding">
+						<input type="text" class="w3-input w3-border" id="tel" name="tel" value="${DATA.tel}">
+					</div>
+				</div>
+				<div class="w3-col">
+					<label for="mail" class="w3-col l3 m3 w3-right-align w3-padding clslbl">긴급 연락 : </label>
+					<div class="w3-col l9 m12 w3-padding">
+						<input type="text" class="w3-input w3-border" id="sos" name="sos" value="${DATA.sos}">
+					</div>
+				</div>
+
+
+				<div class="w3-col w3-margin-bottom">
+					<label class="w3-col l3 m3 w3-right-align w3-padding clslbl">혈액형 선택 : </label>
+					<div class="w3-col l9 m12 w3-padding">
+						<div class="w3-col" id="bl1fr">
+		<c:forEach var="data" items="${LIST1}">
+				<div class="w3-third w3-center w3-padding">
+					<input type="radio" class="w3-col w3-radio-medium blood1" name="blood1" value="${data.blood1}">
+						<span class="w3-twothird w3-center chkbl1">${data.blood1}</span>
+				</div>
+		</c:forEach>	
+						</div>
+					</div>
+				</div>
 				
+				
+				<div class="w3-col w3-margin-bottom">
+					<label class="w3-col l3 m3 w3-right-align w3-padding clslbl">RH 선택 : </label>
+					<div class="w3-col l9 m12 w3-padding">
+						<div class="w3-col" id="bl2fr">
+		<c:forEach var="data" items="${LIST2}">
+				<div class="w3-third w3-center w3-padding">
+					<input type="radio" class="w3-col w3-radio-medium blood2" name="blood2" value="${data.blood2}">
+						<span class="w3-twothird w3-center chkbl2">${data.blood2}</span>
+				</div>
+		</c:forEach>	
+						</div>
+					</div>
+				</div>
 			</form>
 		</div>
 		

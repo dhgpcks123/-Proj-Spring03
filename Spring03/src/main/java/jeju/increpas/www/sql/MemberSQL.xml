@@ -93,6 +93,7 @@
 			member
 		<!--
 			형식 ] 	
+			
 				<trim prefix="SET" suffixOverrides=",">내용</trim>
 		 
 		 <trim prefix="SET" suffixOverrides=",">	
@@ -102,10 +103,29 @@
 		-->
 		<set>
 			<if test="mail neq null">mail = #{mail},</if>
+			<if test="tel neq null">tel = #{tel},</if>
+			<if test="sos neq null">sos = #{sos},</if>
+			<if test="blood1 neq null">blood1 = #{blood1},</if>
+			<if test="blood2 neq null">blood2 = #{blood2},</if>
 		</set>
 		WHERE
 			id = #{id}
 	</update>
 	
-	
+	<select id="bloodList1" resultType="mbVO" >
+		SELECT
+			DISTINCT blood1
+		FROM
+		 	member
+        ORDER BY 
+            blood1
+	</select>
+	<select id="bloodList2" resultType="mbVO" >
+		SELECT
+			DISTINCT blood2
+		FROM
+		 	member
+        ORDER BY 
+            blood2
+	</select>
 </mapper>
