@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+	PUBLIC "-//mybatis.org//DTD config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+	
+<configuration>
+	<!--  myBatis 설정 -->
+	<settings>
+		<setting name="cacheEnabled" value="false"/>
+			<!-- 같은 질의명령일 경우 캐싱기능 사용여부 결정(기본값:true) -->
+		<setting name="useGeneratedKeys" value="true"/>
+			<!-- 생성키에 대한 JDBC 지원을 허용 -->
+		<setting name="defaultExecutorType" value="REUSE" />
+			<!-- 디폴트 생성자 설정 REUSE, SIMPLE, BATCH -->
+	</settings>
+
+	<!-- .java의 Alias선언 -->
+	<typeAliases>
+ 		<typeAlias alias="fVO" type="jeju.increpas.www.vo.FileVO" />
+ 		<typeAlias alias="iVO" type="jeju.increpas.www.vo.InfoVO" />
+ 		<typeAlias alias="mVO" type="jeju.increpas.www.vo.MapVO" />
+ 		<typeAlias alias="rVO" type="jeju.increpas.www.vo.ReviewVO" />
+ 		<typeAlias alias="rpVO" type="jeju.increpas.www.vo.RphotoVO" />
+ 		<typeAlias alias="memberVO" type="jeju.increpas.www.vo.MemberVO" />
+	</typeAliases>
+	
+	<!-- SQL.xml mapper -->
+	<mappers>
+ 		<mapper resource="jeju/increpas/www/sql/MainSQL.xml" />
+ 		<mapper resource="jeju/increpas/www/sql/ReviewSQL.xml" />
+	</mappers>
+</configuration>
