@@ -1,8 +1,7 @@
 package jeju.increpas.www.controller;
 
 
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
@@ -25,6 +24,12 @@ public class MainController {
 	@RequestMapping("/main.jeju")
 	public ModelAndView getMain(ModelAndView mv, MapVO mVO) {
 			mService.getMain(mv, mVO);
+		return mv;
+	}
+	// < 메인 페이지 - 
+	@RequestMapping(value="/main.jeju", method=RequestMethod.GET, produces="application/text; charset=UTF8")
+	public ModelAndView getMainget(ModelAndView mv, MapVO mVO) {
+		mService.getMain(mv, mVO);
 		return mv;
 	}
 	// < 메인 페이지 - 로그인 Proc 요청 >

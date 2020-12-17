@@ -21,7 +21,7 @@
 	<!-- 리뷰 사진 가져오기 -->
 	<select id="getReviewPhoto" resultType="rpVO" parameterType="mVO">
 		SELECT
-			rno, rponame, rpsname, rpdir
+			rno, rponame, rpsname, rpdir, pno
 		FROM
 			review, rphoto
 		WHERE
@@ -29,6 +29,7 @@
 			AND rx = #{ax}
 			AND ry = #{ay}
 			AND review.isshow='Y'
+			AND rphoto.isshow='Y'
 	</select>
 	<!-- 자세히보기 가져오기 -->
 	<select id="getStoreInfo" resultType="iVO" parameterType="mVO">
@@ -40,7 +41,7 @@
 		   areainfo.apno = aphoto.apno  
 		    AND ax= #{ax}  
 		    AND ay= #{ay}
-		    AND isshow='Y'  		
+		    AND isshow='Y'	
 	</select>
 	
 <!--  < 메인 페이지 - 로그인 Proc 요청 > 질의명령 -->

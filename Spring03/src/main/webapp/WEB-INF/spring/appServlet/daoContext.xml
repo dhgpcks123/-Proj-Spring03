@@ -9,6 +9,6 @@
 		
 	<!-- Dao Bean 처리 -->	
 	<bean id="mDao" class="jeju.increpas.www.dao.MainDao" />	
-	<bean id="reviewDao" class="jeju.increpas.www.dao.ReviewDao" />	
+	<bean id="rDao" class="jeju.increpas.www.dao.ReviewDao" />	
 	
 </beans>

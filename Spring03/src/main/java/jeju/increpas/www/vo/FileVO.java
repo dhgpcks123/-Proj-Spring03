@@ -1,9 +1,16 @@
 package jeju.increpas.www.vo;
 
 public class FileVO {
-	private int rpno;
+	private int rpno, pno, rtno;
 	private long rpsize;
-	private String rponame, rpsname, rpdir, rtno;
+	private String rponame, rpsname, rpdir;
+	
+	public int getPno() {
+		return pno;
+	}
+	public void setPno(int pno) {
+		this.pno = pno;
+	}
 	public int getRpno() {
 		return rpno;
 	}
@@ -34,12 +41,16 @@ public class FileVO {
 	public void setRpdir(String rpdir) {
 		this.rpdir = rpdir;
 	}
-	public String getRtno() {
+	public int getRtno() {
 		return rtno;
 	}
-	public void setRtno(String rtno) {
+	public void setRtno(int rtno) {
 		this.rtno = rtno;
 	}
-	
+	@Override
+	public String toString() {
+		return "FileVO [rpno=" + rpno + ", pno=" + pno + ", rtno=" + rtno + ", rpsize=" + rpsize + ", rponame="
+				+ rponame + ", rpsname=" + rpsname + ", rpdir=" + rpdir + "]";
+	}
 	
 }

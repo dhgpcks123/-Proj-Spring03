@@ -67,7 +67,7 @@ public class FileUtil {
 		
 		// 저장 경로 지정 ...
 		String path = this.getClass().getResource("").getPath();
-		path = path.substring(0, path.indexOf("/WEB-INF")) + "/resources"+ dir;
+		path = path.substring(0, path.indexOf("/WEB-INF")) + "/resources/"+ dir;
 		
 		try {
 			for(int i = 0 ; i< file.length; i++) {

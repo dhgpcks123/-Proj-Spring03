@@ -37,20 +37,21 @@
 
 
 ┌───────────────────────────────────────────────────────────────────┐
-					## 리뷰게시판 관련 요청설계
+					## 리뷰 게시판 관련 요청설계
 ├───────────────────────────────────────────────────────────────────┤
 	요청제목 : 	리뷰쓰기 proc 요청 (file-Upload 라이브러리)												
 	요청내용 :	/www/wReviewProc.jeju
-	파라미터 :	id, title, body, file, grade
+	파라미터 :	id, rtitle, rbody, rgrade, rx, ry, rtno, file[]
 	컨트롤러 :	jeju.increpas.www.controller.ReviewController.wReviewProc()
 	 뷰타입  :	redirect (->forward:/redirect수정 요망)
-		성공 ]	/www/main/jeju
+		성공 ]	/www/main.jeju
 ├───────────────────────────────────────────────────────────────────┤
-	요청제목 :								
-	요청내용 : 	/www/loginProc.com
-	파라미터 :	id, pw
-	컨트롤러 :	jeju.increpas.www.controller.MemberController
-	 뷰타입  :	forward
-		성공 ]	/WEB-INF/views/login.jsp		
+	요청제목 :	리뷰수정 proc 요청 (file-Upload 라이브러리)							
+	요청내용 : 	/www/reWriteProc.jeju
+	파라미터 :	id, rtitle, rbody, rgrade, rx, ry, rtno, file[], delfile[]
+	컨트롤러 :	jeju.increpas.www.controller.ReviewController.reWriteProc()
+	 뷰타입  :	redirect
+	 	성공 ]	/www/main.jeju( 모달창 띄운채로+rx/ ry )
+	 	실패 ]
 └───────────────────────────────────────────────────────────────────┘
 
