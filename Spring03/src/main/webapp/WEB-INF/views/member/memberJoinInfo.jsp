@@ -54,8 +54,8 @@
 				 		<span class="w3-col w3-center" id="mailmsg" style="display: none;"></span>
 				   	</div>
 			
-				     <button class="w3-button w3-red w3-left" id="reset1">reset</button>
-				     <button class="w3-button w3-yellow w3-right" id="next1">다음</button>
+				     <div class="w3-button w3-red w3-left" id="reset1">reset</div>
+				     <div class="w3-button w3-yellow w3-right" id="next1">다음</div>
 		  		</div>
 			</div>
 		
@@ -75,7 +75,7 @@
 					   
 					<!-- 이름  -->
 					<div class="w3-col  pb20">
-						<input class="w3-input w3-padding-16 w3-border" type="text" placeholder="이름" name="name" required id="name">
+						<input class="w3-input w3-padding-16 w3-border" type="text" placeholder="이름" name="mname" required id="mname">
 						<span class="w3-col w3-center" id="namemsg" style="display: none;"></span>
 					</div>
 					<!-- 생년월일  -->
@@ -85,7 +85,7 @@
 						<input class="w3-third  w3-input w3-padding-16  w3-border" type="number" name="day" id="day" value="15" min="1", max="31">
 					</div>
 					<!-- 전화번호 -->
-					<div class="w3-col  pb20">
+					<div class="w3-col pb20">
 						<input class="w3-input w3-padding-16 w3-border" type="text" placeholder="숫자만 입력하세요." required id="tel" name="tel">
 						<span class="w3-col w3-center" id="telmsg" style="display: none;"></span>
 					</div>
@@ -101,8 +101,8 @@
 						</div>
 					</div>
 					
-					<button class="w3-button w3-yellow w3-left "id="pre2">이전</button>
-				    <button class="w3-button w3-red w3-left" id="reset2">reset</button>
+					<div class="w3-button w3-yellow w3-left "id="pre2">이전</div>
+				    <div class="w3-button w3-red w3-left" id="reset2">reset</div>
 					<div class="w3-button w3-yellow w3-right" id="next2">다음</div>
 				</div>
 			</div>
@@ -148,9 +148,9 @@
 						</textarea>
 					</div>
 							
-					<button class="w3-button w3-yellow w3-left " id="pre3">이전</button>
-				    <button class="w3-button w3-red w3-left" id="reset3">reset</button>
-					<button class="w3-button w3-yellow w3-right" id="next3">가입완료</button>
+					<div class="w3-button w3-yellow w3-left " id="pre3">이전</div>
+				    <div class="w3-button w3-red w3-left" id="reset3">reset</div>
+					<div class="w3-button w3-yellow w3-right" id="next3">가입완료</div>
 				</div>
 			</div>
 		</div>

@@ -188,13 +188,12 @@ $(document).ready(function(){
 		}
 	});
 	
-	
 	// 비밀번호 포커스 리셋
 	$('#pw').focus(function(){
 		$(this).val("");
 		$('#pw2').val("");
 		$('#pwmsg').hide();
-//		$('#pw2').stop().slideDown(300);
+		$('#pw2').stop().slideDown(300);
 	});
 	
 	// 비밀번호 정규식 검사
@@ -213,6 +212,7 @@ $(document).ready(function(){
 			pwCheck = false;
 		}
 	});
+	/*
 	$('#pw2').keyup(function(){
 		var spw = $(this).val();
 		var pattern = /^[a-z0-9]{8,12}$/; // 소문자,숫자,8-12자리
@@ -228,11 +228,10 @@ $(document).ready(function(){
 			pwCheck = false;
 		}
 	});
-	/*
+	 */
 	function hidePwTag(){
 		$('#pw2').stop().slideUp(300);
 	}
-	 */
 //----------------------------------------------------------
 	// mail 입력확인 
 	$('#mail').focusout(function(){
@@ -261,9 +260,9 @@ $(document).ready(function(){
 	});
 //----------------------------------------------------------
 	// name 입력확인  
-	$('#name').focusout(function(){
+	$('#mname').focusout(function(){
 			
-		if($('#name').val() == ""){
+		if($('#mname').val() == ""){
 			$('#namemsg').html('필수정보입니다.');
 			$('#namemsg').addClass('w3-text-red');
 			$('#namemsg').stop().show(500);
@@ -271,7 +270,7 @@ $(document).ready(function(){
 		}
 	});
 	// name 정규식 검사
-	$('#name').change(function(){
+	$('#mname').change(function(){
 		var sname = $(this).val();
 		var pattern = /^[가-힣]{2,10}$/; // 한글 2-10글자
 		var result = pattern.test(sname);
@@ -362,9 +361,9 @@ $(document).ready(function(){
 	});
 	
 	$('#reset2').click(function(){
-		$('#name').val('');
-		$('#name').removeClass('w3-teal');
-		$('#name').removeClass('w3-pale-red');
+		$('#mname').val('');
+		$('#mname').removeClass('w3-teal');
+		$('#mname').removeClass('w3-pale-red');
 		$('#year').val('1988');
 		$('#mouth').val('6');
 		$('#day').val('15');
@@ -375,13 +374,13 @@ $(document).ready(function(){
 	});
 	
 	$('#next2').click(function(){
-		var sname = $('#name').val();
+		var sname = $('#mname').val();
 		var stel = $('#tel').val();
 		var sgen = $('.gen:checked').val();
 		
 		
 		if(!sname){
-			alert(' 이름을 채워주세요');
+			alert('이름을 채워주세요');
 			return;
 		} else if(telCheck == false){
 			alert('전화번호를 정확하게 입력해주세요.');
@@ -423,7 +422,7 @@ $(document).ready(function(){
 		var sid = $('#id').val();
 		var spw = $('#pw').val();
 		var smail = $('#mail').val();
-		var sname = $('#name').val();
+		var sname = $('#mname').val();
 		var syear = $('#year').val();
 		var smouth = $('#mouth').val();
 		var sday = $('#day').val();
@@ -439,12 +438,10 @@ $(document).ready(function(){
 			sname + '|' + syear + '|' + smouth + '|' + sday + '|' + stel + '|' + sgen + '|' + 
 			sph + '|' + sabo + '|' + sstel + '|' + sstel_name + '|' + stext);*/
 		if(!(sid && spw && smail && 
-			sname && syear && smouth && sday && stel && sgen && 
-			sph && sabo && sstel && sstel_name && stext)){
-				res = false;
+			sname && syear && smouth && sday && stel && sgen)){
+			res = false;
 		} else {
 			alert('입력에 이상이 없는지 확인해주세요.');
-			
 		}
 			
 		$('#memberJoinEnd').attr('method', 'POST'); 

@@ -84,7 +84,7 @@
 		INSERT INTO 
 			member
 		VALUES( 
-			#{mno}, #{id}, #{mname}, #{pw}, #{mail}, #{tel}, #{joindate}, #{gen}, #{isshow}, #{blood1}, #{blood2}, #{birth}, #{sos}   
+			#{mno}, #{id}, #{mname}, #{pw}, #{mail}, #{tel}, #{joindate}, #{gen}, #{isshow}, #{blood1}, #{blood2}, #{birth}, #{sos}, #{msg}   
 		) 
 	</insert>
 	
