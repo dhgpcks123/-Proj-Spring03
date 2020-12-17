@@ -5,6 +5,10 @@ import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+import org.springframework.web.multipart.MultipartFile;
+
+import jeju.increpas.www.vo.FileVO;
+
 public class ReviewVO {
 	 private int ano, rpno, rhit, rtno, rgrade, rno;
 	 private String review, rtitle, rbody, rdate, id;
@@ -12,8 +16,28 @@ public class ReviewVO {
 	 private Time joinTime;
 	 private List<RphotoVO> rphotovoList;
 	 private double rx, ry;
-	 
-	 
+	 private MultipartFile[] file;
+	 private ArrayList<FileVO> list;
+	 private int[] delfile;
+
+	public int[] getDelfile() {
+		return delfile;
+	}
+	public void setDelfile(int[] delfile) {
+		this.delfile = delfile;
+	}
+	public MultipartFile[] getFile() {
+		return file;
+	}
+	public void setFile(MultipartFile[] file) {
+		this.file = file;
+	}
+	public ArrayList<FileVO> getList() {
+		return list;
+	}
+	public void setList(ArrayList<FileVO> list) {
+		this.list = list;
+	}
 	public double getRx() {
 		return rx;
 	}
@@ -116,6 +140,14 @@ public class ReviewVO {
 	public void setRphotovoList(List<RphotoVO> rphotovoList) {
 		this.rphotovoList = rphotovoList;
 	}
+	@Override
+	public String toString() {
+		return "ReviewVO [ano=" + ano + ", rpno=" + rpno + ", rhit=" + rhit + ", rtno=" + rtno + ", rgrade=" + rgrade
+				+ ", rno=" + rno + ", review=" + review + ", rtitle=" + rtitle + ", rbody=" + rbody + ", rdate=" + rdate
+				+ ", id=" + id + ", joinDate=" + joinDate + ", joinTime=" + joinTime + ", rphotovoList=" + rphotovoList
+				+ ", rx=" + rx + ", ry=" + ry + ", file=" + Arrays.toString(file) + ", list=" + list + ", delfile="
+				+ Arrays.toString(delfile) + "]";
+	}
 	
-	 
+	
 }

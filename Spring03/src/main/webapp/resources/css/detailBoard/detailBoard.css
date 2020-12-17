@@ -161,17 +161,27 @@ a:hover{
 }
 
 
-<!-- -->
-  #star_grade a{
-        text-decoration: none;
-        color: gray;
-        text-shadow: 2px 2px 2px gray;
-        font-size: 20pt;
-   }
-   #star_grade a.on{
-       color: yellow;
-       text-shadow: 2px 2px 2px gray;
-       font-size: 20pt;
-   }
+/* 별점 관련 css */
+#star_grade a{
+	text-decoration: none;
+    color: gray;
+    text-shadow: 2px 2px 2px gray;
+    font-size: 20pt;
+}
+#star_grade a.on{
+    color: yellow;
+    text-shadow: 2px 2px 2px gray;
+    font-size: 20pt;
+ }
 
-
+#star_Regrade a{
+	text-decoration: none;
+    color: gray;
+    text-shadow: 2px 2px 2px gray;
+    font-size: 20pt;
+}
+#star_Regrade a.on{
+    color: yellow;
+    text-shadow: 2px 2px 2px gray;
+    font-size: 20pt;
+ }
