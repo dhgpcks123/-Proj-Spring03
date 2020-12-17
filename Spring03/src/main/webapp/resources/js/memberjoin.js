@@ -29,7 +29,7 @@ $(document).ready(function(){
     // 약관동의 필수 체크(true) 확인 기능
     function checkTerms() {
         var res = true;
-
+		
         if ($("#termsService").is(":checked") == false
 			 || $("#termsPrivacy").is(":checked") == false) {
             $("#agreeMsg").show();
@@ -61,6 +61,11 @@ $(document).ready(function(){
 //----------------------------------------------------------
 // 개인정보입력(memberJoinInfo)	
 //----------------------------------------------------------
+	var idCheck = true;
+	var pwCheck = true;
+	var mailCheck = true;
+	var telCheck = true;
+		
 	// id 입력확인  
 	$('#id').focusout(function(){
 		if($('#id').val() == ""){
@@ -74,27 +79,41 @@ $(document).ready(function(){
 	// id 정규식검사 
 	$('#id').keyup(function(){
 		var sid = $(this).val();
-		var pattern = /^[a-z0-9]{8,12}$/; //소문자,숫자,6-12자리 
+		var pattern = /^[a-z0-9]{6,12}$/; //소문자,숫자,6-12자리 
 		var result = pattern.test(sid);
-		if(result){
+		
+			
+		if(result == true){
 			$(this).removeClass('w3-pale-red');
 			$(this).addClass('w3-teal');
+			idCheck = false;
 		} else {
 			$(this).removeClass('w3-teal');
 			$(this).addClass('w3-pale-red');
+			idCheck = false;
 		}
+		// 아이디 연속문자 체크
+		if(true == /(\w)\1\1\1/.test(sid)){
+			alert("같은 문자를 4번 이상 사용하실 수 없습니다.");
+			return;
+			}
 	});	
+	
 	
 	// 아이디체크버튼 처리
 	$('#idck').click(function(){
 		var tid = $('#id').val();
-		if(!tid){
+		if(!tid ){
+			alert('아이디는 입력하고 버튼을 눌러주세요.');
+			return;
+		} else if(tid.length < 6){
+			alert('아이디는 6-12자리로 입력해주세요.');
 			return;
 		}
 		
 		// 데이터를 서버에 보내서 응답을 받는다. 비동기통신으로
 		$.ajax({
-			url: '/Team03Proj/memberIdCheck.cls',
+			url: '/www/member/memberIdCheck.jeju',
 			type: 'POST',
 			dataType: 'json',
 			data: {
@@ -107,12 +126,14 @@ $(document).ready(function(){
 					$('#idmsg').removeClass('w3-text-red');
 					$('#idmsg').addClass('w3-text-blue');
 					$('#idmsg').stop().slideDown(500);
+					idCheck = true;
 				} else {
 					// 사용 불가능한 아이디인 경우
 					$('#idmsg').html('### 중복 된 아이디 입니다! ###');
 					$('#idmsg').removeClass('w3-text-blue');
 					$('#idmsg').addClass('w3-text-red');
 					$('#idmsg').stop().slideDown(500);
+					idCheck = false;
 				}
 			},
 			error: function(){
@@ -132,6 +153,15 @@ $(document).ready(function(){
 		}
 	});
 	
+	// 비밀번호에 아이디 사용 체크 
+	$('#pw').focusout(function(){
+		var tid = $('#id').val();
+		if(this.search(tid) == true) {
+			alert("비밀번호에 아이디가 포함되어있습니다.");
+			return;
+		}
+	});
+		
 	$('#pw2').focusout(function(){
 		if($('#pw2').val() == ""){
 			$('#pw2msg').html('필수정보입니다.');
@@ -145,6 +175,7 @@ $(document).ready(function(){
 	$('#pw2').keyup(function(){
 		var spw = $('#pw').val();
 		var spw2 = $(this).val();
+
 		if(spw == spw2){
 			$('#pwmsg').css('color', 'green');
 			$('#pwmsg').html('*** 비밀번호가 일치합니다! ***');
@@ -156,9 +187,6 @@ $(document).ready(function(){
 			$('#pwmsg').stop().show();
 		}
 	});
-	function hidePwTag(){
-		$('#pw2').stop().slideUp(300);
-	}
 	
 	// 비밀번호 포커스 리셋
 	$('#pw').focus(function(){
@@ -173,14 +201,37 @@ $(document).ready(function(){
 		var spw = $(this).val();
 		var pattern = /^[a-z0-9]{8,12}$/; // 소문자,숫자,8-12자리
 		var result = pattern.test(spw);
+		
 		if(result){
 			$(this).removeClass('w3-pale-red');
 			$(this).addClass('w3-teal');
+			pwCheck = true;
 		} else {
 			$(this).removeClass('w3-teal');
 			$(this).addClass('w3-pale-red');
+			pwCheck = false;
 		}
 	});
+	/*
+	$('#pw2').keyup(function(){
+		var spw = $(this).val();
+		var pattern = /^[a-z0-9]{8,12}$/; // 소문자,숫자,8-12자리
+		var result = pattern.test(spw);
+		
+		if(result){
+			$(this).removeClass('w3-pale-red');
+			$(this).addClass('w3-teal');
+			pwCheck = true;
+		} else {
+			$(this).removeClass('w3-teal');
+			$(this).addClass('w3-pale-red');
+			pwCheck = false;
+		}
+	});
+	 */
+	function hidePwTag(){
+		$('#pw2').stop().slideUp(300);
+	}
 //----------------------------------------------------------
 	// mail 입력확인 
 	$('#mail').focusout(function(){
@@ -200,16 +251,18 @@ $(document).ready(function(){
 		if(result){
 			$(this).removeClass('w3-pale-red');
 			$(this).addClass('w3-teal');
+			mailCheck = true;
 		} else {
 			$(this).removeClass('w3-teal');
 			$(this).addClass('w3-pale-red');
+			mailCheck = false;
 		}
 	});
 //----------------------------------------------------------
 	// name 입력확인  
-	$('#name').focusout(function(){
+	$('#mname').focusout(function(){
 			
-		if($('#name').val() == ""){
+		if($('#mname').val() == ""){
 			$('#namemsg').html('필수정보입니다.');
 			$('#namemsg').addClass('w3-text-red');
 			$('#namemsg').stop().show(500);
@@ -217,7 +270,7 @@ $(document).ready(function(){
 		}
 	});
 	// name 정규식 검사
-	$('#name').change(function(){
+	$('#mname').change(function(){
 		var sname = $(this).val();
 		var pattern = /^[가-힣]{2,10}$/; // 한글 2-10글자
 		var result = pattern.test(sname);
@@ -242,14 +295,16 @@ $(document).ready(function(){
 	// tel 정규식검사 
 	$('#tel').keyup(function(){
 		var stel = $(this).val();
-		var pattern = /^01([0|1|6|7|8|9]?)?([0-9]{3,4})?([0-9]{4})$/;
+		var pattern = /^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/;
 		var result = pattern.test(stel);
 		if(result){
 			$(this).removeClass('w3-pale-red');
 			$(this).addClass('w3-teal');
+			telCheck = true;
 		} else {
 			$(this).removeClass('w3-teal');
 			$(this).addClass('w3-pale-red');
+			telCheck = false;
 		}
 	});	
 //----------------------------------------------------------
@@ -283,13 +338,18 @@ $(document).ready(function(){
 		if(!sid || !spw || !spw2 || !smail){
 			alert('빈칸을 채워주세요');
 			$('#next1').stop();
-		}else if (8 <= sid.length && 15>= sid.length){
-			$('#step1').addClass('w3-hide');
+		} else if(sid.length<6){
+			alert('아이디가 너무 짧습니다.');
+		} else if(idCheck == false){
+			alert('아이디 중복을 체크해주세요.');
+		} else if(pwCheck == false){
+			alert('비밀번호가 너무 쉽습니다. \n규칙 : \"소문자,숫자,8-12자리\"에 맞게 만들어주세요.');
+		} else if(mailCheck == false){
+			alert('메일을 정확하게 입력해주세요.');
+		} else {
 			$('#step1').attr('disabled', 'false');
 			$('#step2').removeClass('w3-hide');
-		}
-		if(sid.length<8){
-			alert('아이디는 8글자 이상 15글자 이하여야 합니다');
+			$('#step1').addClass('w3-hide');	
 		}
 	});
 	
@@ -301,9 +361,9 @@ $(document).ready(function(){
 	});
 	
 	$('#reset2').click(function(){
-		$('#name').val('');
-		$('#name').removeClass('w3-teal');
-		$('#name').removeClass('w3-pale-red');
+		$('#mname').val('');
+		$('#mname').removeClass('w3-teal');
+		$('#mname').removeClass('w3-pale-red');
 		$('#year').val('1988');
 		$('#mouth').val('6');
 		$('#day').val('15');
@@ -314,20 +374,19 @@ $(document).ready(function(){
 	});
 	
 	$('#next2').click(function(){
-		var sname = $('#name').val();
+		var sname = $('#mname').val();
 		var stel = $('#tel').val();
 		var sgen = $('.gen:checked').val();
 		
 		
 		if(!sname){
-			alert(' 이름을 채워주세요');
+			alert('이름을 채워주세요');
 			return;
-		} else if(!stel){
-			alert(' 전화번호를 채워주세요');
-			return;
+		} else if(telCheck == false){
+			alert('전화번호를 정확하게 입력해주세요.');
 		} else if(!sgen){
-			alert(' 성별을 선택해주세요');
-		} else if (sgen){
+			alert('성별을 선택해주세요');
+		} else {
 			$('#step1').addClass('w3-hide');
 			$('#step3').removeClass('w3-hide');
 			$('#step2').addClass('w3-hide');
@@ -363,7 +422,7 @@ $(document).ready(function(){
 		var sid = $('#id').val();
 		var spw = $('#pw').val();
 		var smail = $('#mail').val();
-		var sname = $('#name').val();
+		var sname = $('#mname').val();
 		var syear = $('#year').val();
 		var smouth = $('#mouth').val();
 		var sday = $('#day').val();
@@ -375,20 +434,23 @@ $(document).ready(function(){
 		var sstel_name = $('#stel_name').val();
 		var stext = $('#text').val();
 		
-	/*	alert(sid + '|' + spw + '|' + smail + '|' + 
+	alert(sid + '|' + spw + '|' + smail + '|' + 
 			sname + '|' + syear + '|' + smouth + '|' + sday + '|' + stel + '|' + sgen + '|' + 
-			sph + '|' + sabo + '|' + sstel + '|' + sstel_name + '|' + stext);*/
+			sph + '|' + sabo + '|' + sstel + '|' + sstel_name + '|' + stext);
+			
 		if(!(sid && spw && smail && 
-			sname && syear && smouth && sday && stel && sgen && 
-			sph && sabo && sstel && sstel_name && stext)){
-				res = false;
+			sname && syear && smouth && sday && stel && sgen)){
+			res = false;
 		} else {
 			alert('입력에 이상이 없는지 확인해주세요.');
-			
 		}
-			
+		$('#blood1').val(sabo);
+		$('#blood2').val(sph);
+		$('#birth').val(syear+'/'+smouth+'/'+sday);
+		
 		$('#memberJoinEnd').attr('method', 'POST'); 
-		$('#memberJoinEnd').attr('action', '/Team03Proj/memberJoinEnd.cls'); 
+		$('#memberJoinEnd').attr('action', '/www/member/joinProc.jeju'); 
+//		$('#memberJoinEnd').attr('action', '/www/member/memberJoinEnd.jeju'); 
 		
 		return res;
     }

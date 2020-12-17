@@ -42,6 +42,7 @@ public class MemberDao {
 	
 	// 회원 가입 전담 처리함수
 	public int insertMember(MemberVO mbVO) {
+		System.out.println(mbVO.toString());
 		return sqlSession.insert("mbSQL.addMember", mbVO);
 	}
 	
@@ -49,7 +50,7 @@ public class MemberDao {
 	// 여러 회원가입 트랜젝션 테스트 전담함수
 	public int insertMember(ArrayList<MemberVO> list) {
 		int cnt=0;
-		for(MemberVO mbVO:list) {
+		for(MemberVO mbVO : list) {
 			System.out.println("### dao vo id : "+mbVO.getId());
 			cnt += insertMember(mbVO);
 		}
@@ -60,4 +61,13 @@ public class MemberDao {
 	public int editMember(MemberVO mbVO) {
 		return sqlSession.update("mbSQL.editMember",mbVO);
 	}
+	// 혈액형 리스트 가져오기 전담 처리함수
+	public List<MemberVO> bloodList1(){
+		return sqlSession.selectList("mbSQL.bloodList1");
+	}
+	// 혈액형 리스트 가져오기 전담 처리함수
+	public List<MemberVO> bloodList2(){
+		return sqlSession.selectList("mbSQL.bloodList2");
+	}
+	
 }
