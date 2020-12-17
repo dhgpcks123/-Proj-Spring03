@@ -174,13 +174,13 @@ a:hover{
     font-size: 20pt;
  }
 
-#star_Regrade a{
+.star_Regrade a{
 	text-decoration: none;
     color: gray;
     text-shadow: 2px 2px 2px gray;
     font-size: 20pt;
 }
-#star_Regrade a.on{
+.star_Regrade a.on{
     color: yellow;
     text-shadow: 2px 2px 2px gray;
     font-size: 20pt;

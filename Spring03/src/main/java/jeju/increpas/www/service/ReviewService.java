@@ -18,7 +18,7 @@ public class ReviewService {
 	FileUtil fileUtil;
 	
 	// < 리뷰 게시판 - 리뷰쓰기 proc 요청 > 서비스함수
-	public void wReviewProc(ModelAndView mv, ReviewVO rVO) {
+	public void wReviewProc(ModelAndView mv, ReviewVO rVO, MapVO mVO) {
 		String rdir = "img/review/";
 		ArrayList<FileVO> list = fileUtil.saveProc(rVO.getFile(), rdir);
 		
@@ -32,12 +32,12 @@ public class ReviewService {
 					e.printStackTrace();
 					System.out.println("### 글 등록 실패 ###");
 				}
-				mv.setViewName("redirect:/main.jeju");
+				mv.setViewName("main/reviewRedirect");
 				return;
 	}
 	
 	// < 리뷰 게시판 - 리뷰 수정 proc 요청 > 서비스 함수
-	public void reWriteProc(ModelAndView mv, ReviewVO rVO) {
+	public void reWriteProc(ModelAndView mv, ReviewVO rVO, MapVO mVO) {
 		String rdir = "img/review/";
 		ArrayList<FileVO> list = fileUtil.saveProc(rVO.getFile(), rdir);
 		rVO.setList(list);
@@ -47,7 +47,7 @@ public class ReviewService {
 			e.printStackTrace();
 			System.out.println("### 글 업데이트 실패 ###");
 		}
-		mv.setViewName("redirect:/main.jeju");
+		mv.setViewName("main/reviewRedirect");
 		return;
 	}
 	

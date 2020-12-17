@@ -1,5 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Varela+Round);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
 
+body{
+	font-family: 'Noto Sans KR', sans-serif;
+}
+.tbFont{
+	font-family: 'Nanum Gothic Coding', monospace;
+}
 .slides {
     padding: 0;
     width: 303px;
@@ -114,3 +122,14 @@ background: rgba(0, 0, 0, 0.8);
 	width: 160px;
 	height: 150px;
 }
+
+.Panel__title{
+   background-color:#FFCD36;
+   border-radius: 15px;
+   top: 60px;
+}
+.Panel__title h2{
+   padding: 7px 0px;
+}
+
+
