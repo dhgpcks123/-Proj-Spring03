@@ -14,13 +14,16 @@
 <link rel="stylesheet" type="text/css" href="css/detailBoard/detailBoard.css">
 <link rel="stylesheet" type="text/css" href="css/main/mainPage.css">
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0997e0901ce72cd4e333dc4602ad8e94&libraries=services"></script>
-<script type="text/javascript" src="js/detailBoard.js"></script>
-<script type="text/javascript" src="js/mainPage.js"></script>
-<script type="text/javascript" src="js/memberLogin.js"></script>
+<script type="text/javascript" src="/www/js/detailBoard.js"></script>
+<script type="text/javascript" src="/www/js/mainPage.js"></script>
+<script type="text/javascript" src="/www/js/memberLogin.js"></script>
 <script src="https://kit.fontawesome.com/e6e9b86680.js"	crossorigin="anonymous"></script>
 </head>
 
 <body>
+<form method="POST" action="/www/member/memberInfo.jeju" id="frm" name="frm">
+		<input type="hidden" id="id" name="id" value="${SID}">
+</form>
 <!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
 <!--	#				  사이드패널 					#	-->
 <!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
@@ -61,15 +64,15 @@
            </div> 
            
            <!-- 사이드패널 가게정보 -->
-		<div style="font-size: 9pt; margin-top: 10px; padding-left: 15px; margin-top: 15px;">
+		<div style="font-size: 9pt;  padding-left: 15px; margin-top: 15px;">
 			<!-- location bar -->
             <b>현재 위치</b> 
             <div id="text" style="font-size: 9pt;">지도를 클릭하세요</div>
-            <div style="font-size: 9pt; margin-top: 10px; padding-left: 15px; margin-top: 15px;">
-              		<b>장소 위치</b><br/> ${STORE.get(0).aloc}
+            <div style="font-size: 9pt; margin-top: 15px;">
+              		<b>장소 주소</b><br/> ${STORE.get(0).aloc}
            	</div><br/> 
 			<!-- 전화 번호 -->
-			<div style="font-size: 9pt; padding-left: 15px;">
+			<div style="font-size: 9pt; ">
 				<i class="fas fa-phone-volume"></i> ${STORE.get(0).atel}
 			</div>
 			<!-- 가게 소개 -->
@@ -298,7 +301,8 @@
 	<div class="w3-col" style="margin-top: 20px;">
 		<div class="w3-col" style="text-align: right;">
         <!-- 내 정보보기 -->
-        <div class="w3-col m12 l12 s12" style="padding-right: 60px;"> 내 정보보기 <i class="fas fa-user-cog"></i></div>
+        <div class="w3-button" id="infoBtn" style="display:inline-block;padding-right: 60px;">내 정보보기<i class="fas fa-user-cog"></i></div>
+        
       	<!-- 로그인 시 보이는 화면 -->
       	<c:if test="${not empty sessionScope.SID}">
         <div style="padding-right: 60px;">
@@ -312,13 +316,13 @@
         <form method="POST" action="/Team03Proj/memberLoginProc.cls" id="loginFrm" name="loginFrm">
                <input type="text" style="width: 15%; padding-left: 10px; padding-left: 10px" placeholder="회원아이디" name="id" id="id">
                <input type="password" style="width: 15%; padding-left: 10px;" placeholder="비밀번호" name="pw" id="pw">
-        </form>   
         <!-- 로그인 버튼 -->
         <div class="w3-button w3-amber" id="loginbtn">로그인</div>
         <!--  회원가입 버튼 -->
         <div class="w3-button w3-amber w3-hover-lime" style="margin-right: 50px;" id="member">
         	<a href="/Team03Proj/memberJoin.cls">회원가입</a>
         </div>
+        </form>   
         </c:if>
 		</div>
 	</div>
