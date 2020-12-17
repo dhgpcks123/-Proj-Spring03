@@ -4,13 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="/Team03Proj/css/w3.css">
-<link rel="stylesheet" type="text/css" href="/Team03Proj/css/member/member.css">
+<title>***** 약관동의 *****</title>
+<link rel="stylesheet" type="text/css" href="../css/cls.css">
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/member/member.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script type="text/javascript" src="/Team03Proj/js/jquery-3.5.1.min.js"></script>
-<script type="text/javascript" src="/Team03Proj/js/memberjoin.js"></script>
+<script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="../js/memberjoin.js"></script>
 </head>
 <body>
 	<div class="w3-container">
@@ -21,7 +22,7 @@
 				<p class="w3-opacity">GET IN TOUCH</p>
 	 	 	
 	 	 		<!-- 333 약관 동의 -->
-				<form class="w3-container w3-card w3-padding-32 w3-white " action="/Team03Proj/memberJoinInfo.cls" id="memberJoinInfo">
+				<form class="w3-container w3-card w3-padding-32 w3-white " action="/www/member/memberJoinProc.jeju" id="memberJoinInfo">
 					<input type="hidden" id="join_check" name="join_check">
 				  	<!-- 전체 약관 동의 -->
 					<div class="w3-col mb10 ">

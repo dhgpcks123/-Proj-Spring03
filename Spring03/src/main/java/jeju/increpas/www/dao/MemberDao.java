@@ -34,7 +34,6 @@ public class MemberDao {
 		return sqlSession.update("mbSQL.del_memb", mbVO);
 	}
 
-	
 	// 회원 아이디체크 전담 처리함수
 	public int getIdCnt(String id) {
 		return sqlSession.selectOne("mbSQL.idCount", id);

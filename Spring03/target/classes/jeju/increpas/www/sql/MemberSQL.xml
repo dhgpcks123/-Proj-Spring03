@@ -77,15 +77,15 @@
 	<insert id="addMember" parameterType="mbVO">
 		<selectKey keyProperty="mno" resultType="int" order="BEFORE">
 			SELECT
-				NVL(MAX(mno) + 1, 1001)
+				NVL(MAX(mno)+1, 1001)
 			FROM
 				member
 		</selectKey>
-		INSERT INTO
-			member(mno, id, pw, mname, mail, gen)
-		VALUES(
-			#{mno}, #{id}, #{pw}, #{mname}, #{mail}, #{gen}
-		)
+		INSERT INTO 
+			member
+		VALUES( 
+			#{mno}, #{id}, #{mname}, #{pw}, #{mail}, #{tel}, #{joindate}, #{gen}, #{isshow}, #{blood1}, #{blood2}, #{birth}, #{sos}   
+		) 
 	</insert>
 	
 	<update id="editMember" parameterType="mbVO">

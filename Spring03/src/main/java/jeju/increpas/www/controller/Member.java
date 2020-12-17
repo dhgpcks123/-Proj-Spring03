@@ -157,4 +157,59 @@ public class Member {
 		return mv;
 	}
 	
+	// 회원가입 약관동의 페이지 폼보기 요청
+	@RequestMapping("/memberJoin.jeju") 
+	public String memberJoin() {
+		return "member/memberJoin";
+	}
+	
+	// 회원가입 개인정보 페이지 폼보기 요청
+	@RequestMapping("/memberJoinProc.jeju") 
+	public String memberJoinInfo() {
+		return "member/memberJoinInfo";
+	}
+	
+	// 아이디 체크
+	@RequestMapping("/memberIdCheck.jeju") 
+	@ResponseBody
+	public Map<String, String> idCheck(String id) {
+		//  할일
+		// 데이베이스에서 조회하고
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("result", (mbDao.getIdCnt(id) == 0) ? "OK" : "NO");
+		return map;
+	}
+	
+	// 회원가입 가입 처리 요청 
+	@RequestMapping(value="/joinProc.jeju")
+	@ResponseBody
+	public ModelAndView joinProc(ModelAndView mv, HttpSession session, MemberVO mbVO) {
+		System.out.println("### cont vo id : " + mbVO.getId());
+		
+		// VO 가 완성됬으니 데이터베이스 작업하고
+		ArrayList<MemberVO> list = new ArrayList<MemberVO>();
+		list.add(mbVO);
+		list.add(new MemberVO());
+		int cnt = 0;
+		try {
+			cnt = mbDao.insertMember(list);
+		} catch (Exception e) {
+			e.printStackTrace();
+			cnt=0;
+		}
+
+		if(cnt == 1) {
+			// 성공하면 로그인처리하고
+			session.setAttribute("SID", mbVO.getId());
+			// 메인페이지로 이동하고
+			mv.setViewName("redirect:/memberJoinEnd.jeju");
+		} else {
+			// 실패한 경우
+			// 회원가입페이지로 다시 이동시키고
+			mv.setViewName("redirect:/memberJoin.jeju");
+		}
+		
+		return mv;
+	}
+
 }
