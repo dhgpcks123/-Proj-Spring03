@@ -1,3 +1,4 @@
+
 package jeju.increpas.www.vo;
 
 import java.sql.*;
@@ -5,7 +6,7 @@ import java.text.*;
 
 public class MemberVO {
    private int mno;
-   private String id, mname, pw, mail, tel, gen, isshow, joindate, blood1, blood2, sos;
+   private String id, mname, pw, mail, tel, gen, isshow, joindate, blood1, blood2, sos,msg ;	// msg 추가
    private Date joinDate;
    private Date birth;
    
@@ -85,7 +86,15 @@ public class MemberVO {
    public void setSos(String sos) {
       this.sos = sos;
    }
-   public Date getJoinDate() {
+   
+   
+   public String getMsg() {
+	return msg;
+}
+public void setMsg(String msg) {
+	this.msg = msg;
+}
+public Date getJoinDate() {
       return joinDate;
    }
    public void setJoinDate(Date joinDate) {
@@ -98,4 +107,3 @@ public class MemberVO {
    public void setBirth(Date birth) {
       this.birth = birth;
    }
-}
