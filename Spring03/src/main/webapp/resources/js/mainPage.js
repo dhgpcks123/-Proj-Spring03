@@ -38,9 +38,9 @@ $(document).ready(function(){
 		/*$(this).attr('method' , 'POST');
 		$(this).attr('action' , '/www/rhitupdate.jeju');
 		$(this).submit();*/
-		$(this).text(
-			'<form method="POST" action="/www/AddFavorite.jeju"> <input type="hidden" id="ano"> </form>')
+		$(this).append(
+			'<form method="POST" action="/www/AddFavorite.jeju" id="ffrm"> <input type="hidden" id="ano" name="ano"> </form>')
 		$('#ano').val(ano);
-		$('#favor').submit();
+		$('#ffrm').submit();
 	});
 });

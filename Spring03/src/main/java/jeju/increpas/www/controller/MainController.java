@@ -1,6 +1,5 @@
 package jeju.increpas.www.controller;
 
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,11 +52,27 @@ public class MainController {
 	
 	// 찜하기 처리
 	@RequestMapping("/AddFavorite.jeju")
-	public ModelAndView AddFavorite(ModelAndView mv, FavoriteVO faVO) {
+	public ModelAndView AddFavorite(ModelAndView mv, FavoriteVO faVO, HttpSession session) {
+		String id = (String)session.getAttribute("SID");
+		System.out.println("id : "+id);
 		
+		int mno = mDao.getMno(id);
+		System.out.println("id number : "+mno);
+		faVO.setMno(mno);
 		
-		System.out.println("작업이 성공적으로 이루어짐");
-		mv.setViewName("redirect: /www/main.jeju");
+		System.out.println("faVO.mno : "+faVO.getMno());
+		System.out.println("faVO.ano : "+faVO.getAno());
+		
+		//찜할 정보의 중복여부 체크
+		int check = mDao.favorCheck(faVO);
+		
+		if(check == 1) {
+			System.out.println("이미 찜하기 되어있습니당!");
+		} else {
+			mDao.AddFavorite(faVO);
+			System.out.println("작업이 성공적으로 이루어짐.");	
+			mv.setViewName("redirect: /www/main.jeju");
+		}
 		return mv;
 	}
 }

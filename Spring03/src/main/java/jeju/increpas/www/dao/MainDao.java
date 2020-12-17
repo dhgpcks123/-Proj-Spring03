@@ -6,6 +6,7 @@ import java.util.List;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import jeju.increpas.www.vo.FavoriteVO;
 import jeju.increpas.www.vo.InfoVO;
 import jeju.increpas.www.vo.MapVO;
 import jeju.increpas.www.vo.MemberVO;
@@ -41,5 +42,17 @@ public class MainDao {
 	// 로그인처리
 	public int LoginProc(MemberVO meVO) {
 		return sqlSession.selectOne("mSQL.Login", meVO);
+	}
+	// id로 mno가져오기
+	public int getMno(String id) {
+		return sqlSession.selectOne("mSQL.getMno", id);
+	}
+	// 찜하기 중복여부 체크
+	public int favorCheck(FavoriteVO faVO) {
+		return sqlSession.selectOne("mSQL.favoriteCheck", faVO);
+	}
+	// 찜하기처리
+	public void AddFavorite(FavoriteVO faVO) {
+		sqlSession.selectOne("mSQL.setFavorite", faVO);
 	}
 }
