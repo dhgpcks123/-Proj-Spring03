@@ -20,15 +20,15 @@ public class ReviewController {
 	
 	// < 리뷰 게시판 - 리뷰쓰기 proc 요청 >
 	@RequestMapping("/wReviewProc.jeju")
-	public ModelAndView wReviewProc(ModelAndView mv, ReviewVO rVO) {
-		rService.wReviewProc(mv, rVO);
+	public ModelAndView wReviewProc(ModelAndView mv, ReviewVO rVO, MapVO mVO) {
+		rService.wReviewProc(mv, rVO, mVO);
 		return mv;
 	}
 	
 	// < 리뷰 게시판 - 리뷰수정 proc 요청 >
 	@RequestMapping("/reWriteProc.jeju")
-	public ModelAndView reWriteProc(ModelAndView mv, ReviewVO rVO) {
-		rService.reWriteProc(mv, rVO);
+	public ModelAndView reWriteProc(ModelAndView mv, ReviewVO rVO, MapVO mVO) {
+		rService.reWriteProc(mv, rVO, mVO);
 		return mv;
 	}
 }
