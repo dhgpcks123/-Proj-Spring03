@@ -22,11 +22,13 @@
  		<typeAlias alias="mVO" type="jeju.increpas.www.vo.MapVO" />
  		<typeAlias alias="rVO" type="jeju.increpas.www.vo.ReviewVO" />
  		<typeAlias alias="rpVO" type="jeju.increpas.www.vo.RphotoVO" />
+ 		<typeAlias alias="memberVO" type="jeju.increpas.www.vo.MemberVO" />
 	</typeAliases>
 	
 	<!-- SQL.xml mapper -->
 	<mappers>
  		<mapper resource="jeju/increpas/www/sql/MainSQL.xml" />
  		<mapper resource="jeju/increpas/www/sql/MemberSQL.xml" />
+ 		<mapper resource="jeju/increpas/www/sql/ReviewSQL.xml" />
 	</mappers>
 </configuration>

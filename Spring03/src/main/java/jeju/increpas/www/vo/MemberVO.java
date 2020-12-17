@@ -1,3 +1,4 @@
+
 package jeju.increpas.www.vo;
 
 import java.sql.*;
@@ -106,4 +107,3 @@ public Date getJoinDate() {
    public void setBirth(Date birth) {
       this.birth = birth;
    }
-}

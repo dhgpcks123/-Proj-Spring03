@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="rSQL">
+	<!--  < 리뷰 게시판 -  리뷰쓰기 proc 요청 > 질의명령 -->
+	<!-- 리뷰 정보 업로드 요청 -->
+	<insert id="wReviewInfo" parameterType="rVO">
+		<selectKey keyProperty="rno" resultType="int" order="BEFORE">
+			SELECT
+				NVL(MAX(rno)+1, 10001)
+			FROM
+				review
+		</selectKey>
+		INSERT INTO
+			review(rno, mno, rtitle, rbody, rpno, rgrade, rx, ry)
+		VALUES(
+			#{rno},
+			(SELECT mno FROM member WHERE id=#{id}),
+			#{rtitle}, #{rbody}, #{rno}, #{rgrade}, #{rx}, #{ry}
+		)
+	</insert>
+	<!-- 리뷰 파일 업로드 요청 -->
+	<insert id="wReviewFile" parameterType="fVO">
+		<selectKey keyProperty="pno" resultType="int" order="BEFORE">
+			SELECT
+				NVL(MAX(pno)+1, 10001)
+			FROM
+				rphoto
+		</selectKey>
+		INSERT INTO
+			rphoto(pno, rpno, rponame, rpsname, rpsize, rpdir, rtno)
+		VALUES(
+			#{pno}, #{rpno}, #{rponame}, #{rpsname}, #{rpsize}, #{rpdir}, #{rtno}
+		)	
+	</insert>
+	
+	<!-- < 리뷰 게시판 - 리뷰 수정 proc 요청 > 처리함수 -->
+	<!-- 리뷰 정보 수정 업데이트 요청 -->
+	<update id="reWriteInfo" parameterType="rVO">
+		UPDATE review
+		SET rtitle=#{rtitle}, rbody=#{rbody}, rgrade = #{rgrade}
+		WHERE rno = #{rno}
+	</update>
+	<!-- 리뷰 파일 추가 업데이트 요청 -->
+	<insert id="reWriteFile" parameterType="fVO">
+		<selectKey keyProperty="pno" resultType="int" order="BEFORE">
+			SELECT
+				NVL(MAX(pno)+1, 10001)
+			FROM
+				rphoto
+		</selectKey>
+		INSERT INTO
+			rphoto(pno, rpno, rponame, rpsname, rpsize, rpdir, rtno)
+		VALUES	(
+			#{pno}, #{rpno}, #{rponame}, #{rpsname}, #{rpsize}, #{rpdir}, #{rtno}
+				)
+	</insert>
+	<!-- 리뷰 파일 삭제 업데이트 요청 -->
+	<update id="reWriteDel" parameterType="int">
+		UPDATE rphoto
+		SET	isshow='N'
+		WHERE pno = #{pno}
+	</update>
+</mapper>

@@ -1,9 +1,18 @@
 package jeju.increpas.www.vo;
 
 public class RphotoVO {
-	private int rno;
+	private int rno, pno;
 	private String rponame, rpsname, rpdir;
+
 	
+	public int getPno() {
+		return pno;
+	}
+
+	public void setPno(int pno) {
+		this.pno = pno;
+	}
+
 	public int getRno() {
 		return rno;
 	}

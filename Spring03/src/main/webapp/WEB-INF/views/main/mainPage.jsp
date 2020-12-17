@@ -229,25 +229,71 @@
 							<div>${data.rdate }</div>
 						</div>
 						<!-- 리뷰 본문글 및 사진 -->
-						<div style="border-bottom: 1px solid #ECEAEB;">
+						<div style="border-bottom: 1px solid #ECEAEB; margin-bottom: 10px;">
 							<!-- 본문 글 -->
 							<div style="margin-top: 20px; padding-right: 33px; display: inline-block;">
 								${data.rbody}
 							</div>
 							<!-- 리뷰 사진 -->
-							<div style="display: flex; flex-wrap: wrap; justify-content: flex-start; margin-bottom: 20px;">
+							<div style="display: flex; flex-wrap: wrap; justify-content: flex-start; margin-bottom: 20px;" id="img${data.rno}">
+							
 							<c:forEach var="data1" items="${REVIEW.get(0).rphotovoList}">
 							<c:if test="${data.rno == data1.rno}">
-								<img class="reviewIMG" src="${data1.rpdir}${data1.rponame}"></img>
+								<div style="position: relative;">
+									<img class="reviewIMG" id="${data1.pno}" src="${data1.rpdir}${data1.rponame}"></img>
+									<div class="w3-button w3-amber delImg" style="display: none; position: absolute; top:110px; right: 5px;">사진삭제</div>
+								</div>								
 							</c:if>
 							</c:forEach>
 							</div>
+							<!-- 리뷰 수정 버튼 -->
+							<c:if test="${data.id==sessionScope.SID}">
+							<div style="display: block">
+								<div class="w3-right reviewRebtn" style=" padding-right: 10px; cursor: pointer; display: inline-block;" id="${data.rno}"> 수정 <i class="far fa-edit"></i></div>
+							</div>
+								
+								<form style="display: none;" class="RewriteForm" method="POST" encType="multipart/form-data" id="fr${data.rno}">
+									<!-- 별점주기 -->
+									<div class="starRev w3-right" style="display: inline-block; margin-left: 15px;">
+										<p id="star_Regrade">
+											<a href="#" id="Rebyul1">★</a> <a href="#" id="Rebyul2">★</a> <a href="#" id="Rebyul3">★</a>
+											<a href="#" id="Rebyul4">★</a> <a href="#" id="Rebyul5">★</a>
+										</p>
+									</div>
+									<!-- 글쓰기 데이터 넘기기 input 태그 -->
+									<input type="hidden" id="RewriteRid" name="id" value="${SID}">
+									<input type="hidden" id="RewriteRgrade" name="rgrade">
+									<input type="hidden" id="RewriteRx" name="rx" value="${REVIEW.get(0).rx}">
+									<input type="hidden" id="RewriteRy" name="ry" value="${REVIEW.get(0).ry}">
+									<input type="hidden" id="RewriteRtno" name="rtno" value="${STORE.get(0).atno}">
+									<input type="hidden" id="RewriteRno" name="rno" value="">
+									<!-- 글쓰기 제목 -->
+									<input type="text" placeholder="글 제목" style="margin-top: 40px; border: none; padding: 5px; border-top: 1px solid gray;" name="rtitle" id="rewriteRtitle${data.rno}" value="${data.rtitle}">
+									<!-- 글쓰기 본문 -->
+									<textarea style="width: 100%; height: 200px; margin-bottom: 5px; padding: 20px;" id="rewriteRbody${data.rno}" name="rbody">${data.rbody}</textarea>
+									<!-- 글쓰기 버튼 '리뷰 작성' -->
+									<div class="w3-button w3-amber w3-right rewriteBtn" id="rewriteBtn${data.rno}"style="margin-bottom: 30px; width: 150px;">작성</div>
+									<div class="w3-button w3-amber w3-right rewriteCancelBtn" id="rewriteCancelBtn${data.rno}" style="margin-bottom: 30px; width: 150px;">취소</div>
+									<div class="w3-button w3-amber w3-right rewriteResetBtn" id="Reset${data.rno}" style="margin-bottom: 30px; width: 150px;">내용 지우기</div>
+									<!-- 글쓰기 file 추가 -->
+									<div>
+										<input type="file" style="display: inline-block; width: 500px;" class="reFile1" name="file">
+										<input type="file" style="display: none; width: 500px;" class="reFile2" name="file">
+										<input type="file" style="display: none; width: 500px;" class="reFile3" name="file">
+										<input type="file" style="display: none; width: 500px;"	class="reFile4" name="file">
+									</div>
+							</form>
+							
+							
+							
+							
+							</c:if>
 						</div>
 					</c:forEach>
 					</section>
 					<!--  사용자 리뷰 글쓰기 -->
 					<footer style="display: flex; flex-direction: column; margin-top: 50px; margin-left: 60px; margin-right: 40px;">
-						<form method="POST" encType="multipart/form-data" action="/Team03Proj/wReviewProc.cls" id="wReviewfrm" name="wReviewfrm">
+						<form method="POST" encType="multipart/form-data" action="/www/wReviewProc.jeju" id="wReviewfrm" name="wReviewfrm">
 						<!-- 비 로그인 시 -->
 						<c:if test="${empty sessionScope.SID}">
 							<div style="margin: 30px;">*로그인 하셔야 리뷰를 작성할 수 있습니다</div>
@@ -262,26 +308,24 @@
 								</p>
 							</div>
 							<!-- 글쓰기 데이터 넘기기 input 태그 -->
-							<input type="hidden" id="reviewId" name="reviewId" value="${SID}">
-							<input type="hidden" id="reviewStar" name="reviewStar">
-							<input type="hidden" id="reviewRtno" name="reviewRtno" value="${STORE.get(0).atno}">
-							<input type="hidden" id="reviewX" name="reviewX" value="${REVIEW.get(0).rx}">
-							<input type="hidden" id="reviewY" name="reviewY" value="${REVIEW.get(0).ry}">
-							<input type="hidden" id="rpno" name="rpno" value="${REVIEW.get(0).rpno}">
+							<input type="hidden" id="reviewId" name="id" value="${SID}">
+							<input type="hidden" id="reviewStar" name="rgrade">
+							<input type="hidden" id="reviewX" name="rx" value="${REVIEW.get(0).rx}">
+							<input type="hidden" id="reviewY" name="ry" value="${REVIEW.get(0).ry}">
+							<input type="hidden" id="reviewRtno" name="rtno" value="${STORE.get(0).atno}">
+							
 							<!-- 글쓰기 제목 -->
-							<input type="text" placeholder="글 제목" style="margin-top: 40px; border: none; padding: 5px; border-top: 1px solid gray;" name="reviewTitle" id="reviewTitle">
+							<input type="text" placeholder="글 제목" style="margin-top: 40px; border: none; padding: 5px; border-top: 1px solid gray;" name="rtitle" id="reviewTitle">
 							<!-- 글쓰기 본문 -->
-							<textarea style="width: 100%; height: 200px; margin-bottom: 5px; padding: 20px;"
-								placeholder="이 곳에 리뷰를 작성하세요 :)" id="reviewBody" name="reviewBody">
-							</textarea>
+							<textarea style="width: 100%; height: 200px; margin-bottom: 5px; padding: 20px;" id="reviewBody" name="rbody"></textarea>
 							<!-- 글쓰기 버튼 '리뷰 작성' -->
 							<div class="w3-button w3-amber w3-right" id="wsend" style="margin-bottom: 30px; width: 150px;">리뷰 작성</div>
 							<!-- 글쓰기 file 추가 -->
 							<div>
-								<input type="file" style="display: inline-block; width: 500px;" id="file1" name="file1">
-								<input type="file" style="display: none; width: 500px;" id="file2" name="file2">
-								<input type="file" style="display: none; width: 500px;" id="file3" name="file3">
-								<input type="file" style="display: none; width: 500px;"	id="file4" name="file4">
+								<input type="file" style="display: inline-block; width: 500px;" id="file1" name="file">
+								<input type="file" style="display: none; width: 500px;" id="file2" name="file">
+								<input type="file" style="display: none; width: 500px;" id="file3" name="file">
+								<input type="file" style="display: none; width: 500px;"	id="file4" name="file">
 							</div>
 						</c:if>
 						</form>
@@ -300,30 +344,29 @@
 <div class="w3-main" style="margin-left: 420px;">
 	<div class="w3-col" style="margin-top: 20px;">
 		<div class="w3-col" style="text-align: right;">
-        <!-- 내 정보보기 -->
-        <div class="w3-button" id="infoBtn" style="display:inline-block;padding-right: 60px;">내 정보보기<i class="fas fa-user-cog"></i></div>
-        
-      	<!-- 로그인 시 보이는 화면 -->
-      	<c:if test="${not empty sessionScope.SID}">
-        <div style="padding-right: 60px;">
-        	<div style="padding-right: 10px; display:inline-block;">[ ${sessionScope.SID} ] 님 환영합니다.</div>
-        	<div class="w3-button w3-amber" id="logoutbtn" style="display:inline-block;">로그아웃</div>
-        </div>
-      	</c:if>
-      	<!-- 비로그인 시 보이는 화면 -->
-        <c:if test="${empty sessionScope.SID}">
-        <!-- 로그인 창 -->
-        <form method="POST" action="/Team03Proj/memberLoginProc.cls" id="loginFrm" name="loginFrm">
-               <input type="text" style="width: 15%; padding-left: 10px; padding-left: 10px" placeholder="회원아이디" name="id" id="id">
-               <input type="password" style="width: 15%; padding-left: 10px;" placeholder="비밀번호" name="pw" id="pw">
-        <!-- 로그인 버튼 -->
-        <div class="w3-button w3-amber" id="loginbtn">로그인</div>
-        <!--  회원가입 버튼 -->
-        <div class="w3-button w3-amber w3-hover-lime" style="margin-right: 50px;" id="member">
-        	<a href="/Team03Proj/memberJoin.cls">회원가입</a>
-        </div>
-        </form>   
-        </c:if>
+	        <!-- 내 정보보기 -->
+	        <div class="w3-col m12 l12 s12" style="padding-right: 60px;"> 내 정보보기 <i class="fas fa-user-cog"></i></div>
+	      	<!-- 로그인 시 보이는 화면 -->
+	      	<c:if test="${not empty sessionScope.SID}">
+	        <div style="padding-right: 60px;">
+	        	<div style="padding-right: 10px; display:inline-block;">[ ${sessionScope.SID} ] 님 환영합니다.</div>
+	        	<div class="w3-button w3-amber" id="logoutbtn" style="display:inline-block;">로그아웃</div>
+	        </div>
+	      	</c:if>
+	      	<!-- 비로그인 시 보이는 화면 -->
+	        <c:if test="${empty sessionScope.SID}">
+	        <!-- 로그인 창 -->
+	        <form method="POST" action="/www/loginProc.jeju" id="loginFrm" name="loginFrm">
+	            <input type="text" style="width: 15%; padding-left: 10px; padding-left: 10px" placeholder="회원아이디" name="id" id="id">
+	            <input type="password" style="width: 15%; padding-left: 10px;" placeholder="비밀번호" name="pw" id="pw">
+		        <!-- 로그인 버튼 -->
+		        <div class="w3-button w3-amber" id="loginbtn">로그인</div>
+		        <!--  회원가입 버튼 -->
+		        <div class="w3-button w3-amber w3-hover-lime" style="margin-right: 50px;" id="member">
+		        	<a href="/Team03Proj/memberJoin.cls">회원가입</a>
+		        </div>
+	        </form>   
+	        </c:if>
 		</div>
 	</div>
     <!-- 주소 정보 -->
@@ -336,7 +379,7 @@
     <!-- 카카오 맵 API -->
     <div class="map_wrap">
 		<!-- 지도를 표시할 div 입니다 -->
-        <div id="map" style="width:97%; height:700px;position:relative;overflow:hidden"></div>
+        <div id="map" style="width:97%; height:700px; position:relative; overflow:hidden"></div>
 	    <!-- 검색창 -->
         <div id="menu_wrap" class="bg_white" style="margin-left: 15px; margin-top: 15px;">
 			<div class="option">
@@ -353,7 +396,8 @@
 		</div>
 	</div>
 	<!-- x, y값 넘기기 폼 태그 -->
-	<form method="POST" action="/Team03Proj/main.cls" id="mfrm" name="mfrm">
+	<!-- 해당 폼은 지도마커 클릭 시 패널을 불러오기 위해 제작 된 폼 태그 -->
+	<form method="GET" action="/www/main.jeju" id="mfrm" name="mfrm">
 		<input type="hidden" name="ax" id="ax" value="${MAPx}">
 		<input type="hidden" name="ay" id="ay" value="${MAPy}">
 	</form>   
@@ -377,13 +421,13 @@
 	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 	    mapOption = { 
 	        center: new kakao.maps.LatLng(startx, starty), // 지도의 중심좌표
-	        level: 6 // 지도의 확대 레벨
+	        level: 7 // 지도의 확대 레벨
 	    };
 	
-	// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+	// 지도를 표시할 div와 지도 옵션으로  지도를 생성합니다
 	var map = new kakao.maps.Map(mapContainer, mapOption); 
 	$.ajax({
-		url: '/Team03Proj/markerlist.cls',
+		url: '/www/markerlist.jeju',
 		type: 'POST',
 		dataType: 'json',
 		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -706,6 +750,63 @@
 	        el.removeChild (el.lastChild);
 	    }
 	}
+
+
+/* ############################## 4. 내 위치 ############################## */
+/*
+// 현재 접속 위치가 기본 값일 때만 내 위치 찾기를 실행한다
+if( $('#ax').val() == 33.23574587023389 && $('#ay').val() == 126.36351258114277 ){
+	 // HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
+	if (navigator.geolocation) {
+	    
+	    // GeoLocation을 이용해서 접속 위치를 얻어옵니다
+	    navigator.geolocation.getCurrentPosition(function(position) {
+	        
+	        var lat = position.coords.latitude, // 위도
+	            lon = position.coords.longitude; // 경도
+	        	
+	        var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
+	            message = '<div style="padding:5px;">현재 내 위치에요 :-)</div>'; // 인포윈도우에 표시될 내용입니다
+	        
+	        // 마커와 인포윈도우를 표시합니다
+	        displayMarker(locPosition, message);
+	            
+	      });
+	    
+	} else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
+	    
+	    var locPosition = new kakao.maps.LatLng(33.450701, 126.570667),    
+	        message = 'geolocation을 사용할수 없어요..'
+	        
+	    displayMarker(locPosition, message);
+	}
+}
+
+// 지도에 마커와 인포윈도우를 표시하는 함수입니다
+function displayMarker(locPosition, message) {
+
+    // 마커를 생성합니다
+    var marker = new kakao.maps.Marker({  
+        map: map, 
+        position: locPosition
+    }); 
+    
+    var iwContent = message, // 인포윈도우에 표시할 내용
+        iwRemoveable = true;
+
+    // 인포윈도우를 생성합니다
+    var infowindow = new kakao.maps.InfoWindow({
+        content : iwContent,
+        removable : iwRemoveable
+    });
+    
+    // 인포윈도우를 마커위에 표시합니다 
+    infowindow.open(map, marker);
+    
+    // 지도 중심좌표를 접속위치로 변경합니다
+    map.setCenter(locPosition);      
+}    
+*/
 	</script>
 </body>
 </html>
