@@ -28,7 +28,6 @@ public class ReviewController {
 	// < 리뷰 게시판 - 리뷰수정 proc 요청 >
 	@RequestMapping("/reWriteProc.jeju")
 	public ModelAndView reWriteProc(ModelAndView mv, ReviewVO rVO) {
-		System.out.println("컨트롤러 연걸 성공");
 		rService.reWriteProc(mv, rVO);
 		return mv;
 	}

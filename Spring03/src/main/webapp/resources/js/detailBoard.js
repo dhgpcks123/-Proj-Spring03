@@ -272,7 +272,9 @@ $(document).ready(function(){
 		var pno = $(this).prev().attr('id');
 		$(this).prev().css('display','none');
 		$(this).css('display','none');
-		$('#RewriteForm').append('<input type="hidden" class="delfile" name="delfile" value="'+pno+'">')
+		var DelImgRno = $(this).attr('id');
+		var delimgrno = DelImgRno.substring(6);
+		$('#fr'+delimgrno).append('<input type="hidden" class="delfile" name="delfile" value="'+pno+'">')
 	})
 });
 

@@ -1,4 +1,4 @@
--- ¸®ºä»çÁøÅ×ÀÌºí
+-- ë¦¬ë·°ì‚¬ì§„í…Œì´ë¸”
 
 DROP TABLE rphoto;
 CREATE TABLE rphoto(
@@ -23,94 +23,94 @@ CREATE TABLE rphoto(
 INSERT INTO
     rphoto
 VALUES(
-    10001,1,'noimage.jpg','»ç¶ó¿À¸§1.jpg',200*100,'/img/review/',10
+    10001,1,'noimage.jpg','ì‚¬ë¼ì˜¤ë¦„1.jpg',200*100,'/img/review/',10
 );
 
 INSERT INTO
     rphoto
 VALUES(
-    10002,1,'test01.jpg','»ç¶ó¿À¸§3.jpg',200*100,'/img/review/',10
+    10002,1,'test01.jpg','ì‚¬ë¼ì˜¤ë¦„3.jpg',200*100,'/img/review/',10
 );
 
 INSERT INTO
     rphoto
 VALUES(
-    10003, 2,'test02.jpg','°¡ÆÄµµ3.jpg',200*100,'/img/review/',10
+    10003, 2,'test02.jpg','ê°€íŒŒë„3.jpg',200*100,'/img/review/',10
 );
 
 INSERT INTO
     rphoto
 VALUES(
-    10004,2,'test03.jpg','°¡ÆÄµµ4.jpg',200*100,'/img/review/',10
+    10004,2,'test03.jpg','ê°€íŒŒë„4.jpg',200*100,'/img/review/',10
 );
 
 INSERT INTO
     rphoto
 VALUES(
-    10005, 3,'test04.jpg','´õ¼î¾îÈ£ÅÚ.jpg',200*100,'/img/review/',20
+    10005, 3,'test04.jpg','ë”ì‡¼ì–´í˜¸í…”.jpg',200*100,'/img/review/',20
 );
 
 INSERT INTO
     rphoto
 VALUES(
-    10006,3,'test10.jpg','´õ¼î¾îÈ£ÅÚ.jpg',200*100,'/img/review/',20
+    10006,3,'test10.jpg','ë”ì‡¼ì–´í˜¸í…”.jpg',200*100,'/img/review/',20
 );
 
 INSERT INTO
     rphoto
 VALUES(
-    10007,4,'test05.jpg','´ã¾Æ·¡¼­±ÍÆ÷Á¡2.jpg',200*100,'/img/review/',30
+    10007,4,'test05.jpg','ë‹´ì•„ë˜ì„œê·€í¬ì 2.jpg',200*100,'/img/review/',30
 );
 
 INSERT INTO
     rphoto
 VALUES(
-    10008,4,'test11.jpg','´ã¾Æ·¡¼­±ÍÆ÷Á¡2.jpg',200*100,'/img/review/',30
+    10008,4,'test11.jpg','ë‹´ì•„ë˜ì„œê·€í¬ì 2.jpg',200*100,'/img/review/',30
 );
 INSERT INTO
     rphoto
 VALUES(
-    10009, 4,'test12.jpg','´ã¾Æ·¡¼­±ÍÆ÷Á¡2.jpg',200*100,'/img/review/',30
-);
-
-INSERT INTO
-    rphoto
-VALUES(
-    10010, 4,'test13.jpg','´ã¾Æ·¡¼­±ÍÆ÷Á¡2.jpg',200*100,'/img/review/',30
+    10009, 4,'test12.jpg','ë‹´ì•„ë˜ì„œê·€í¬ì 2.jpg',200*100,'/img/review/',30
 );
 
 INSERT INTO
     rphoto
 VALUES(
-    10011,5,'test06.jpg','ÇÑ¶ó±¹¼ö2.jpg',200*100,'/img/review/',30
-);
-INSERT INTO
-    rphoto
-VALUES(
-    10012,5,'test12.jpg','ÇÑ¶ó±¹¼ö2.jpg',200*100,'/img/review/',30
+    10010, 4,'test13.jpg','ë‹´ì•„ë˜ì„œê·€í¬ì 2.jpg',200*100,'/img/review/',30
 );
 
 INSERT INTO
     rphoto
 VALUES(
-    10013,6,'test07.jpg','Ä¡°úÈÄ±â.jpg',200*100,'/img/review/',40
+    10011,5,'test06.jpg','í•œë¼êµ­ìˆ˜2.jpg',200*100,'/img/review/',30
 );
 INSERT INTO
     rphoto
 VALUES(
-    10014,6,'test13.jpg','Ä¡°úÈÄ±â.jpg',200*100,'/img/review/',40
-);
-
-INSERT INTO
-    rphoto
-VALUES(
-    10015,7,'test08.jpg','ÇÑÀÇ¿ø.jpg',200*100,'/img/review/',40
+    10012,5,'test12.jpg','í•œë¼êµ­ìˆ˜2.jpg',200*100,'/img/review/',30
 );
 
 INSERT INTO
     rphoto
 VALUES(
-    10016,7,'test14.jpg','ÇÑÀÇ¿ø.jpg',200*100,'/img/review/',40
+    10013,6,'test07.jpg','ì¹˜ê³¼í›„ê¸°.jpg',200*100,'/img/review/',40
+);
+INSERT INTO
+    rphoto
+VALUES(
+    10014,6,'test13.jpg','ì¹˜ê³¼í›„ê¸°.jpg',200*100,'/img/review/',40
+);
+
+INSERT INTO
+    rphoto
+VALUES(
+    10015,7,'test08.jpg','í•œì˜ì›.jpg',200*100,'/img/review/',40
+);
+
+INSERT INTO
+    rphoto
+VALUES(
+    10016,7,'test14.jpg','í•œì˜ì›.jpg',200*100,'/img/review/',40
 );
 
 INSERT INTO
@@ -139,3 +139,149 @@ VALUES(
 
 commit;
 SELECT * FROM RPHOTO ;
+
+--5
+
+-- ë¦¬ë·°ì‚¬ì§„í…Œì´ë¸”
+
+DROP TABLE rphoto;
+CREATE TABLE rphoto(
+    pno NUMBER(10)
+        CONSTRAINT RPHOTO_PNO_PK PRIMARY KEY,
+    rpno NUMBER(10)
+        CONSTRAINT RPHOTO_RPNO_FK REFERENCES review(rpno)
+        CONSTRAINT RPHOTO_RPNO_NN NOT NULL,
+    rponame VARCHAR2(100 CHAR) DEFAULT 'noimage.jpg'
+        CONSTRAINT RPHOTO_ONAME_NN NOT NULL,
+    rpsname VARCHAR2(100 CHAR) DEFAULT 'noimage.jpg'
+        CONSTRAINT RPHOTO_SNAME_NN NOT NULL,
+    rpsize NUMBER(10) DEFAULT 200*100
+        CONSTRAINT RPHOTO_SIZE_NN NOT NULL,
+    rpdir VARCHAR2(100 CHAR) DEFAULT '/img/review'
+        CONSTRAINT RPHOTO_DIR_NN NOT NULL,
+    rtno NUMBER(10)
+        CONSTRAINT RPHOTO_RTNO_FK REFERENCES areatype(atno)
+        CONSTRAINT RPHOTO_RTNO_NN NOT NULL
+        CONSTRAINT RPHOTO_RTNO_CK CHECK (rtno IN (10,20,30,40,50)),
+    isshow CHAR(1) DEFAULT 'Y'
+        CONSTRAINT RPHOTO_ISSHOW_NN NOT NULL
+        CONSTRAINT RPHOTO_ISSHOW_CK CHECK (isshow IN ('Y','N'))
+);
+INSERT INTO
+    rphoto
+VALUES(
+    10001,1,'noimage.jpg','ì‚¬ë¼ì˜¤ë¦„1.jpg',200*100,'/img/review/',10,'Y'
+);
+
+INSERT INTO
+    rphoto
+VALUES(
+    10002,1,'test01.jpg','ì‚¬ë¼ì˜¤ë¦„3.jpg',200*100,'/img/review/',10,'Y'
+);
+
+INSERT INTO
+    rphoto
+VALUES(
+    10003, 2,'test02.jpg','ê°€íŒŒë„3.jpg',200*100,'/img/review/',10,'Y'
+);
+
+INSERT INTO
+    rphoto
+VALUES(
+    10004,2,'test03.jpg','ê°€íŒŒë„4.jpg',200*100,'/img/review/',10,'Y'
+);
+
+INSERT INTO
+    rphoto
+VALUES(
+    10005, 3,'test04.jpg','ë”ì‡¼ì–´í˜¸í…”.jpg',200*100,'/img/review/',20,'Y'
+);
+
+INSERT INTO
+    rphoto
+VALUES(
+    10006,3,'test10.jpg','ë”ì‡¼ì–´í˜¸í…”.jpg',200*100,'/img/review/',20,'Y'
+);
+
+INSERT INTO
+    rphoto
+VALUES(
+    10007,4,'test05.jpg','ë‹´ì•„ë˜ì„œê·€í¬ì 2.jpg',200*100,'/img/review/',30,'Y'
+);
+
+INSERT INTO
+    rphoto
+VALUES(
+    10008,4,'test11.jpg','ë‹´ì•„ë˜ì„œê·€í¬ì 2.jpg',200*100,'/img/review/',30,'Y'
+);
+INSERT INTO
+    rphoto
+VALUES(
+    10009, 4,'test12.jpg','ë‹´ì•„ë˜ì„œê·€í¬ì 2.jpg',200*100,'/img/review/',30,'Y'
+);
+
+INSERT INTO
+    rphoto
+VALUES(
+    10010, 4,'test13.jpg','ë‹´ì•„ë˜ì„œê·€í¬ì 2.jpg',200*100,'/img/review/',30,'Y'
+);
+
+INSERT INTO
+    rphoto
+VALUES(
+    10011,5,'test06.jpg','í•œë¼êµ­ìˆ˜2.jpg',200*100,'/img/review/',30,'Y'
+);
+INSERT INTO
+    rphoto
+VALUES(
+    10012,5,'test12.jpg','í•œë¼êµ­ìˆ˜2.jpg',200*100,'/img/review/',30,'Y'
+);
+
+INSERT INTO
+    rphoto
+VALUES(
+    10013,6,'test07.jpg','ì¹˜ê³¼í›„ê¸°.jpg',200*100,'/img/review/',40,'Y'
+);
+INSERT INTO
+    rphoto
+VALUES(
+    10014,6,'test13.jpg','ì¹˜ê³¼í›„ê¸°.jpg',200*100,'/img/review/',40,'Y'
+);
+
+INSERT INTO
+    rphoto
+VALUES(
+    10015,7,'test08.jpg','í•œì˜ì›.jpg',200*100,'/img/review/',40,'Y'
+);
+
+INSERT INTO
+    rphoto
+VALUES(
+    10016,7,'test14.jpg','í•œì˜ì›.jpg',200*100,'/img/review/',40,'Y'
+);
+
+INSERT INTO
+    rphoto
+VALUES(
+    10017,8,'test09.jpg','noimage.jpg',200*100,'/img/review/',50,'Y'
+);
+INSERT INTO
+    rphoto
+VALUES(
+    10018,8,'test15.jpg','noimage.jpg',200*100,'/img/review/',50,'Y'
+);
+
+INSERT INTO rphoto
+VALUES(
+    10019, 9, 'test01.jpg', 'test01.jpg', 20000, 'img/review/', 30,'Y'
+);
+INSERT INTO rphoto
+VALUES(
+    10020, 9, 'test02.jpg', 'test01.jpg', 20000, 'img/review/', 30,'Y'
+);
+INSERT INTO rphoto
+VALUES(
+    10021,9, 'test03.jpg', 'test01.jpg', 20000, 'img/review/', 30,'Y'
+);
+
+commit;

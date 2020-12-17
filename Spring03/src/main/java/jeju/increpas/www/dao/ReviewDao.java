@@ -74,6 +74,7 @@ public class ReviewDao {
 		//파일삭제
 		// 수정 할 게 있으면 값을 넣도록 한다
 		if(rVO.getDelfile() != null) {
+			System.out.println(rVO.toString());
 			int[] delArray = rVO.getDelfile();
 			for(int i = 0 ; i < delArray.length ; i++) {
 				int pno = delArray[i];

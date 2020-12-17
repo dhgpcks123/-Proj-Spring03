@@ -107,3 +107,4 @@ public Date getJoinDate() {
    public void setBirth(Date birth) {
       this.birth = birth;
    }
+}
