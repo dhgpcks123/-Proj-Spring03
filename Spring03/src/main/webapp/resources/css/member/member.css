@@ -343,3 +343,9 @@ span#wbtn {
     color: red;
     padding-bottom: 20px;
 }
+
+.startbtn{
+	font-size : 45px;
+	width: 300px;
+	height: 100px;
+}

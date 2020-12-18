@@ -406,7 +406,7 @@ $(document).ready(function(){
 		$('#abo').val('');
 		$('#stel').val('');
 		$('#stel_name').val('');
-		$('#text').val('');
+		$('#msg').val('');
 	});
 	
 	$('#next3').click(function(){		
@@ -414,7 +414,8 @@ $(document).ready(function(){
 		joinAgree();
 	});
 
-
+	
+	
 	 // 개인정보 확인 후 가입내용 전송 
     function joinCheck() {
 		var res = true;
@@ -430,20 +431,21 @@ $(document).ready(function(){
 		var sgen = $('.gen:checked').val();
 		var sph = $('.ph:checked').val();
 		var sabo = $('.abo:checked').val();
-		var sstel = $('#stel').val();
-		var sstel_name = $('#stel_name').val();
-		var stext = $('#text').val();
-		
-	alert(sid + '|' + spw + '|' + smail + '|' + 
-			sname + '|' + syear + '|' + smouth + '|' + sday + '|' + stel + '|' + sgen + '|' + 
-			sph + '|' + sabo + '|' + sstel + '|' + sstel_name + '|' + stext);
+		var ssos = $('#sos').val();
+		var srel = $('#srel').val();
+//		var smag = $('#mag').val();
+
+		/*
+		alert(sid + '|' + spw + '|' + smail + '|' + 
+				sname + '|' + syear + '|' + smouth + '|' + sday + '|' + stel + '|' + sgen + '|' + 
+				sph + '|' + sabo + '|' + sstel + '|' + sstel_name + '|' + smag);
+		*/	
 			
-		if(!(sid && spw && smail && 
-			sname && syear && smouth && sday && stel && sgen)){
-			res = false;
-		} else {
+		if(!(sid && spw && smail && sname && stel && sgen)){
 			alert('입력에 이상이 없는지 확인해주세요.');
+			res = false;
 		}
+		
 		$('#blood1').val(sabo);
 		$('#blood2').val(sph);
 		$('#birth').val(syear+'/'+smouth+'/'+sday);
@@ -464,4 +466,5 @@ $(document).ready(function(){
         return true;
     }
 
+	
 });
