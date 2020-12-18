@@ -75,7 +75,18 @@
 			<!-- 전화 번호 -->
 			<div style="font-size: 9pt; ">
 				<i class="fas fa-phone-volume"></i> ${STORE.get(0).atel}
+			
+			<!-- SOS -->
+			<c:if test="${STORE.get(0).atno==40 || STORE.get(0).atno==50}">
+				<span class="sos">
+					<a href='tel:${STORE.get(0).atel}'>
+						<img src="/upload/sos.png" alt="sos 전화 걸기">
+					</a>
+				</span>	
+			</c:if>	
 			</div>
+			
+			
 			<!-- 가게 소개 -->
 			<div class="tbFont" style="border-top: 1px dashed gray; border-bottom: 1px dashed gray; padding: 15px 30px; margin: 30px 5px 15px 5px;">
 				<div>
@@ -162,6 +173,7 @@
 						전화번호 : <span>${STORE.get(0).atel}</span>
 					</div>
 				</div>
+			
 				<div>
 					<!-- 상단 아이콘버튼 -->
 					<nav style="padding: 0px; margin: 30px; border-top: 1px solid #ECEAEB; border-bottom: 1px solid #ECEAEB;">
@@ -376,6 +388,7 @@
 	        <span class="title">주소정보</span>
 	        <span id="centerAddr"></span>
     	</div>
+    	
     </div>
     <!-- 카카오 맵 API -->
     <div class="map_wrap">
@@ -394,7 +407,9 @@
 			<hr>
 			<ul id="placesList"></ul>
 			<div id="pagination"></div>
+			
 		</div>
+
 	</div>
 	<!-- x, y값 넘기기 폼 태그 -->
 	<!-- 해당 폼은 지도마커 클릭 시 패널을 불러오기 위해 제작 된 폼 태그 -->
@@ -752,6 +767,7 @@
 	    }
 	}
 
+	
 
 /* ############################## 4. 내 위치 ############################## */
 /*
