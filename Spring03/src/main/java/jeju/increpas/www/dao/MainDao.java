@@ -38,4 +38,24 @@ public class MainDao {
 	public List<MapVO> getMarklist(){
 		return sqlSession.selectList("mSQL.getMarklist");
 	}
+	
+	
+	//-------ㅂㅇ
+	
+	// 맵 정보 가져오기
+		public List<MapVO> getMapInfo(){
+			return sqlSession.selectList("mSQL.getMapInfo");
+	}
+	// id로 mno가져오기
+	public int getMno(String id) {
+		return sqlSession.selectOne("mSQL.getMno", id);
+	}
+	// 찜하기 중복여부 체크
+	public int favorCheck(FavoriteVO faVO) {
+		return sqlSession.selectOne("mSQL.favoriteCheck", faVO);
+	}
+	// 찜하기처리
+	public void AddFavorite(FavoriteVO faVO) {
+		sqlSession.selectOne("mSQL.setFavorite", faVO);
+	}
 }

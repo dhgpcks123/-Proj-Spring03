@@ -67,4 +67,39 @@
 		WHERE
 			isshow='Y'
 	</select>
+	
+	<!-- ㅂㅇ -->
+	<!-- id정보로 회원 번호 가져오기 -->
+	<select id="getMno" resultType="int" parameterType="string">
+		SELECT
+			mno
+		FROM
+			member
+		WHERE
+			isshow = 'Y'
+			AND id = #{id}
+	</select>
+	<!-- 찜하기 전 중복여부 체크기능 -->
+	<select id="favoriteCheck" resultType="int" parameterType="faVO">
+		SELECT
+			COUNT(*) cnt
+		FROM
+			favorite
+		WHERE
+			mno = #{mno}
+			AND ano = #{ano}
+	</select>
+	<!-- 찜하기 추가기능 -->
+	<insert id="setFavorite" parameterType="faVO">
+		INSERT INTO
+			favorite(fno, mno, ano)
+		VALUES(
+    		(select nvl(max(fno)+1, 1) from favorite),
+    		#{mno}, #{ano}
+		)
+	</insert>	
+	
+	
+	
+	
 </mapper>
