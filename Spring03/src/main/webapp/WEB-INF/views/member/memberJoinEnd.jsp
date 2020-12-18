@@ -29,7 +29,7 @@
 			</span>
 	    </div>  	
 				
-	       <div class="w3-button w3-blue w3-hover-aqua startbtn">
+	       <div class="w3-button w3-blue w3-hover-aqua startbtn startbtnh">
 	       		<a href="/www/main.jeju">시작하기</a>
 	       	</div>
 	     </form>
