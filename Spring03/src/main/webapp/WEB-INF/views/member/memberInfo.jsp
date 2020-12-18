@@ -39,13 +39,10 @@
 							<div class="w3-col w3-text-grey ft18px mh3"><span class="w3-third w3-right-align">아 이 디 : </span><span class="w3-twothird w3-center">${DATA.id}</span></div>
 							<div class="w3-col w3-text-grey ft18px mh3"><span class="w3-third w3-right-align">회원이름 : </span><span class="w3-twothird w3-center">${DATA.mname}</span></div>
 							<div class="w3-col w3-text-grey ft18px mh3"><span class="w3-third w3-right-align">회원메일 : </span><span class="w3-twothird w3-center" id="cMail">${DATA.mail}</span></div>
-							<div class="w3-col w3-text-grey ft18px mh3"><span class="w3-third w3-right-align">전화번호 : </span><span class="w3-twothird w3-center">${DATA.tel}</span></div>
-							<div class="w3-col w3-text-grey ft18px mh3"><span class="w3-third w3-right-align">혈 액 형 : </span><span class="w3-twothird w3-center">${DATA.blood1} / ${DATA.blood2} 형</span></div>
 							<div class="w3-col w3-text-grey ft18px mh3"><span class="w3-third w3-right-align">전화번호 : </span><span class="w3-twothird w3-center" id="cTel">${DATA.tel}</span></div>
 							<div class="w3-col w3-text-grey ft18px mh3"><span class="w3-third w3-right-align">혈 액 형 : </span><span class="w3-twothird w3-center" id="cBl1">${DATA.blood1} 형</span></div>
-							<div class="w3-col w3-text-grey ft18px mh3"><span class="w3-third w3-right-align">RH Type : </span><span class="w3-twothird w3-center" id="cBl2">${DATA.blood2}</span></div>
+							<div class="w3-col w3-text-grey ft18px mh3"><span class="w3-third w3-right-align">R	     H : </span><span class="w3-twothird w3-center" id="cBl2">${DATA.blood2}</span></div>
 							<div class="w3-col w3-text-grey ft18px mh3"><span class="w3-third w3-right-align">생년월일 : </span><span class="w3-twothird w3-center">${DATA.birth}</span></div>
-							<div class="w3-col w3-text-grey ft18px mh3"><span class="w3-third w3-right-align">긴급연락 : </span><span class="w3-twothird w3-center">${DATA.sos}</span></div>
 							<div class="w3-col w3-text-grey ft18px mh3"><span class="w3-third w3-right-align">긴급연락 : </span><span class="w3-twothird w3-center" id="cSos">${DATA.sos}</span></div>
 							<div class="w3-col w3-text-grey ft18px mh3"><span class="w3-third w3-right-align">회원성별 : </span>
 								<span class="w3-twothird w3-center">
