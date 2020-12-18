@@ -22,13 +22,75 @@
 </head>
 
 <body>
+<!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
+<!--	#			 	메인 상단 헤더 부분			 	#	-->
+<!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
+<div class="topHeader">
+	<div class="topHeader__column">
+		<div class="topHeader__column-backwhite">
+			<div class="topHeader__desc">
+				<span>제주를 여행하는 가장 빠른 방법 </span>
+				<i class="fas fa-plane-departure"></i>
+			</div>
+			<div class="topHeader__logo">
+				<span>제주꿀맵</span>
+				<div class="topHeader__eyesIcon">
+					<div class="topHeader__eyes">
+				    	<div class="topHeader__eye1 eye">
+				       		<div class="topHeader__dot">
+				       	</div>
+				        </div>
+				       	<div class="topHeader__eye2 eye">
+				    	   	<div class="topHeader__dot">
+				    	</div>
+					    </div>
+				    </div>
+				</div>
+			</div>
+		</div>
+	</div>	
+<!-- 비로그인 시 보이는 화면 -->
+<c:if test="${empty sessionScope.SID}">
+	<div class="topHeader__column">
+       	<!-- 로그인 창 -->
+       	<form class="topHeader__loginform" method="POST" action="/www/loginProc.jeju" id="loginFrm" name="loginFrm">
+       	    <input class="topHeader__input" type="text" placeholder="회원아이디" name="id" id="id">
+       	    <input class="topHeader__input" type="password" placeholder="비밀번호" name="pw" id="pw">
+       	 	<!-- 로그인 버튼 -->
+       	 	<div class="topHeader__loginBtn topHeader__btn w3-button" id="loginbtn">로그인</div>
+       	 	<!--  회원가입 버튼 -->
+       		<div class="topHeader__joinBtn topHeader__btn w3-button" id="member">
+       	 		<a href="/www/member/memberJoin.jeju">회원가입</a>
+       		</div>
+       	</form>   
+    </div>
+</c:if>
+
+<!-- 로그인 시 보이는 화면 -->
+<c:if test="${not empty sessionScope.SID}">
+    <div class="topHeader__column">
+    	<div class="topHeader__logoutForm">
+	       	<!-- 내 정보보기 -->
+	       	<div class="logoutForm_LeftCol logoutForm__Col">
+		       	<div class="topHeader__welcomeId">[  ${sessionScope.SID}  ] <i class="fas fa-dragon"></i> </div>
+		       	<div class="topHeader__welcome">님 방문을 환영합니다</div>
+	       	</div>	       	
+	       	<div class="logoutForm_RightCol logoutForm__Col">
+	      		<div class="topHeader__btn w3-button" id="favoritBtn"> 찜 모아보기</div>
+		       	<div class="topHeader__btn w3-button" id="logoutbtn">로그아웃</div>
+	      		<div class="topHeader__btn w3-button" id="infoBtn"> 내 정보보기 <i class="fas fa-user-cog"></i></div>
+	       	</div>
+    	</div>
+    </div>
+</c:if>
+</div>
 <form method="POST" action="/www/member/memberInfo.jeju" id="frm" name="frm">
 	<input type="hidden" name="id" value="${SID}">
 </form>
 <!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
 <!--	#				  사이드패널 					#	-->
 <!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
-<nav class="w3-sidebar w3-collapse w3-animate-left w3-card" style="z-index: 3; width: 400px;" id="mySidebar">
+<nav class="w3-sidebar w3-collapse w3-animate-left" style="z-index: 3; width: 400px;" id="mySidebar">
 	<!-- 헤더 : 자세히보기 -->
 	<header style="text-align: right;">
 		<a href="javascript:void(0)" class="w3-bar-item w3-button w3-button" style="font-size: 10pt;" onclick="document.getElementById('id01').style.display='block'">
@@ -43,7 +105,7 @@
 		<div>
 			<!--  title  -->
 			<div class="Panel__title">
-				<h2 class="w3-center" style="margin-top: 0px; margin-bottom: 30px;">
+				<h2 class="w3-center" style="margin-top: 15px; margin-bottom: 30px;">
 					<i class="fas fa-store-alt"></i><strong> ${STORE.get(0).aname}</strong>
 				</h2>
 			</div>
@@ -85,9 +147,9 @@
 		</div>
 		
 		<!-- 사이드패널 최근리뷰 -->
-		<div class="tbFont" style="padding: 15px; margin-top: 20px;">
-			<div style="text-align: center; margin-bottom: 9px; background-color: #DEDEDE;">이 가게의 가장 최근리뷰</div>
-			<div style="margin-bottom: 10px;">
+		<div class="tbFont" style="padding: 15px; margin-top: 30px;">
+			<div style="text-align: center; margin-bottom: 9px; background-color: #ffcd36;">이 가게의 가장 최근리뷰</div>
+			<div style="padding: 5px; margin-bottom: 10px; border: 0.1px dashed #008080; border-radius: 5px; background-color: rgba(255, 205, 54, 0.05);">
 				<!-- 리뷰 타이틀 및 본문 -->
 				<div style="display: block; font-size:14pt">${REVIEW.get(0).rtitle}</div>
 				<div style="display: block; font-size: 7pt;">${REVIEW.get(0).rdate}</div>
@@ -100,23 +162,25 @@
 					<c:if test="${REVIEW.get(0).rgrade==1}">★☆☆☆☆</c:if>
 					<span style="color:black;">[${REVIEW.get(0).rgrade}/5]</span>
 				</div>
+				<!-- 리뷰 사진 -->
+				<div class="w3-col" style="margin-bottom: 30px;">
+					<div>
+					<c:forEach var="data" items="${REVIEW.get(0).rphotovoList}">
+					<c:if test="${REVIEW.get(0).rno == data.rno}">
+						<img class="w3-col m6 l6 s6 reviewIMG" src="img/review/${data.rponame}"></img>
+					</c:if>
+					</c:forEach>
+					</div>
+				</div>
+				<!-- 리뷰 본문 -->
+				<div class="tbFont" style="padding: 3px; margin-top: 5px;">${REVIEW.get(0).rbody}</div>
 			</div>
-			<!-- 리뷰 사진 -->
-			<div style="margin-bottom: 30px; display:flex; justify-content: center;">
-			<c:forEach var="data" items="${REVIEW.get(0).rphotovoList}">
-			<c:if test="${REVIEW.get(0).rno == data.rno}">
-				<img class="reviewIMG" src="img/review/${data.rponame}"></img>
-			</c:if>
-			</c:forEach>
-			</div>
-			<!-- 리뷰 본문 -->
-			<div class="tbFont" style="padding: 3px; margin-top: 5px;">${REVIEW.get(0).rbody}</div>
 		</div>
 	</section>
 	
 	<!-- 푸더 : 후기 더 보기 -->
 	<footer>
-		<div class="w3-right tbFont" style=" margin-bottom: 30px;  margin-top :15px">
+		<div class="w3-right tbFont" style=" margin-bottom: 130px;  margin-top :15px">
 			<a href="javascript:void(0)" class="w3-bar-item" style="font-size: 10pt;" onclick="document.getElementById('id01').style.display='block'">
 				<Strong>> 후기 더보기.. </Strong>
 			</a>
@@ -131,7 +195,7 @@
 <!-- 모달 창 연결 버튼 -->
 <a id="myBtn" onclick="myFunc('Demo1')" href="javascript:void(0)" class="w3-bar-item w3-button"></a>
 <!-- 모달 창 틀 -->
-<div id="id01" class="w3-modal w3-border" style="z-index: 3; padding-top: 4%;">
+<div id="id01" class="w3-modal w3-border" style="z-index: 4; padding-top: 4%;">
 	<!-- x 아이콘 -->
 	<div class="w3-panel"
 		style="position: fixed; z-index: 999; top: 1%; right: 6%">
@@ -172,9 +236,16 @@
 							<div class="w3-button" style="font-size: 15pt;">
 								<i class="fas fa-pencil-alt"></i><a href="#wReviewfrm"> 리뷰 쓰기</a>
 							</div>
-							<div class="w3-button" style="font-size: 15pt;">
-								<i class="fas fa-bookmark"></i> 찜 하기
+					<c:if test="${empty sessionScope.SID}">
+							<div class="w3-button" style="font-size: 15pt;" id="nonLogfavor" name=${STORE.get(0).ano}>
+								<i class="far fa-bookmark"></i> 찜 하기 <!-- 비어있음 여긴 아예 쓰질 못해 -->
 							</div>
+					</c:if>
+					<c:if test="${not empty sessionScope.SID}">
+							<div class="w3-button" style="font-size: 15pt;" id="favor" name="${STORE.get(0).ano}">
+								<i class="far fa-bookmark"></i> 찜 하기<!-- 비어있음, 이 경우만 찜하기 작동 될 거임 -->
+							</div>
+					</c:if>
 						</div>
 					</nav>
 					<!-- 슬라이드 이미지 -->
@@ -228,6 +299,8 @@
 							<div>${data.id}</div>
 							<div style="margin-left: 45px;">작성일 :</div>
 							<div>${data.rdate }</div>
+							<div style="margin-left: 45px;">조회수 :</div>
+							<div>${data.rhit}</div>
 						</div>
 						<!-- 리뷰 본문글 및 사진 -->
 						<div class="tbFont" style="border-bottom: 1px solid #ECEAEB; margin-bottom: 10px;">
@@ -313,6 +386,8 @@
 							<input type="hidden" id="reviewStar" name="rgrade">
 							<input type="hidden" id="reviewX" name="ax" value="${REVIEW.get(0).rx}">
 							<input type="hidden" id="reviewY" name="ay" value="${REVIEW.get(0).ry}">
+							<input type="hidden" name="rx" value="${REVIEW.get(0).rx}">
+							<input type="hidden" name="ry" value="${REVIEW.get(0).ry}">
 							<input type="hidden" id="reviewRtno" name="rtno" value="${STORE.get(0).atno}">
 							
 							<!-- 글쓰기 제목 -->
@@ -343,44 +418,17 @@
 <!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
 <!-- Page content -->
 <div class="w3-main" style="margin-left: 420px;">
-	<div class="w3-col" style="margin-top: 20px;">
-		<div class="w3-col" style="text-align: right;">
-	      	<!-- 로그인 시 보이는 화면 -->
-	      	<c:if test="${not empty sessionScope.SID}">
-	        <!-- 내 정보보기 -->
-	        <div class="w3-col m12 l12 s12" style="padding-right: 60px;" id="infoBtn"> 내 정보보기 <i class="fas fa-user-cog"></i></div>
-	        <div style="padding-right: 60px;">
-	        	<div style="padding-right: 10px; display:inline-block;">[ ${sessionScope.SID} ] 님 환영합니다.</div>
-	        	<div class="w3-button w3-amber" id="logoutbtn" style="display:inline-block;">로그아웃</div>
-	        </div>
-	      	</c:if>
-	      	<!-- 비로그인 시 보이는 화면 -->
-	        <c:if test="${empty sessionScope.SID}">
-	        <!-- 로그인 창 -->
-	        <form method="POST" action="/www/loginProc.jeju" id="loginFrm" name="loginFrm">
-	            <input type="text" style="width: 15%; padding-left: 10px; padding-left: 10px" placeholder="회원아이디" name="id" id="id">
-	            <input type="password" style="width: 15%; padding-left: 10px;" placeholder="비밀번호" name="pw" id="pw">
-		        <!-- 로그인 버튼 -->
-		        <div class="w3-button w3-amber" id="loginbtn">로그인</div>
-		        <!--  회원가입 버튼 -->
-		        <div class="w3-button w3-amber w3-hover-lime" style="margin-right: 50px;" id="member">
-		        	<a href="/www/member/memberJoin.jeju">회원가입</a>
-		        </div>
-	        </form>   
-	        </c:if>
-		</div>
-	</div>
     <!-- 주소 정보 -->
 	<div class="map_wrap2">
 		<div class="hAddr">   
-	        <span class="title">주소정보</span>
+	        <span class="title">주소 정보</span>
 	        <span id="centerAddr"></span>
     	</div>
     </div>
     <!-- 카카오 맵 API -->
     <div class="map_wrap">
 		<!-- 지도를 표시할 div 입니다 -->
-        <div id="map" style="width:97%; height:700px; position:relative; overflow:hidden"></div>
+        <div id="map" style="width:97%; height:610px; position:relative; overflow:hidden"></div>
 	    <!-- 검색창 -->
         <div id="menu_wrap" class="bg_white" style="margin-left: 15px; margin-top: 15px;">
 			<div class="option">
