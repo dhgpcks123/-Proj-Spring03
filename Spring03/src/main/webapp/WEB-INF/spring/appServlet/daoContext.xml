@@ -12,6 +12,7 @@
 	<bean id="mbDao" class="jeju.increpas.www.dao.MemberDao" />
 	<bean id="mDao" class="jeju.increpas.www.dao.MainDao" />	
 	<bean id="rDao" class="jeju.increpas.www.dao.ReviewDao" />	
+	<bean id="suggestDao" class="jeju.increpas.www.dao.SuggestDao" />	
 
 	
 </beans>

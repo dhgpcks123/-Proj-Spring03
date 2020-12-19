@@ -31,5 +31,6 @@
  		<mapper resource="jeju/increpas/www/sql/MainSQL.xml" />
  		<mapper resource="jeju/increpas/www/sql/MemberSQL.xml" />
  		<mapper resource="jeju/increpas/www/sql/ReviewSQL.xml" />
+ 		<mapper resource="jeju/increpas/www/sql/SuggestSQL.xml" />
 	</mappers>
 </configuration>

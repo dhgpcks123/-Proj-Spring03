@@ -76,9 +76,10 @@
 		       	<div class="topHeader__welcome">님 방문을 환영합니다</div>
 	       	</div>	       	
 	       	<div class="logoutForm_RightCol logoutForm__Col">
-	      		<div class="topHeader__btn w3-button" id="favoritBtn"> 찜 모아보기</div>
-		       	<div class="topHeader__btn w3-button" id="logoutbtn">로그아웃</div>
-	      		<div class="topHeader__btn w3-button" id="infoBtn"> 내 정보보기 <i class="fas fa-user-cog"></i></div>
+	      		<div class="topHeader__btn w3-button w3-card" id="suggestBtn"> 어디로 갈까?</div>
+	      		<div class="topHeader__btn w3-button w3-card" id="favoritBtn"> 찜 모아보기</div>
+		       	<div class="topHeader__btn w3-button w3-card" id="logoutbtn">로그아웃</div>
+	      		<div class="topHeader__btn w3-button w3-card" id="infoBtn"> 내 정보보기 <i class="fas fa-user-cog"></i></div>
 	       	</div>
     	</div>
     </div>
