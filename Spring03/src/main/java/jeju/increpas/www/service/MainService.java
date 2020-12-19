@@ -18,7 +18,7 @@ public class MainService {
 	
 	// < 메인 페이지 - 메인 폼 요청 > 서비스 함수
 	public void getMain(ModelAndView mv, MapVO mVO) {
-		System.out.println("@@@@@@@@@@@@@@@@@@@@@"+mVO.getAx()+"//"+mVO.getAy());
+//		System.out.println("@@@@@@@@@@@@@@@@@@@@@"+mVO.getAx()+"//"+mVO.getAy());
 		if(mVO.getAx() == 0 || mVO.getAy() == 0) {
 			mVO.setAx(33.23574587023389);
 			mVO.setAy(126.36351258114277);

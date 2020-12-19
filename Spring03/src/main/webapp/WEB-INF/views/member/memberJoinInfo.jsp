@@ -125,30 +125,30 @@
 						<span class="w3-col m12 w3-border" id="blood"  >혈액형</span>
 						<div class="w3-col m5 mt5  w3-border w3-left">
 							<input type="radio" class="w3-radio-medium ph" id="phP" name="ph" value="RH+"><span>&nbsp;RH+</span><br>
-							<input type="radio" class="w3-radio-medium ph" id="phM" name="ph" value="RH-"><span>&nbsp;RH-</span>
+							<input type="radio" class="w3-radio-medium ph" id="phM" name="ph" value="RH-"><span>&nbsp;RH-</span><br>
+							<input type="radio" class="w3-radio-medium ph" id="phX" name="ph" value="모름"><span>&nbsp;모름</span>
 						</div>
 						<div class="w3-col m5 mt5 w3-border w3-right">
 							<input type="radio" class="w3-radio-medium abo" id="aboA" name="abo" value="A"><span>&nbsp;A</span>
 							<input type="radio" class="w3-radio-medium abo" id="aboB" name="abo" value="B"><span>&nbsp;B</span><br>
 							<input type="radio" class="w3-radio-medium abo" id="aboAB" name="abo" value="AB"><span>&nbsp;AB</span>
-							<input type="radio" class="w3-radio-medium abo" id="aboO" name="abo" value="O"><span>&nbsp;O</span>
+							<input type="radio" class="w3-radio-medium abo" id="aboO" name="abo" value="O"><span>&nbsp;O</span><br>
+							<input type="radio" class="w3-radio-medium abo" id="aboX" name="abo" value="모름"><span>&nbsp;모름</span>
 						</div>
 					</div>
 					<!-- 긴급연락처 -->
 					<div class="w3-col  pb20">
-						<input class="w3-input w3-padding-16 w3-border" type="text" placeholder="긴급연락처"  name="sos" id="stel">
+						<input class="w3-input w3-padding-16 w3-border" type="text" placeholder="긴급연락처"  name="sos" id="sos">
 					</div>
 					<!-- DB에 없어서 연동 불가 -->
 					<!-- 긴급연락처와의 관계  -->
 					<div class="w3-col  pb20">
-						<input class="w3-input w3-padding-16 w3-border" type="text" placeholder="긴급연락처와의 관계"  name="rel" id="stel_name">
+						<input class="w3-input w3-padding-16 w3-border" type="text" placeholder="긴급연락처와의 관계"  name="rel" id="rel">
 					</div>
-					<!-- 추가설명 -->
+					<!-- 추가설명  -->
 					<div class="w3-col pb20">
-						<textarea class="w3-input w3-padding-16 w3-border"  placeholder="참고사항을 입력하세요." name="msg" id="text" >
-						</textarea>
+						<textarea class="w3-input w3-padding-16 w3-border" placeholder="참고사항을 입력하세요." name="addmsg" id="addmsg"></textarea>
 					</div>
-
 							
 					<div class="w3-button w3-yellow w3-left " id="pre3">이전</div>
 				    <div class="w3-button w3-red w3-left" id="reset3">reset</div>

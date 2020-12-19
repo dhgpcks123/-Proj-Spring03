@@ -6,7 +6,7 @@ import java.text.*;
 
 public class MemberVO {
    private int mno;
-   private String id, mname, pw, mail, tel, gen, isshow, joindate, blood1, blood2, sos, msg, birth, rel;	// msg 추가
+   private String id, mname, pw, mail, tel, gen, isshow, joindate, blood1, blood2, sos, msg, birth, rel, addmsg;
    private Date joinDate;
    
    public int getMno() {
@@ -110,15 +110,21 @@ public class MemberVO {
 	public void setRel(String rel) {
 		this.rel = rel;
 	}
+	public String getAddmsg() {
+		return addmsg;
+	}
+	public void setAddmsg(String addmsg) {
+		this.addmsg = addmsg;
+	}
 @Override
 public String toString() {
 	return "MemberVO [mno=" + mno + ", id=" + id + ", mname=" + mname + ", pw=" + pw + ", mail=" + mail + ", tel=" + tel
 			+ ", gen=" + gen + ", isshow=" + isshow + ", joindate=" + joindate + ", blood1=" + blood1 + ", blood2="
-			+ blood2 + ", sos=" + sos + ", msg=" + msg + ", joinDate=" + joinDate + ", birth=" + birth + ", getMno()="
+			+ blood2 + ", sos=" + sos + ", msg=" + msg + ", addmsg=" + addmsg + ", joinDate=" + joinDate + ", birth=" + birth + ", getMno()="
 			+ getMno() + ", getId()=" + getId() + ", getMname()=" + getMname() + ", getPw()=" + getPw() + ", getMail()="
 			+ getMail() + ", getTel()=" + getTel() + ", getGen()=" + getGen() + ", getIsshow()=" + getIsshow()
 			+ ", getJoindate()=" + getJoindate() + ", getBlood1()=" + getBlood1() + ", getBlood2()=" + getBlood2()
-			+ ", getSos()=" + getSos() + ", getMsg()=" + getMsg() + ", getJoinDate()=" + getJoinDate() + ", getBirth()="
+			+ ", getSos()=" + getSos() + ", getMsg()=" + getMsg() + "getAddmsg()=" + getAddmsg() + ", getJoinDate()=" + getJoinDate() + ", getBirth()="
 			+ getBirth() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
 			+ super.toString() + "]";
 }
