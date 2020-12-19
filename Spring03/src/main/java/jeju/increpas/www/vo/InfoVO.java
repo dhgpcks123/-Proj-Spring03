@@ -3,9 +3,7 @@ package jeju.increpas.www.vo;
 public class InfoVO {
 	private int ano, atno, apno;
 	private String aname, aloc, atel, abody, apdir, aponame, apsname;
-	
-	
-	
+	private Double ax, ay;
 
 	public int getAno() {
 		return ano;
@@ -66,6 +64,18 @@ public class InfoVO {
 	}
 	public void setApsname(String apsname) {
 		this.apsname = apsname;
+	}
+	public Double getAx() {
+		return ax;
+	}
+	public void setAx(Double ax) {
+		this.ax = ax;
+	}
+	public Double getAy() {
+		return ay;
+	}
+	public void setAy(Double ay) {
+		this.ay = ay;
 	}
 	
 }

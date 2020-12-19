@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="suggestSQL">
+	<!-- < 장소추천 페이지 - 추천장소 뽑기 요청 > 질의명령  -->
+	<!-- 유형(atno)에 속한 ano 뽑아내기 -->
+	<select id="getAno" resultType="int" parameterType="int">
+		SELECT
+			ano
+		FROM
+			areainfo
+		WHERE
+			atno = #{atno}
+			AND isshow='Y'
+	</select>
+	<!-- AreaInfo(ano)로 장소의 정보를 가져오기 -->
+	<select id="getAreaInfo" resultType="iVO" parameterType="int">
+		SELECT
+			ano, aname, aloc, abody, ax, ay
+		FROM
+			areainfo
+		WHERE
+			ano = #{ano}
+	</select>
+	<!-- atno가 10, 20, 30인 ano값을 뽑아오기 -->
+	<select id="getAllAno" resultType="int">
+		SELECT
+		    ano
+		FROM
+		    areainfo
+		WHERE
+		    atno in(10, 20, 30)
+		    AND isshow='Y'
+	</select>
+	
+</mapper>

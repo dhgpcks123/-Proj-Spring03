@@ -1,4 +1,9 @@
 $(document).ready(function(){
+//어디로갈까? 버튼 이벤트
+	$('#suggestBtn').click(function(){
+		$(location).attr('href','/www/suggest.jeju');
+	});
+
 /*##################### x버튼 이벤트 #########################*/
 
 	$('#xbutton').click(function(){
@@ -149,11 +154,7 @@ $(document).ready(function(){
 		});
 		
 		
-/*############################# 회원가입 관련 js #########################*/	
-		$('#member').click(function(){
-			$(this).attr('href', '/Tean03Proj/memberJoin.cls');
-		});
-		
+
 /*############################# 리뷰 수정 작업 관련 js #########################*/	
 // 리뷰 수정 별점주기 관련 js
 		$('.Rebyul1').click(function(){
