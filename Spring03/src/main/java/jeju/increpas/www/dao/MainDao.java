@@ -43,16 +43,4 @@ public class MainDao {
 	public int LoginProc(MemberVO meVO) {
 		return sqlSession.selectOne("mSQL.Login", meVO);
 	}
-	// id로 mno가져오기
-	public int getMno(String id) {
-		return sqlSession.selectOne("mSQL.getMno", id);
-	}
-	// 찜하기 중복여부 체크
-	public int favorCheck(FavoriteVO faVO) {
-		return sqlSession.selectOne("mSQL.favoriteCheck", faVO);
-	}
-	// 찜하기처리
-	public void AddFavorite(FavoriteVO faVO) {
-		sqlSession.selectOne("mSQL.setFavorite", faVO);
-	}
 }

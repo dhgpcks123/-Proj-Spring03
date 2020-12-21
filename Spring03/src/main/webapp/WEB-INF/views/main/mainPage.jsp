@@ -302,7 +302,9 @@
 	<div class="w3-col" style="margin-top: 20px;">
 		<div class="w3-col" style="text-align: right;">
         <!-- 내 정보보기 -->
-        <div class="w3-col m12 l12 s12" style="padding-right: 60px;"> 내 정보보기 <i class="fas fa-user-cog"></i></div>
+        <c:if test="${not empty sessionScope.SID}">
+        	<div class="w3-col m12 l12 s12" style="padding-right: 60px;" id="infoview"> 내 정보보기 <i class="fas fa-user-cog"></i></div>
+        </c:if>
       	<!-- 로그인 시 보이는 화면 -->
       	<c:if test="${not empty sessionScope.SID}">
         <div style="padding-right: 60px;">

@@ -9,6 +9,6 @@
 		
 	<!-- Dao Bean 처리 -->	
 	<bean id="mDao" class="jeju.increpas.www.dao.MainDao" />
-	
+	<bean id="fDao" class="jeju.increpas.www.dao.FavorDao" />
 	
 </beans>

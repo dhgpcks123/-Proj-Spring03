@@ -43,4 +43,9 @@ $(document).ready(function(){
 		$('#ano').val(ano);
 		$('#ffrm').submit();
 	});
+	
+	// 찝 목록보기 테스트
+	$('#infoview').click(function(){
+		$(location).attr('href', '/www/FavorView.jeju');
+	});
 });

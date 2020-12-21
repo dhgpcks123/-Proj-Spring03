@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+		PUBLIC  "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+<mapper namespace="fSQL">
+	<!-- id정보로 회원 번호 가져오기 -->
+	<select id="getMno" resultType="int" parameterType="string">
+		SELECT
+			mno
+		FROM
+			member
+		WHERE
+			isshow = 'Y'
+			AND id = #{id}
+	</select>
+	<!-- 찜하기 전 중복여부 체크기능 -->
+	<select id="favoriteCheck" resultType="int" parameterType="faVO">
+		SELECT
+			COUNT(*) cnt
+		FROM
+			favorite
+		WHERE
+			mno = #{mno}
+			AND ano = #{ano}
+	</select>
+	<!-- 찜하기 추가기능 -->
+	<insert id="setFavorite" parameterType="faVO">
+		insert into favorite
+		values(
+		    (select nvl(max(fno)+1, 1) from favorite),
+		    #{mno}, #{ano} ,
+		    (select atno from areainfo where ano = #{ano})
+		)
+	</insert>
+	<!-- 찜목록 보기 -->
+	<select id="favorView" resultType="aVO" parameterType="int">
+		SELECT
+		    aname, aloc, nvl(atel, '번호없음') atel
+		FROM
+		    (select ano from favorite where mno = #{mno}) no,
+		    areainfo af
+		WHERE
+		    af.ano = no.ano
+		    AND isshow = 'Y'
+	</select>
+	<!-- 찜 목록 정렬 -->
+	<select id="favorSort" resultType="aVO" parameterType="faVO">
+		SELECT
+		    aname, aloc, nvl(atel, '번호없음') atel
+		FROM
+		    (select ano from favorite where mno = #{mno}) no,
+		    areainfo af
+		WHERE
+		    af.ano = no.ano
+		    AND atno = #{ano}
+		    AND isshow = 'Y'
+	</select>
+</mapper>

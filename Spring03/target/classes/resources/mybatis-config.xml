@@ -23,10 +23,12 @@
  		<typeAlias alias="rpVO" type="jeju.increpas.www.vo.RphotoVO" />
  		<typeAlias alias="faVO" type="jeju.increpas.www.vo.FavoriteVO" />
  		<typeAlias alias="meVO" type="jeju.increpas.www.vo.MemberVO" />
+ 		<typeAlias alias="aVO" type="jeju.increpas.www.vo.AreaInfoVO" />
 	</typeAliases>
 	
 	<!-- SQL.xml mapper -->
 	<mappers>
  		<mapper resource="jeju/increpas/www/sql/MainSQL.xml" />
+ 		<mapper resource="jeju/increpas/www/sql/FavoriteSQL.xml" />
 	</mappers>
 </configuration>

@@ -1,7 +1,7 @@
 package jeju.increpas.www.vo;
 
 public class FavoriteVO {
-	private int fno, mno, ano;
+	private int fno, mno, ano, atno;
 
 	public int getFno() {
 		return fno;
@@ -27,4 +27,11 @@ public class FavoriteVO {
 		this.ano = ano;
 	}
 	
+	public int getAtno() {
+		return atno;
+	}
+	
+	public void setAtno(int atno) {
+		this.atno = atno;
+	}
 }

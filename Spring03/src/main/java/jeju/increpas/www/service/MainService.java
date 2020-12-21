@@ -5,16 +5,16 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.ModelAndView;
 
-import jeju.increpas.www.dao.MainDao;
-import jeju.increpas.www.vo.InfoVO;
-import jeju.increpas.www.vo.MapVO;
-import jeju.increpas.www.vo.ReviewVO;
-import jeju.increpas.www.vo.RphotoVO;
+import jeju.increpas.www.dao.*;
+import jeju.increpas.www.vo.*;
 
 public class MainService {
 	
 	@Autowired
 	MainDao mDao;
+	@Autowired
+	FavorDao fDao;
+	
 	//localhost/jeju/min.jeju로 요청.
 	// < 메인 페이지 - 메인 폼 요청 > 서비스 함수
 	public void getMain(ModelAndView mv, MapVO mVO) {
@@ -39,6 +39,28 @@ public class MainService {
 		
 		mv.setViewName("main/mainPage");
 		return;
+	}
+	
+	// 찜하기 목록
+	public void getFavorView(ModelAndView mv, String id) {
+		int mno = fDao.getMno(id);
+		List<AreaInfoVO> list = fDao.getFavoriteView(mno);
+		
+		mv.addObject("LIST", list);
+		
+		mv.setViewName("favor/favorView");
+	}
+	
+	// 찜하기 목록 정렬
+	public void sortFavorView(ModelAndView mv, FavoriteVO faVO) {
+		
+		System.out.println("fVO.mno : " +faVO.getMno());
+		System.out.println("fVO.ano : " +faVO.getAno());
+		
+		List<AreaInfoVO> list = fDao.sortFavorView(faVO);
+		
+		mv.addObject("LIST", list);		
+		mv.setViewName("favor/favorView");
 	}
 	
 }
