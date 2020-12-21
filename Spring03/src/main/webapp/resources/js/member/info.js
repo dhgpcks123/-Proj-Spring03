@@ -52,7 +52,5 @@ $(document).ready(function(){
 		// 동기 방식 처리
 		var sno = $('#mno').val();
 		$('#dfrm').submit(); 
-		
-	
 	});
 });
