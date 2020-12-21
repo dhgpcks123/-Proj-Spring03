@@ -293,8 +293,9 @@
 					</div>
 
 					<!-- 사용자 리뷰 데이터 -->
-					<section style="display: flex; flex-direction: column; border-top: 1px solid #ECEAEB; margin-left: 60px; margin-right: 40px;" id="wReviewSuccess">
+					<section style="display: flex; flex-direction: column; border-top: 1px solid #ECEAEB; margin: 50px 40px 0px 60px;" id="wReviewSuccess">
 					<c:forEach var="data" items="${REVIEW}">
+					<div style="border-bottom:1px solid #ECEAEB; padding-bottom: 20px;" id="Review${data.rno}">
 						<!-- 리뷰 타이틀 & 평점-->
 						<div style="background-color: #F6F6F6; margin-top: 10px; display: flex; justify-content: space-between; border-bottom: 1px solid #ECEAEB; padding: 0px 20px;">
 							<h3 style="cursor: pointer; margin-top: 15px;">${data.rtitle}</h3>
@@ -307,7 +308,7 @@
 							</h3>
 						</div>
 						<!-- 리뷰 작성자 아이디 및 작성일 -->
-						<div class="tbFont" style="display: flex; border-bottom: 1px solid #ECEAEB; padding-right: 20px;">
+						<div class="tbFont" style="display: flex; border-bottom: 1px solid  #ECEAEB; padding-right: 20px;">
 							<div style="margin-left: 45px;">작성자 :</div>
 							<div>${data.id}</div>
 							<div style="margin-left: 45px;">작성일 :</div>
@@ -316,7 +317,7 @@
 							<div>${data.rhit}</div>
 						</div>
 						<!-- 리뷰 본문글 및 사진 -->
-						<div class="tbFont" style="border-bottom: 1px solid #ECEAEB; margin-bottom: 10px;">
+						<div class="tbFont" style="margin-bottom: 10px;">
 							<!-- 본문 글 -->
 							<div style="margin-top: 20px; padding-right: 33px; display: inline-block;">
 								${data.rbody}
@@ -333,6 +334,13 @@
 							</c:if>
 							</c:forEach>
 							</div>
+							
+							<!-- 리뷰 삭제 버튼 -->
+							<c:if test="${data.id==sessionScope.SID}">
+							<div style="display: flex; justify-content:flex-end;">
+								<div class="reviewDelbtn" style="padding-right: 13px; cursor: pointer; display: inline-block;" id="del${data.rno}">삭제 <i class="far fa-trash-alt"></i></div>
+							</div>
+							</c:if>
 							<!-- 리뷰 수정 버튼 -->
 							<c:if test="${data.id==sessionScope.SID}">
 							<div style="display: block">
@@ -370,12 +378,9 @@
 										<input type="file" style="display: none; width: 500px;"	class="reFile4" name="file">
 									</div>
 							</form>
-							
-							
-							
-							
 							</c:if>
 						</div>
+					</div>	
 					</c:forEach>
 					</section>
 					<!--  사용자 리뷰 글쓰기 -->

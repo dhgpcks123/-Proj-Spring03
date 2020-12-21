@@ -74,7 +74,6 @@ public class MainController {
 		String ano = req.getParameter("ANO");
 		
 		faVO.setAno(Integer.parseInt(ano));
-		System.out.println("###################"+ano);
 		faVO.setMno(mno);
 		int check = mDao.favorCheck(faVO);
 		
