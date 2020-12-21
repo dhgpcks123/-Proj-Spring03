@@ -293,6 +293,36 @@ $(document).ready(function(){
 		var delimgrno = DelImgRno.substring(6);
 		$('#fr'+delimgrno).append('<input type="hidden" class="delfile delfile'+delimgrno+'" name="delfile" value="'+pno+'">')
 	})
+	
+//########################### 게시글 삭제 ##################################
+	$('.reviewDelbtn').click(function(){
+		let check = confirm('정말 삭제하시겠습니까?', '예', '아니오');
+		if(check == true ){
+			let delrno = $(this).attr('id');
+			delrno = delrno.substring(3);
+		
+			let delrnoForm ={
+				'RNO' : delrno
+			}
+			
+			$.ajax({
+				url: '/www/delWriteProc.jeju',
+				data: delrnoForm,
+				dataType: 'html',
+				type:'POST',
+				contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+				success:function(obj){
+					if(obj == 'OK'){
+						$('#Review'+delrno).slideUp();
+					};
+				},
+				error:function(){
+					alert('리뷰 삭제 서버 통신 에러');
+				}
+			});
+		
+		}
+	})
 });
 
 
