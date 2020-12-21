@@ -1,31 +1,44 @@
 $(document).ready(function(){
+/* ######################## */
+/* ### 로고 눈동자 작업 ### */
+/* ######################## */
 	$('#infoBtn').click(function(){
 		$('#frm').submit();
 				return;
 	});
-	var 눈알 = function (selector) {
-	         var 눈 = document.querySelector(selector),
-	            눈동자 = 눈.querySelector('.topHeader__dot'),
-	            눈영역 = 눈.getBoundingClientRect();
+	let eyes = function (selector) {
+	         let eye = document.querySelector(selector),
+	            dot = eye.querySelector('.topHeader__dot'),
+	            eyeArea = eye.getBoundingClientRect();
 	   
-	         var 눈알굴리기 = function (mouseX, mouseY) {
-	            var 라디안 = Math.atan2( mouseY - (눈영역.y + 눈영역.height * 0.5), mouseX - (눈영역.x + 눈영역.width * 0.5) );
-	            눈동자.style.transform = 'rotate(' + (180 * 라디안 / Math.PI - 90) + 'deg)';
+	         let action = function (mouseX, mouseY) {
+	            let rad = Math.atan2( mouseY - (eyeArea.y + eyeArea.height * 0.5), mouseX - (eyeArea.x + eyeArea.width * 0.5) );
+	            dot.style.transform = 'rotate(' + (180 * rad / Math.PI - 90) + 'deg)';
 	         };
 	   
 	         return {
-	            눈알굴리기: 눈알굴리기
+	            action: action
 	         };
 	   };
 	   
-	   var 왼눈 = 눈알('.topHeader__eye1');
-	   var 오른눈 = 눈알('.topHeader__eye2');
+	   let lefteye = eyes('.topHeader__eye1');
+	   let righteye = eyes('.topHeader__eye2');
 	   
 	window.addEventListener('mousemove', function (e) {
-	         왼눈.눈알굴리기(e.pageX, e.pageY);
-	         오른눈.눈알굴리기(e.pageX, e.pageY);
+	         lefteye.action(e.pageX, e.pageY);
+	         righteye.action(e.pageX, e.pageY);
 	});
 	
+/* ############################### */
+/* ### 어디로갈까? 버튼 이벤트 ### */
+/* ############################### */
+	$('#suggestBtn').click(function(){
+		$(location).attr('href','/www/suggest.jeju');
+	});
+	
+/* ######################## */
+/* ### 찜하기 관련 기능 ### */
+/* ######################## */
 	//로그인 안 되어 있는데 찜하기 버튼 눌렀을 때
 	$('#nonLogfavor').click(function(){
 		alert('로그인해야 사용할 수 있습니다');

@@ -1,10 +1,10 @@
 package jeju.increpas.www.controller;
 
 
-import java.util.Enumeration;
 
 import javax.servlet.http.*;
 
+import org.slf4j.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.http.*;
 import org.springframework.stereotype.*;
@@ -22,6 +22,8 @@ public class MainController {
 	MainService mService;
 	@Autowired
 	MainDao mDao;
+	
+	private final Logger log = LoggerFactory.getLogger(MainController.class); //로깅처리 - AOP!
 	
 	// < 메인 페이지 - 메인 폼 요청 >
 	@RequestMapping("/main.jeju")
@@ -44,6 +46,7 @@ public class MainController {
 			//로그인 성공
 			String id = memberVO.getId();
 			session.setAttribute("SID", id);
+			log.info("### "+id+"님 ] 로그인");
 		}else {
 			//로그인 실패
 		}
@@ -53,6 +56,8 @@ public class MainController {
 	// < 메인 페이지 - 로그아웃 Proc 요청 >
 	@RequestMapping("/logoutProc.jeju")
 	public ModelAndView logoutProc(ModelAndView mv, HttpSession session) {
+		String id = (String)session.getAttribute("SID");
+		log.info("### "+id+"님 ] 로그아웃");
 		session.removeAttribute("SID");
 		mv.setViewName("redirect:/main.jeju");
 		return mv;

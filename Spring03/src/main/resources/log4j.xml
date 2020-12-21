@@ -18,7 +18,7 @@
 
 <!-- 	 Appenders : ▽파일추가 클래스 -->
 	<appender name="file" class="org.apache.log4j.FileAppender">
-		<param name="file" value="${catalina.base}/webapps/jeju/log/log.log" />
+		<param name="file" value="${catalina.base}/webapps/jeju/log.log" />
 		<param name="Append" value="true" />
 		<layout class="org.apache.log4j.PatternLayout">
 			<param name="ConversionPattern" 
@@ -27,7 +27,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="org.springframework" additivity="false">
+	<logger name="jeju.increpas.www">
 		<level value="info" />
 <!-- 			<appender-ref ref="rolling" /> -->
 <!-- 			<appender-ref ref="dailyout" /> -->
