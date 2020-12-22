@@ -48,11 +48,30 @@
 							</tr>
 							<tr>
 								<th scope="row">휴대폰번호<span id="mberNmSpan" title="필수입력" class="color01">＊</span></th>
-								<td>
-									<div class="input-3cols">
-										<div class="w3-col w3-text-grey ft18px mh3">
-											<span class="w3-twothird w3-center" id="cTel">${DATA.tel}</span>
-										</div>
+								<td class="edit">
+									<div class="w3-col w3-text-grey">
+										<span class="w3-twothird w3-center mt7 ft18px" id="cTel">${DATA.tel}</span>
+	                       				<button type="button" name="edit1" class="w3-button w3-cell m2 w3-orange w3-hover-deep-orange w3-right">Edit</button>
+									</div>
+									<form id="telfrm" name="telfrm" style="display: none;" class="w3-col w3-padding">
+										<input type="hidden" name="id" value="${SID}">
+										<input type="text" class="w3-col m8 w3-input w3-border w3-center ft18px" id="tel" name="tel" value="${DATA.tel}">
+	                       				<button type="button" name="save" class="w3-button w3-medium w3-red w3-hover-orange mt0 w3-right">Save</button>
+										<!-- 
+										<select title="핸드폰 번호 앞자리 선택" name="cryalTelno1" id="cryalTelno1" class="selectBox">
+											<option selected="selected" value="">선택</option>
+												<option value="010">010</option>
+												<option value="011">011</option>
+												<option value="016">016</option>
+												<option value="017">017</option>
+												<option value="018">018</option>
+												<option value="019">019</option>
+										</select> -
+										<input type="text" title="핸드폰 가운데 번호" name="cryalTelno2" id="cryalTelno2" maxlength="4"> -
+										<input type="text" title="핸드폰 마지막 번호" name="cryalTelno3" id="cryalTelno3" maxlength="4">
+										 -->
+									</form>
+								</td>	
 								<!-- 
 										<select title="핸드폰 번호 앞자리 선택" name="cryalTelno1" id="cryalTelno1" class="selectBox">
 											<option selected="selected" value="">선택</option>
@@ -72,6 +91,7 @@
 							</tr>
 							<tr>
 								<th scope="row">혈액형</th>
+								<!-- 
 								<td>
 									<div class="input-3cols">
 										<div class="w3-col w3-text-grey ft18px mh3">
@@ -79,6 +99,23 @@
 										</div>
 									</div>
 								</td>
+								 -->
+								<td class="edit">
+									<div class="w3-col w3-text-grey">
+										<span class="w3-twothird w3-center mt7 ft18px" id="cBl1">${DATA.blood1}</span>
+	                       				<button type="button" name="edit2" class="w3-button w3-cell m2 w3-orange w3-hover-deep-orange w3-right">Edit</button>
+									</div>
+									<form id="bl1frm" name="bl1frm" style="display: none;" class="w3-col w3-padding">
+										<input type="hidden" name="id" value="${SID}">
+<c:forEach var="data" items="${LIST1}">
+										<div class="w3-col m2 w3-center w3-padding">
+											<input type="radio" class="w3-col w3-radio-medium blood1" name="blood1" value="${data.blood1}">
+												<span class="w3-twothird w3-center chkbl1">${data.blood1}</span>
+										</div>
+</c:forEach>	
+	                       				<button type="button" name="save" class="w3-button w3-medium w3-red w3-hover-orange mt0 w3-right">Save</button>
+									</form>
+								</td>	
 							</tr>
 							<tr>
 								<th scope="row">PH형</th>
@@ -168,7 +205,7 @@
 				<button class="w3-button w3-cell m2 btnType1 w3-orange w3-hover-deep-orange" id="iebtn">정보수정</button>
 				<button class="w3-button w3-cell m2 btnType1 w3-red w3-hover-pale-red" id="dbtn">탈 퇴</button>
 			
-			<!-- 탈퇴버튼 팝업 -->
+				<!-- 탈퇴버튼 팝업 -->
 				<form method="POST" action="/www/member/memberDel.jeju"  
 						id="dfrm" name="dfrm" style="display: none;"
 						class="w3-col w3-card-4 w3-padding w3-margin-bottom">
