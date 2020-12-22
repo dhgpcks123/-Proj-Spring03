@@ -13,11 +13,12 @@
 <link rel="stylesheet" type="text/css" href="css/main/mapStyle.css">
 <link rel="stylesheet" type="text/css" href="css/detailBoard/detailBoard.css">
 <link rel="stylesheet" type="text/css" href="css/main/mainPage.css">
+<link rel="stylesheet" type="text/css" href="css/component/topHeader.css">
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0997e0901ce72cd4e333dc4602ad8e94&libraries=services"></script>
 <script type="text/javascript" src="/www/js/detailBoard.js"></script>
-<script type="text/javascript" src="/www/js/mainPage.js"></script>
+<script type="text/javascript" src="/www/js/component/topHeader.js"></script>
 <script type="text/javascript" src="/www/js/memberLogin.js"></script>
-<script src="https://kit.fontawesome.com/e6e9b86680.js"	crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/e6e9b86680.js"></script>
 
 </head>
 
@@ -49,8 +50,8 @@
 			</div>
 		</div>
 	</div>	
-<!-- 비로그인 시 보이는 화면 -->
-<c:if test="${empty sessionScope.SID}">
+	<!-- 비로그인 시 보이는 화면 -->
+	<c:if test="${empty sessionScope.SID}">
 	<div class="topHeader__column">
        	<!-- 로그인 창 -->
        	<form class="topHeader__loginform" method="POST" action="/www/loginProc.jeju" id="loginFrm" name="loginFrm">
@@ -64,15 +65,14 @@
        		</div>
        	</form>   
     </div>
-</c:if>
-
-<!-- 로그인 시 보이는 화면 -->
-<c:if test="${not empty sessionScope.SID}">
+	</c:if>
+	<!-- 로그인 시 보이는 화면 -->
+	<c:if test="${not empty sessionScope.SID}">
     <div class="topHeader__column">
     	<div class="topHeader__logoutForm">
 	       	<!-- 내 정보보기 -->
 	       	<div class="logoutForm_LeftCol logoutForm__Col">
-		       	<div class="topHeader__welcomeId">[  ${sessionScope.SID}  ] <i class="fas fa-dragon"></i> </div>
+		       	<div class="topHeader__welcomeId">[  ${sessionScope.SID}  ] </div>
 		       	<div class="topHeader__welcome">님 방문을 환영합니다</div>
 	       	</div>	       	
 	       	<div class="logoutForm_RightCol logoutForm__Col">
@@ -88,6 +88,7 @@
 <form method="POST" action="/www/member/memberInfo.jeju" id="frm" name="frm">
 	<input type="hidden" name="id" value="${SID}">
 </form>
+
 <!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
 <!--	#				  사이드패널 					#	-->
 <!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
@@ -250,13 +251,13 @@
 								<i class="fas fa-pencil-alt"></i><a href="#wReviewfrm"> 리뷰 쓰기</a>
 							</div>
 					<c:if test="${empty sessionScope.SID}">
-							<div class="w3-button" style="font-size: 15pt;" id="nonLogfavor" name=${STORE.get(0).ano}>
-								<i class="far fa-bookmark"></i> 찜 하기 <!-- 비어있음 여긴 아예 쓰질 못해 -->
+							<div class="w3-button" style="font-size: 15pt;" id="nonLogfavor" name="${STORE.get(0).ano}">
+								<i class="far fa-bookmark"></i> 찜 하기
 							</div>
 					</c:if>
 					<c:if test="${not empty sessionScope.SID}">
 							<div class="w3-button" style="font-size: 15pt;" id="favor" name="${STORE.get(0).ano}">
-								<i class="far fa-bookmark"></i> 찜 하기<!-- 비어있음, 이 경우만 찜하기 작동 될 거임 -->
+								<i class="far fa-bookmark"></i> 찜 하기
 							</div>
 					</c:if>
 						</div>
