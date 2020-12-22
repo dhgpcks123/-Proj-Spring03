@@ -19,8 +19,6 @@ import jeju.increpas.www.controller.*;
 import com.oreilly.servlet.*;
 import com.oreilly.servlet.multipart.*;
 
-
-
 @Controller
 @RequestMapping("/member")
 public class Member {
@@ -32,6 +30,10 @@ public class Member {
 	@RequestMapping("/login.jeju") // 클래스의 /member 와 함수의 /login.www 를 합쳐서 /member/login.www 로 처리
 	public String loginPage() {
 		return "member/login";
+	}
+	@RequestMapping("/memberJoinEnd.jeju") // 클래스의 /member 와 함수의 /login.www 를 합쳐서 /member/login.www 로 처리
+	public String memberJoinEnd() {
+		return "member/memberJoinEnd";
 	}
 
 	private static final Logger logger = LoggerFactory.getLogger(Member.class);
@@ -184,8 +186,8 @@ public class Member {
 		}
 
 		// 회원가입 가입 처리 요청 
-		@RequestMapping(value="/joinProc.jeju")
-		public ModelAndView joinProc(ModelAndView mv, HttpSession session, MemberVO mbVO) {
+		@RequestMapping(value="/joinProc.jeju" )
+		public ModelAndView joinProc(ModelAndView mv, HttpSession session, MemberVO mbVO ) {
 			System.out.println("### cont vo id : " + mbVO.getId());
 
 			// VO 가 완성됬으니 데이터베이스 작업하고
@@ -199,12 +201,22 @@ public class Member {
 				e.printStackTrace();
 				cnt=0;
 			}
-
+			System.out.println("**************************** 로그인처리");
 			if(cnt == 1) {
 				// 성공하면 로그인처리하고
 				session.setAttribute("SID", mbVO.getId());
-				// 메인페이지로 이동하고
-				mv.setViewName("redirect:/member/memberJoinEnd.jeju");
+				
+				System.out.println("**************************** 데이터");
+				// 데이터 가져오기 
+				String id = mbVO.getId();
+				if(id != null) {
+					mbVO=mbDao.getInfo(id);
+					mv.addObject("DATA",mbVO);
+				}
+				
+				System.out.println("**************************** 페이지이동");
+				// 가입완료페이지로 이동하고
+				mv.setViewName("member/memberJoinEnd");
 			} else {
 				// 실패한 경우
 				// 회원가입페이지로 다시 이동시키고

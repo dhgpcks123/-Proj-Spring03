@@ -62,4 +62,15 @@
 		SET	isshow='N'
 		WHERE pno = #{pno}
 	</update>
+	
+	<!-- < 리뷰 게시판 - 리뷰 삭제 proc 요청 > 처리함수 -->
+	<!-- 리뷰 파일 삭제 업데이트 요청 -->
+	<update id="delWriteFile" parameterType="int">
+		UPDATE rphoto SET isshow='N' WHERE rpno = #{rno}
+	</update>
+	<!-- 리뷰 게시글 삭제 업데이트 요청 -->
+	<update id="delWriteInfo" parameterType="int">
+		UPDATE review SET isshow='N' WHERE rno = #{rno}
+	</update>
+	
 </mapper>

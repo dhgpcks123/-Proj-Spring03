@@ -32,6 +32,7 @@
 	</beans:bean>
 	
 	<!-- bean처리 설정파일 import -->
+	<beans:import resource="interceptorContext.xml"/>
 	<beans:import resource="daoContext.xml"/>
 	<beans:import resource="utilContext.xml"/>
 	<beans:import resource="serviceContext.xml"/>

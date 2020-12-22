@@ -82,26 +82,21 @@
 				member
 		</selectKey>
 		INSERT INTO 
-			member(mno, id, mname, pw, mail, tel, joindate, gen, blood1, blood2, birth, sos)
+			member(mno, id, mname, pw, mail, tel, joindate, gen, blood1, blood2, birth, sos, rel, addmsg)
 		VALUES( 
-			#{mno}, #{id}, #{mname}, #{pw}, #{mail}, #{tel}, sysdate, #{gen}, #{blood1}, #{blood2}, TO_DATE(#{birth}), #{sos} 
+			#{mno}, #{id}, #{mname}, #{pw}, #{mail}, #{tel}, sysdate, #{gen}, #{blood1}, #{blood2}, TO_DATE(#{birth}), #{sos}, #{rel}, #{addmsg} 
 		) 
 	</insert>
 
 	<update id="editMember" parameterType="mbVO">
 		UPDATE
 			member
-		<!--
-			형식 ] 	
-				<trim prefix="SET" suffixOverrides=",">내용</trim>
-		 
-		 <trim prefix="SET" suffixOverrides=",">	
-			<if test="mail neq null">mail = #{mail},</if>			
-			<if test="avt neq 0">avt = #{avt},</if>	
-		</trim>		
-		-->
 		<set>
 			<if test="mail neq null">mail = #{mail},</if>
+			<if test="tel neq null">tel = #{tel},</if>
+			<if test="sos neq null">sos = #{sos},</if>
+			<if test="blood1 neq null">blood1 = #{blood1},</if>
+			<if test="blood2 neq null">blood2 = #{blood2},</if>
 		</set>
 		WHERE
 			id = #{id}

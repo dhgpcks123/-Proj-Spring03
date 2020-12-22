@@ -23,6 +23,7 @@
  		<typeAlias alias="rVO" type="jeju.increpas.www.vo.ReviewVO" />
  		<typeAlias alias="rpVO" type="jeju.increpas.www.vo.RphotoVO" />
  		<typeAlias alias="memberVO" type="jeju.increpas.www.vo.MemberVO" />
+ 		<typeAlias alias="faVO" type="jeju.increpas.www.vo.FavoriteVO" />
 	</typeAliases>
 	
 	<!-- SQL.xml mapper -->
@@ -30,5 +31,7 @@
  		<mapper resource="jeju/increpas/www/sql/MainSQL.xml" />
  		<mapper resource="jeju/increpas/www/sql/MemberSQL.xml" />
  		<mapper resource="jeju/increpas/www/sql/ReviewSQL.xml" />
+ 		<mapper resource="jeju/increpas/www/sql/SuggestSQL.xml" />
+ 		<mapper resource="jeju/increpas/www/sql/FavoriteSQL.xml" />
 	</mappers>
 </configuration>

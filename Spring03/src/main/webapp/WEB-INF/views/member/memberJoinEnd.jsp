@@ -24,12 +24,14 @@
 			<h1 class="mtb50">환영합니다!</h1>
 			<i class="far fa-check-circle" style="width: 70px; height: 70px; "></i>
 			<span class="input_chk mtb50">
-				<span class="chk_all"><strong>name</strong>님의 아이디는 <strong class="w3-text-red">id</strong>입니다.</span><br>
+				<span class="chk_all"><strong>${DATA.mname}</strong>님의 아이디는 <strong class="w3-text-red">${DATA.id}</strong>입니다.</span><br>
 				<span class="chk_all">지금 바로 시작해보세요.</span>
 			</span>
 	    </div>  	
 				
-	       <button  class="w3-button w3-blue startbtn">시작하기</button>
+	       <div class="w3-button w3-blue w3-hover-aqua startbtn startbtnh">
+	       		<a href="/www/main.jeju">시작하기</a>
+	       	</div>
 	     </form>
 		</div>
    </div>

@@ -83,4 +83,22 @@ public class ReviewDao {
 		}
 		return;
 	}
+	
+//	< 리뷰 게시판 - 리뷰 삭제 proc 요청> 처리함수 rpno지우고 rno지우고
+		// 리뷰 파일 삭제 업데이트 요청
+		public int delWriteFile(int rno) {
+			return sqlSession.update("rSQL.delWriteFile", rno);
+		}
+		// 리뷰 게시글 삭제 업데이트 요청
+		public int delWriteInfo(int rno) {
+			return sqlSession.update("rSQL.delWriteInfo", rno);
+		}
+		// 리뷰 정보/파일 업데이트 요청
+		@Transactional
+		public int delWriteAll(int rno) {
+			delWriteFile(rno);
+			int cnt = delWriteInfo(rno);
+			return cnt;
+		}
+		
 }

@@ -38,4 +38,9 @@ public class MainDao {
 	public List<MapVO> getMarklist(){
 		return sqlSession.selectList("mSQL.getMarklist");
 	}
+	// 맵 정보 가져오기
+		public List<MapVO> getMapInfo(){
+			return sqlSession.selectList("mSQL.getMapInfo");
+	}
+
 }

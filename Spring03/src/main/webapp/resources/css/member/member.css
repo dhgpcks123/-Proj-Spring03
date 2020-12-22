@@ -343,3 +343,23 @@ span#wbtn {
     color: red;
     padding-bottom: 20px;
 }
+
+.startbtn {
+	padding-top: 17px;
+	font-size : 45px;
+	width: 300px;
+	height: 100px;
+}
+.startbtn > a {
+	text-decoration:none;
+	padding-top: 17px;
+	font-size : 45px;
+}
+
+.startbtn:hover {
+	font-weight:bold;
+	padding-top: 17px;
+	font-size : 45px;
+	width: 300px;
+	height: 100px;
+}
