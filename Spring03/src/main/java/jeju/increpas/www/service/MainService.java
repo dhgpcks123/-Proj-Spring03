@@ -14,7 +14,9 @@ public class MainService {
 	
 	@Autowired
 	MainDao mDao;
-	//localhost/jeju/min.jeju로 요청
+	
+	@Autowired
+	FavorDao fDao;
 	
 	// < 메인 페이지 - 메인 폼 요청 > 서비스 함수
 	public void getMain(ModelAndView mv, MapVO mVO) {
@@ -66,4 +68,7 @@ public class MainService {
 			
 			return buff.toString();
 	}
+	
+	
+		
 }

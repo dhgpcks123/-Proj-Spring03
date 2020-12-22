@@ -69,28 +69,4 @@ public class MainController {
 		String str = mService.markerlist();
 		return str;
 	}
-	// 찜하기 처리
-	@ResponseBody
-	@RequestMapping("/AddFavorite.jeju")
-	public String AddFavorite(HttpServletRequest req, HttpSession session, FavoriteVO faVO) {
-		String id = (String)session.getAttribute("SID");
-		int mno = mDao.getMno(id);
-		
-		String ano = req.getParameter("ANO");
-		
-		faVO.setAno(Integer.parseInt(ano));
-		faVO.setMno(mno);
-		int check = mDao.favorCheck(faVO);
-		
-		String faCheck;
-		
-		if(check == 1){
-			faCheck = "NO";
-		} else {
-		 	mDao.AddFavorite(faVO);
-		 	faCheck="OK";
-		}
-		return faCheck;
-	}
-	
 }

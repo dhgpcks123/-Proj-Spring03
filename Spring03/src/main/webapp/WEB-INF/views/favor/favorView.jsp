@@ -1,28 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>어디로 갈까?</title>
-<link rel="stylesheet" type="text/css" href="/www/css/w3.css">
-<link rel="stylesheet" type="text/css" href="/www/css/suggestBoard/suggestBoard.css" />
+<title>File Board List</title>
 <link rel="stylesheet" type="text/css" href="css/cls.css">
-<link rel="stylesheet" type="text/css" href="css/main/mainPage.css">
+<link rel="stylesheet" type="text/css" href="css/w3.css">
 <link rel="stylesheet" type="text/css" href="css/component/topHeader.css">
-<script type="text/javascript" src="/www/js/jquery-3.5.1.min.js"></script> 
-<script type="text/javascript" src="/www/js/suggestBoard/suggestBoard.js"></script>
-<script type="text/javascript" src="/www/js/detailBoard.js"></script>
+
+<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="js/favorView.js"></script>
 <script type="text/javascript" src="/www/js/component/topHeader.js"></script>
 <script type="text/javascript" src="/www/js/memberLogin.js"></script>
-<link rel="stylesheet" type="text/css" href="/www/css/main/mainPage.css">
 <script src="https://kit.fontawesome.com/e6e9b86680.js"></script>
 </head>
-<body>
 <!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
 <!--	#			 	메인 상단 헤더 부분			 	#	-->
 <!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
-<div class="topHeader">
+<div class="topHeader" style="margin-bottom: 30px;">
 	<div class="topHeader__column">
 		<div class="topHeader__column-backwhite">
 			<div class="topHeader__desc">
@@ -46,8 +42,8 @@
 			</div>
 		</div>
 	</div>	
-<!-- 비로그인 시 보이는 화면 -->
-<c:if test="${empty sessionScope.SID}">
+	<!-- 비로그인 시 보이는 화면 -->
+	<c:if test="${empty sessionScope.SID}">
 	<div class="topHeader__column">
        	<!-- 로그인 창 -->
        	<form class="topHeader__loginform" method="POST" action="/www/loginProc.jeju" id="loginFrm" name="loginFrm">
@@ -61,10 +57,9 @@
        		</div>
        	</form>   
     </div>
-</c:if>
-
-<!-- 로그인 시 보이는 화면 -->
-<c:if test="${not empty sessionScope.SID}">
+	</c:if>
+	<!-- 로그인 시 보이는 화면 -->
+	<c:if test="${not empty sessionScope.SID}">
     <div class="topHeader__column">
     	<div class="topHeader__logoutForm">
 	       	<!-- 내 정보보기 -->
@@ -85,56 +80,53 @@
 <form method="POST" action="/www/member/memberInfo.jeju" id="frm" name="frm">
 	<input type="hidden" name="id" value="${SID}">
 </form>
+<!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
+<!--	#			 	본문 내용					 	#	-->
+<!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
 
+<body>
+	<div class="w3-content mw800">
+		<!-- top -->
+		<div class="w3-col w3-center w3-card-4">
+			<!-- 타이틀 -->
+			<div class="w3-col w3-pink w3-padding txt24">${SID} 님의 찜 목록</div>
 
-   <nav>
-      <div class="header-bar">
-         <div class="header-bar__column btn header-bar__mainBtn w3-button" id="goToMain">
-            메인으로
-         </div>
-         <div class="header-bar__column header-bar__listBtn">
-            <select id="selectedList">
-               <option value="30">식당</option>
-               <option value="10">관광지</option>
-               <option value="20">숙소</option>
-               <option value="all" selected>장소랜덤</option>
-            </select>
-            <span>을 추천해주세요</span>
-         </div>
-      </div>
-   </nav>
-   
-   <section>
-      <div class="suggest w3-card-4">
-         <div class="suggest__body">
-            <div class="suggest__number suggest__text" style="height: 30%!important">
-               <span>오늘의~ 행운 번호는&nbsp;&nbsp;</span>
-               <span id=luckyNo></span>
-            </div>
-            <div class="suggest__menu suggest__text">
-               <div class="suggest__menu__box">
-                  <span class="suggest__menu__name">추천장소 뽑기를 누르세요!</span>
-                  <div style="width:100%; height:0.3px; background-color: gray"></div>
-                  <span class="suggest__menu__loc"></span>
-                  <form action="/www/main.jeju" method="GET" id="detailForm">
-	                  <input type="hidden" name="ax" id="ax" value="0">
-	                  <input type="hidden" name="ay" id="ay" value="">
-                  </form>
-               </div>
-               <span id="abody" style="font-size: 14px; margin-top:10px;"></span>
-            </div>
-         </div>
-         <div class="ipad__button"></div>
-      </div>
-      <div class="lower-bar">
-         <div class="lower-bar__ranBtn w3-button btn w3-card" id="getSuggestBtn">
-            <span>추천장소 뽑기</span>
-         </div>
-         <div class="lower-bar__mapBtn w3-button btn w3-card" id="showDetailBtn">
-            <span>장소 자세히보기</span>
-         </div>
-      </div>
-      
-   </section>
+			<!-- 메뉴 -->
+			<div class="w3-col">
+				<div class="w3-col m1 w3-deep-orange w3-hover-lime w3-button w3-left"  style="width:130px;"
+					id="hbtn">home</div>
+	<c:if test="${not empty SID}">
+				<div class="w3-col m1 w3-gray w3-hover-green w3-button w3-right sbtn" style="width:130px;"
+					id="sbtn5">응급 모아보기</div>
+				<div class="w3-col m1 w3-yellow w3-hover-lime w3-button w3-right sbtn" style="width:130px;" 
+					id="sbtn4">식당 모아보기</div>
+				<div class="w3-col m1 w3-green w3-hover-teal w3-button w3-right sbtn" style="width:130px;" 
+					id="sbtn3">병원 모아보기</div>
+				<div class="w3-col m1 w3-blue w3-hover-aqua w3-button w3-right sbtn" style="width:130px;" 
+					id="sbtn2">숙박 모아보기</div>
+				<div class="w3-col m1 w3-orange w3-hover-deep-orange w3-button w3-right sbtn" style="width:130px;" 
+					id="sbtn1">관광 모아보기</div>
+
+	</c:if>
+				<div class="w3-rest w3-purple" style="opacity: 0.7; height: 39px;"> </div>
+			</div>
+		</div>
+
+		<!-- 게시글리스트 -->
+		<div class="w3-col w3-margin-top w3-padding w3-card-4">
+			<div class="w3-col w3-center w3-border w3-margin-top">
+				<div class="w3-col m3 w3-light-grey w3-border-right">장소이름</div>
+				<div class="w3-col m6 w3-light-grey w3-border-right">장소경로</div>
+				<div class="w3-col m3 w3-light-grey w3-border-right">전화번호</div>
+			</div>
+			<div class="w3-col w3-border-left w3-border-bottom w3-margin-bottom">
+				<c:forEach var="data" items="${LIST}">
+					<div class="w3-col m3 w3-border-right">${data.aname}</div>
+					<div class="w3-col m6 w3-border-right">${data.aloc}</div>
+					<div class="w3-col m3 w3-border-right">${data.atel}</div>
+				</c:forEach>
+			</div>
+		</div>
+	</div>
 </body>
-</html>
+</html> 

@@ -13,11 +13,12 @@
 <link rel="stylesheet" type="text/css" href="css/main/mapStyle.css">
 <link rel="stylesheet" type="text/css" href="css/detailBoard/detailBoard.css">
 <link rel="stylesheet" type="text/css" href="css/main/mainPage.css">
+<link rel="stylesheet" type="text/css" href="css/component/topHeader.css">
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0997e0901ce72cd4e333dc4602ad8e94&libraries=services"></script>
 <script type="text/javascript" src="/www/js/detailBoard.js"></script>
-<script type="text/javascript" src="/www/js/mainPage.js"></script>
+<script type="text/javascript" src="/www/js/component/topHeader.js"></script>
 <script type="text/javascript" src="/www/js/memberLogin.js"></script>
-<script src="https://kit.fontawesome.com/e6e9b86680.js"	crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/e6e9b86680.js"></script>
 
 </head>
 
@@ -71,7 +72,7 @@
     	<div class="topHeader__logoutForm">
 	       	<!-- 내 정보보기 -->
 	       	<div class="logoutForm_LeftCol logoutForm__Col">
-		       	<div class="topHeader__welcomeId">[  ${sessionScope.SID}  ] <i class="fas fa-dragon"></i> </div>
+		       	<div class="topHeader__welcomeId">[  ${sessionScope.SID}  ] </div>
 		       	<div class="topHeader__welcome">님 방문을 환영합니다</div>
 	       	</div>	       	
 	       	<div class="logoutForm_RightCol logoutForm__Col">
