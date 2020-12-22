@@ -440,8 +440,8 @@
     <!-- 주소 정보 -->
 	<div class="map_wrap2">
 		<div class="hAddr">   
-	        <span class="title">주소 정보</span>
-	        <span id="centerAddr"></span>
+	        <span class="title" style="color:black!important;">주소 정보</span>
+	        <span id="centerAddr" style="color:black!important;"></span>
     	</div>
     	
     </div>
