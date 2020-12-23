@@ -36,6 +36,13 @@
 		chatarea = document.getElementById("chatarea");
 		chatarea.innerHTML = chatarea.innerHTML + "<br/>" +data
 	}
+	// 엔터키로 전송하기 이벤트
+	$("#message").keyup(function(key) {
+		if (key.keyCode == 13) {
+			send();
+		}
+	});
+	
 	
 	// ##### 연결을 해제합니다!
 	document.getElementById("exit").addEventListener("click", function() {
@@ -43,8 +50,9 @@
 		setTimeout(function(){			
 			disconnect();
 		}, 200);
-		
 	});
+	
+	
 	function exitMsg(){
 		id = document.getElementById("id").value;
 		websocket.send( "[ "+ id + " ] 님 퇴장하셨습니다");
