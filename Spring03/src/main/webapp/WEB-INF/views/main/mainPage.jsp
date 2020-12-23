@@ -76,6 +76,7 @@
 		       	<div class="topHeader__welcome">님 방문을 환영합니다</div>
 	       	</div>	       	
 	       	<div class="logoutForm_RightCol logoutForm__Col">
+	      		<div class="topHeader__btn w3-button w3-card" id="chatBtn"> 채팅서비스 </div>
 	      		<div class="topHeader__btn w3-button w3-card" id="suggestBtn"> 어디로 갈까?</div>
 	      		<div class="topHeader__btn w3-button w3-card" id="favoritBtn"> 찜 모아보기</div>
 		       	<div class="topHeader__btn w3-button w3-card" id="logoutbtn">로그아웃</div>
@@ -440,8 +441,8 @@
     <!-- 주소 정보 -->
 	<div class="map_wrap2">
 		<div class="hAddr">   
-	        <span class="title">주소 정보</span>
-	        <span id="centerAddr"></span>
+	        <span class="title" style="color:black!important;">주소 정보</span>
+	        <span id="centerAddr" style="color:black!important;"></span>
     	</div>
     	
     </div>

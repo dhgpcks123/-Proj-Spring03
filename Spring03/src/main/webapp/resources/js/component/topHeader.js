@@ -41,5 +41,11 @@ $(document).ready(function(){
 	$('#favoritBtn').click(function(){
 		$(location).attr('href','/www/FavorView.jeju');
 	});
+/* ############################### */
+/* ### 찜 모아보기 버튼 이벤트 ### */
+/* ############################### */
+	$('#chatBtn').click(function(){
+		$(location).attr('href','/www/chat.jeju');
+	});
 	
 });

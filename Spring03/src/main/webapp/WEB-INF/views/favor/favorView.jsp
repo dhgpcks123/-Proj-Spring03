@@ -15,6 +15,7 @@
 <script type="text/javascript" src="/www/js/memberLogin.js"></script>
 <script src="https://kit.fontawesome.com/e6e9b86680.js"></script>
 </head>
+<body>
 <!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
 <!--	#			 	메인 상단 헤더 부분			 	#	-->
 <!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
@@ -68,6 +69,7 @@
 		       	<div class="topHeader__welcome">님 방문을 환영합니다</div>
 	       	</div>	       	
 	       	<div class="logoutForm_RightCol logoutForm__Col">
+	       		<div class="topHeader__btn w3-button w3-card" id="chatBtn"> 채팅서비스 </div>
 	      		<div class="topHeader__btn w3-button w3-card" id="suggestBtn"> 어디로 갈까?</div>
 	      		<div class="topHeader__btn w3-button w3-card" id="favoritBtn"> 찜 모아보기</div>
 		       	<div class="topHeader__btn w3-button w3-card" id="logoutbtn">로그아웃</div>
@@ -84,7 +86,6 @@
 <!--	#			 	본문 내용					 	#	-->
 <!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
 
-<body>
 	<div class="w3-content mw800">
 		<!-- top -->
 		<div class="w3-col w3-center w3-card-4">
