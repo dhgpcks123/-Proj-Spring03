@@ -118,7 +118,7 @@ body{
 
 .topHeader__btn{
 	background-color: #ffcd36;
-	width: 125px;
+	max-width: 125px;
 	border-radius: 5px;
 	margin: 0px 3px;
 	border: 2px solid rgba(255, 255, 255, 0.3);
@@ -139,9 +139,11 @@ logoutForm__Col{
 }
 .logoutForm__LeftCol{
 	display: flex;
+	width: 40%;
 }
 .logoutForm__RightCol{
 	display:flex;
+	width: 60%;
 }
 .topHeader__welcomeId{
 	display: inline-block;
