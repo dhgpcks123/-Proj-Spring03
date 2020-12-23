@@ -69,4 +69,13 @@ public class MainController {
 		String str = mService.markerlist();
 		return str;
 	}
+	
+	// < 채팅 페이지 - 채팅 페이지 폼 요청 >
+	@RequestMapping("/chat.jeju")
+	public ModelAndView getChat(ModelAndView mv, HttpSession session) {
+		String id = (String)session.getAttribute("SID");
+		mv.setViewName("chat/chat");
+		return mv;
+	}
+	
 }
