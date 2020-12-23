@@ -56,7 +56,7 @@
 									<form id="telfrm" name="telfrm" style="display: none;" class="w3-col w3-padding">
 										<input type="hidden" name="id" value="${SID}">
 										<input type="text" class="w3-col m8 w3-input w3-border w3-center ft18px" id="tel" name="tel" value="${DATA.tel}">
-	                       				<button type="button" name="save" class="w3-button w3-medium w3-red w3-hover-orange mt0 w3-right">Save</button>
+	                       				<button type="button" name="save1" class="w3-button w3-medium w3-red w3-hover-orange mt0 w3-right">Save</button>
 										<!-- 
 										<select title="핸드폰 번호 앞자리 선택" name="cryalTelno1" id="cryalTelno1" class="selectBox">
 											<option selected="selected" value="">선택</option>
@@ -113,19 +113,37 @@
 												<span class="w3-twothird w3-center chkbl1">${data.blood1}</span>
 										</div>
 </c:forEach>	
-	                       				<button type="button" name="save" class="w3-button w3-medium w3-red w3-hover-orange mt0 w3-right">Save</button>
+	                       				<button type="button" name="save2" class="w3-button w3-medium w3-red w3-hover-orange mt0 w3-right">Save</button>
 									</form>
 								</td>	
 							</tr>
 							<tr>
-								<th scope="row">PH형</th>
+								<th scope="row ">PH형</th>
+						<!-- 
 								<td>
 									<div class="input-3cols">
 										<div class="w3-col w3-text-grey ft18px mh3">
 											<span class="w3-twothird w3-center" id="cBl2">${DATA.blood2}</span>
 										</div>
 									</div>
-								</td>
+								</td>	
+						 -->
+								<td class="edit ">
+									<div class="w3-col w3-text-grey">
+										<span class="w3-twothird w3-center mt7 ft18px" id="cBl1">${DATA.blood2}</span>
+	                       				<button type="button" name="edit3" class="w3-button w3-cell m2 w3-orange w3-hover-deep-orange w3-right">Edit</button>
+									</div>
+									<form id="bl2frm" name="bl2frm" style="display: none;" class="w3-col w3-padding">
+										<input type="hidden" name="id" value="${SID}">
+<c:forEach var="data" items="${LIST2}">
+										<div class="w3-col m3 w3-center w3-padding">
+											<input type="radio" class="w3-col w3-radio-medium blood2" name="blood2" value="${data.blood2}">
+												<span class="w3-twothird w3-center chkbl1">${data.blood2}</span>
+										</div>
+</c:forEach>	
+	                       				<button type="button" name="save3" class="w3-button w3-medium w3-red w3-hover-orange mt0 w3-right">Save</button>
+									</form>
+								</td>								
 							</tr>
 							<tr>
 								<th scope="row">생년월일</th>
@@ -153,6 +171,7 @@
 	
 							<tr>
 								<th scope="row">긴급연락처</th>
+							<!-- 
 								<td>
 									<div class="input-3cols">
 										<div class="w3-col w3-text-grey ft18px mh3">
@@ -160,9 +179,22 @@
 										</div>
 									</div>
 								</td>
+							 -->
+								<td class="edit">
+									<div class="w3-col w3-text-grey">
+										<span class="w3-twothird w3-center mt7 ft18px" id="cSos">${DATA.sos}</span>
+	                       				<button type="button" name="edit4" class="w3-button w3-cell m2 w3-orange w3-hover-deep-orange w3-right">Edit</button>
+									</div>
+									<form id="sosfrm" name="sosfrm" style="display: none;" class="w3-col w3-padding">
+										<input type="hidden" name="id" value="${SID}">
+										<input type="text" class="w3-col m8 w3-input w3-border w3-center ft18px" id="sos" name="sos" value="${DATA.sos}">
+	                       				<button type="button" name="save4" class="w3-button w3-medium w3-red w3-hover-orange mt0 w3-right">Save</button>
+									</form>
+								</td>	
 							</tr>
 							<tr>
 								<th scope="row">긴급연락처와의 관계</th>
+							<!-- 
 								<td>
 									<div class="input-3cols">
 										<div class="w3-col w3-text-grey ft18px mh3">
@@ -170,9 +202,22 @@
 										</div>
 									</div>
 								</td>
+							 -->	
+								<td class="edit">
+									<div class="w3-col w3-text-grey">
+										<span class="w3-twothird w3-center mt7 ft18px" id="cRel">${DATA.rel}</span>
+	                       				<button type="button" name="edit5" class="w3-button w3-cell m2 w3-orange w3-hover-deep-orange w3-right">Edit</button>
+									</div>
+									<form id="relfrm" name="relfrm" style="display: none;" class="w3-col w3-padding">
+										<input type="hidden" name="id" value="${SID}">
+										<input type="text" class="w3-col m8 w3-input w3-border w3-center ft18px" id="rel" name="rel" value="${DATA.rel}">
+	                       				<button type="button" name="save5" class="w3-button w3-medium w3-red w3-hover-orange mt0 w3-right">Save</button>
+									</form>
+								</td>	
 							</tr>
 							<tr>
 								<th scope="row">참고사항</th>
+							<!-- 
 								<td>
 									<div class="input-3cols">
 										<div class="w3-col w3-text-grey ft18px mh3">
@@ -180,6 +225,18 @@
 										</div>
 									</div>
 								</td>
+							 -->	
+								<td class="edit">
+									<div class="w3-col w3-text-grey">
+										<span class="w3-twothird w3-center mt7 ft18px" id="cAddmsg">${DATA.addmsg}</span>
+	                       				<button type="button" name="edit6" class="w3-button w3-cell m2 w3-orange w3-hover-deep-orange w3-right">Edit</button>
+									</div>
+									<form id="addmsgfrm" name="addmsgfrm" style="display: none;" class="w3-col w3-padding">
+										<input type="hidden" name="id" value="${SID}">
+										<input type="text" class="w3-col m8 w3-input w3-border w3-center ft18px" id="addmsg" name="addmsg" value="${DATA.addmsg}">
+	                       				<button type="button" name="save6" class="w3-button w3-medium w3-red w3-hover-orange mt0 w3-right">Save</button>
+									</form>
+								</td>	
 							</tr>
 							<tr>
 								<th scope="row">가입일</th>
@@ -221,7 +278,7 @@
 	</div>
 	
 	
-	<!-- 정보수정태그 -->
+	<!-- 정보수정태그
 	<form class="w3-col" id="frm" name="frm" style="display: none;">
 		<input type="hidden" name="id" value="${SID}">
 		<div class="w3-col w3-border-top w3-margin-top w3-padding">
@@ -276,6 +333,8 @@
 			</div>
 		</div>
 	</form>
+
+	 -->
 		
 		<!-- 메세지 확인 모달 -->
 	<c:if test="${not empty MSG}">
