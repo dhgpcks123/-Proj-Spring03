@@ -1,44 +1,44 @@
--- ¿©ÇàÁö ÃßÃµ½Ã °èÀıÀ» ±¸ºĞÇÒ ¼ö ÀÖ´Â SEASONTYPE »ı¼º (µğÆúÆ® °ª : °èÀı ¹«°ü)
+-- ì—¬í–‰ì§€ ì¶”ì²œì‹œ ê³„ì ˆì„ êµ¬ë¶„í•  ìˆ˜ ìˆëŠ” SEASONTYPE ìƒì„± (ë””í´íŠ¸ ê°’ : ê³„ì ˆ ë¬´ê´€)
 
 CREATE TABLE seasontype(
     stno NUMBER(3) 
         CONSTRAINT SEASON_STNO_PK PRIMARY KEY
         CONSTRAINT SEASON_STNO_CK CHECK ( stno IN (100,200,300,400,500)),
-    stname VARCHAR2(12)
+    stname VARCHAR2(12) DEFAULT 'ê³„ì ˆë¬´ê´€'
         CONSTRAINT SEASON_STNAME_NN NOT NULL
-        CONSTRAINT SEASON_STNAME_CK CHECK ( stname IN ('º½','¿©¸§','°¡À»','°Ü¿ï','°èÀı¹«°ü')) 
+        CONSTRAINT SEASON_STNAME_CK CHECK ( stname IN ('ë´„','ì—¬ë¦„','ê°€ì„','ê²¨ìš¸','ê³„ì ˆë¬´ê´€')) 
 );
 INSERT INTO
     seasontype
 VALUES(
-    100,'º½'
+    100,'ë´„'
 );
 INSERT INTO
     seasontype
 VALUES(
-    200,'¿©¸§'
+    200,'ì—¬ë¦„'
 );
 
 INSERT INTO
     seasontype
 VALUES(
-    300,'°¡À»'
+    300,'ê°€ì„'
 );
 
 INSERT INTO
     seasontype
 VALUES(
-    400,'°Ü¿ï'
+    400,'ê²¨ìš¸'
 );
 
 
 INSERT INTO
     seasontype
 VALUES(
-    500,'°èÀı¹«°ü'
+    500,'ê³„ì ˆë¬´ê´€'
 );
 
--- areainfo Å×ÀÌºí¿¡¼­ °èÀı ±¸ºĞ°ª stno »ı¼º
+-- areainfo í…Œì´ë¸”ì—ì„œ ê³„ì ˆ êµ¬ë¶„ê°’ stno ìƒì„±
 ALTER TABLE areainfo 
 ADD stno NUMBER(3) DEFAULT 500
     CONSTRAINT AINFO_STNO_FK REFERENCES seasontype(stno)
@@ -81,8 +81,8 @@ commit;
 
 
 
--- Àå¼Ò»çÁø Å×ÀÌºí 
--- ±âº»Å° pno Ãß°¡, °°Àº Àå¼Ò¿¡ ´ëÇØ ¿©·¯°³ÀÇ »çÁø Áß Ã¹¹øÂ° »çÁø¸¸ º¸¿©ÁÙ subpno Ãß°¡
+-- ì¥ì†Œì‚¬ì§„ í…Œì´ë¸” 
+-- ê¸°ë³¸í‚¤ pno ì¶”ê°€, ê°™ì€ ì¥ì†Œì— ëŒ€í•´ ì—¬ëŸ¬ê°œì˜ ì‚¬ì§„ ì¤‘ ì²«ë²ˆì§¸ ì‚¬ì§„ë§Œ ë³´ì—¬ì¤„ subpno ì¶”ê°€
 
 DROP TABLE  aphoto;
 CREATE TABLE aphoto(
@@ -111,163 +111,155 @@ CREATE TABLE aphoto(
 
 
 INSERT INTO aphoto
-VALUES(1, 4, 1, 'test02.jpg', '¼Û¾Ç»ê3.jpg', 20000, '/img/area/', 10)
+VALUES(1, 4, 1, 'test02.jpg', 'ì†¡ì•…ì‚°3.jpg', 20000, '/img/area/', 10)
 ;
 
 INSERT INTO aphoto
-VALUES(2, 5, 1, 'test20.jpg', 'Á¦ÀÌÈú.jpg', 20000, '/img/area/', 20)
+VALUES(2, 5, 1, 'test20.jpg', 'ì œì´í.jpg', 20000, '/img/area/', 20)
 ;
 
 INSERT INTO aphoto
-VALUES(3, 6, 1, 'test19.jpg', '»çÁø.jpg', 20000, '/img/area/', 20)
+VALUES(3, 6, 1, 'test19.jpg', 'ì‚¬ì§„.jpg', 20000, '/img/area/', 20)
 ;
 
 INSERT INTO aphoto
-VALUES(4, 7, 1, 'test18.jpg', '»çÁø2.jpg', 20000, '/img/area/', 20)
+VALUES(4, 7, 1, 'test18.jpg', 'ì‚¬ì§„2.jpg', 20000, '/img/area/', 20)
 ;
 
 INSERT INTO aphoto
-VALUES(5, 8, 1, 'test17.jpg', '»çÁø3.jpg', 20000, '/img/area/', 30)
+VALUES(5, 8, 1, 'test17.jpg', 'ì‚¬ì§„3.jpg', 20000, '/img/area/', 30)
 ;
 
 INSERT INTO aphoto
-VALUES(6, 9, 1, 'test16.jpg', '»çÁø1.jpg', 20000, '/img/area/', 30)
+VALUES(6, 9, 1, 'test16.jpg', 'ì‚¬ì§„1.jpg', 20000, '/img/area/', 30)
 ;
 INSERT INTO aphoto
-VALUES(7, 9, 1, 'test17.jpg', '»çÁø1.jpg', 20000, '/img/area/', 30)
+VALUES(7, 9, 1, 'test17.jpg', 'ì‚¬ì§„1.jpg', 20000, '/img/area/', 30)
 ;
 INSERT INTO aphoto
-VALUES(8, 9, 1, 'test18.jpg', '»çÁø1.jpg', 20000, '/img/area/', 30)
+VALUES(8, 9, 1, 'test18.jpg', 'ì‚¬ì§„1.jpg', 20000, '/img/area/', 30)
 ;
 INSERT INTO aphoto
-VALUES(9, 9, 1, 'test19.jpg', '»çÁø1.jpg', 20000, '/img/area/', 30)
+VALUES(9, 9, 1, 'test19.jpg', 'ì‚¬ì§„1.jpg', 20000, '/img/area/', 30)
 ;
 
 INSERT INTO aphoto
-VALUES(10, 11, 1, 'test01.jpg', '»çÁø2.jpg', 20000, '/img/area/', 40)
+VALUES(10, 11, 1, 'test01.jpg', 'ì‚¬ì§„2.jpg', 20000, '/img/area/', 40)
 ;
 INSERT INTO aphoto
-VALUES(11, 12, 1, 'test02.jpg', '»çÁø3.jpg', 20000, '/img/area/', 40)
+VALUES(11, 12, 1, 'test02.jpg', 'ì‚¬ì§„3.jpg', 20000, '/img/area/', 40)
 ;
 INSERT INTO aphoto
-VALUES(12, 12, 1, 'test07.jpg', '»çÁø3.jpg', 20000, '/img/area/', 40)
+VALUES(12, 12, 1, 'test07.jpg', 'ì‚¬ì§„3.jpg', 20000, '/img/area/', 40)
 ;
 INSERT INTO aphoto
-VALUES(13, 13, 1, 'test03.jpg', '»çÁø4.jpg', 20000, '/img/area/', 40)
+VALUES(13, 13, 1, 'test03.jpg', 'ì‚¬ì§„4.jpg', 20000, '/img/area/', 40)
 ;
 INSERT INTO aphoto
-VALUES(14, 14, 1, 'test04.jpg', '»çÁø53.jpg', 20000, '/img/area/', 50)
+VALUES(14, 14, 1, 'test04.jpg', 'ì‚¬ì§„53.jpg', 20000, '/img/area/', 50)
 ;
 INSERT INTO aphoto
-VALUES(15, 15, 1, 'test05.jpg', '»çÁø6.jpg', 20000, '/img/area/', 50)
+VALUES(15, 15, 1, 'test05.jpg', 'ì‚¬ì§„6.jpg', 20000, '/img/area/', 50)
 ;
 INSERT INTO aphoto
-VALUES(16, 15, 1, 'test06.jpg', '»çÁø7.jpg', 20000, '/img/area/', 50)
+VALUES(16, 15, 1, 'test06.jpg', 'ì‚¬ì§„7.jpg', 20000, '/img/area/', 50)
 ;
 INSERT INTO aphoto
-VALUES(17, 15, 1, 'test07.jpg', '»çÁø8.jpg', 20000, '/img/area/', 50)
+VALUES(17, 15, 1, 'test07.jpg', 'ì‚¬ì§„8.jpg', 20000, '/img/area/', 50)
 ;
 
 INSERT INTO 
 aphoto
 VALUES(
-18, 1, 1, 'test01.jpg','¼·ÁöÄÚÁö1.jpg',200 * 100,'/img/area/',10
+18, 1, 1, 'test01.jpg','ì„­ì§€ì½”ì§€1.jpg',200 * 100,'/img/area/',10
 );
 
 INSERT INTO 
 aphoto
 VALUES(
-19, 1, 1, 'test02.jpg','¼·ÁöÄÚÁö2.jpg',200 * 100,'/img/area/',10
+19, 1, 1, 'test02.jpg','ì„­ì§€ì½”ì§€2.jpg',200 * 100,'/img/area/',10
 );
 
 INSERT INTO 
 aphoto
 VALUES(
-20, 2, 1, 'test03.jpg','»ç¶ó¿À¸§1.jpg',200 * 100,'/img/area/',10
+20, 2, 1, 'test03.jpg','ì‚¬ë¼ì˜¤ë¦„1.jpg',200 * 100,'/img/area/',10
 );
 
 INSERT INTO 
 aphoto
 VALUES(
-21, 2, 1, 'test04.jpg','»ç¶ó¿À¸§2.jpg',200 * 100,'/img/area/',10
+21, 2, 1, 'test04.jpg','ì‚¬ë¼ì˜¤ë¦„2.jpg',200 * 100,'/img/area/',10
 );
 
 INSERT INTO 
 aphoto
 VALUES(
-22, 3, 1, 'test05.jpg','°¡ÆÄµµ1.jpg',200 * 100,'/img/area/',10
-);
-
-
-INSERT INTO 
-aphoto
-VALUES(
-23, 3, 1, 'test06.jpg','°¡ÆÄµµ4.jpg',200 * 100,'/img/area/',10
-);
-
-INSERT INTO 
-aphoto
-VALUES(
-24, 4, 1, 'test07.jpg','¼Û¾Ç»ê1.jpg',200 * 100,'/img/area/',10
+22, 3, 1, 'test05.jpg','ê°€íŒŒë„1.jpg',200 * 100,'/img/area/',10
 );
 
 
 INSERT INTO 
 aphoto
 VALUES(
-25, 4, 1, 'test08.jpg','¼Û¾Ç»ê2.jpg',200 * 100,'/img/area/',10
+23, 3, 1, 'test06.jpg','ê°€íŒŒë„4.jpg',200 * 100,'/img/area/',10
 );
 
 INSERT INTO 
 aphoto
 VALUES(
-26, 5, 1, 'test09.jpg','Á¦ÀÌÈúÈ£ÅÚ.jpg',200 * 100,'/img/area/',20
-);
-
-
-INSERT INTO 
-aphoto
-VALUES(
-27, 6, 1, 'test10.jpg','À¯Å¾À¯ºí·¹½ºÈ£ÅÚ.jpg',200 * 100,'/img/area/',20
+24, 4, 1, 'test07.jpg','ì†¡ì•…ì‚°1.jpg',200 * 100,'/img/area/',10
 );
 
 
 INSERT INTO 
 aphoto
 VALUES(
-28, 7, 1, 'test11.jpg','´õ¼î¾îÈ£ÅÚ.jpg',200 * 100,'/img/area/',20
+25, 4, 1, 'test08.jpg','ì†¡ì•…ì‚°2.jpg',200 * 100,'/img/area/',10
+);
+
+INSERT INTO 
+aphoto
+VALUES(
+26, 5, 1, 'test09.jpg','ì œì´íí˜¸í…”.jpg',200 * 100,'/img/area/',20
 );
 
 
 INSERT INTO 
 aphoto
 VALUES(
-29, 8, 1, 'test12.jpg','¼º»ê¿ÁÅ¾.jpg',200 * 100,'/img/area/', 30
+27, 6, 1, 'test10.jpg','ìœ íƒ‘ìœ ë¸”ë ˆìŠ¤í˜¸í…”.jpg',200 * 100,'/img/area/',20
 );
-
-INSERT INTO 
-aphoto
-VALUES(
-30, 9, 1, 'test13.jpg','´ã¾Æ·¡ ¼­±ÍÆ÷Á¡.jpg',200 * 100,'/img/area/', 30
-);
-INSERT INTO 
-aphoto
-VALUES(
-31, 10, 1, 'test14.jpg','Á¦ÁÖÇÑ¶ó±¹¼ö1.jpg',200 * 100,'/img/area/', 30
-);
-
-INSERT INTO 
-aphoto
-VALUES(
-32, 10, 1, 'test15.jpg','Á¦ÁÖÇÑ¶ó±¹¼ö2.jpg',200 * 100,'/img/area/', 30
-);
-
 
 
 INSERT INTO 
 aphoto
 VALUES(
-33, 11, 1, 'test16.jpg','´ÚÅÍ¾ç³»°ú.jpg',200 * 100,'/img/area/',40
+28, 7, 1, 'test11.jpg','ë”ì‡¼ì–´í˜¸í…”.jpg',200 * 100,'/img/area/',20
+);
+
+
+INSERT INTO 
+aphoto
+VALUES(
+29, 8, 1, 'test12.jpg','ì„±ì‚°ì˜¥íƒ‘.jpg',200 * 100,'/img/area/', 30
+);
+
+INSERT INTO 
+aphoto
+VALUES(
+30, 9, 1, 'test13.jpg','ë‹´ì•„ë˜ ì„œê·€í¬ì .jpg',200 * 100,'/img/area/', 30
+);
+INSERT INTO 
+aphoto
+VALUES(
+31, 10, 1, 'test14.jpg','ì œì£¼í•œë¼êµ­ìˆ˜1.jpg',200 * 100,'/img/area/', 30
+);
+
+INSERT INTO 
+aphoto
+VALUES(
+32, 10, 1, 'test15.jpg','ì œì£¼í•œë¼êµ­ìˆ˜2.jpg',200 * 100,'/img/area/', 30
 );
 
 
@@ -275,7 +267,7 @@ VALUES(
 INSERT INTO 
 aphoto
 VALUES(
-34, 12, 1, 'test17.jpg','¼±Ä¡°úÀÇ¿ø.jpg',200 * 100,'/img/area/', 40
+33, 11, 1, 'test16.jpg','ë‹¥í„°ì–‘ë‚´ê³¼.jpg',200 * 100,'/img/area/',40
 );
 
 
@@ -283,7 +275,7 @@ VALUES(
 INSERT INTO 
 aphoto
 VALUES(
-35, 13, 1, 'test18.jpg','´Ù³ªÇÑÀÇ¿ø.jpg',200 * 100,'/img/area/', 40
+34, 12, 1, 'test17.jpg','ì„ ì¹˜ê³¼ì˜ì›.jpg',200 * 100,'/img/area/', 40
 );
 
 
@@ -291,21 +283,29 @@ VALUES(
 INSERT INTO 
 aphoto
 VALUES(
-36, 14, 1, 'test19.jpg','Á¦ÁÖÇÑ¶óº´¿ø ÀÀ±Ş½Ç.jpg',200 * 100,'/img/area/', 50
+35, 13, 1, 'test18.jpg','ë‹¤ë‚˜í•œì˜ì›.jpg',200 * 100,'/img/area/', 40
+);
+
+
+
+INSERT INTO 
+aphoto
+VALUES(
+36, 14, 1, 'test19.jpg','ì œì£¼í•œë¼ë³‘ì› ì‘ê¸‰ì‹¤.jpg',200 * 100,'/img/area/', 50
 );
 
 
 INSERT INTO 
 aphoto
 VALUES(
-37, 15, 1, 'test20.jpg','¼­±ÍÆ÷ÀÇ·á¿ø ÀÀ±Ş½Ç.jpg',200 * 100,'/img/area/', 50
+37, 15, 1, 'test20.jpg','ì„œê·€í¬ì˜ë£Œì› ì‘ê¸‰ì‹¤.jpg',200 * 100,'/img/area/', 50
 );
 
 
 INSERT INTO 
 aphoto
 VALUES(
-38, 16, 1, 'test01.jpg','Á¦ÁÖ´ëÇĞ±³º´¿ø ÀÀ±Ş½Ç.jpg',200 * 100,'/img/area/', 50
+38, 16, 1, 'test01.jpg','ì œì£¼ëŒ€í•™êµë³‘ì› ì‘ê¸‰ì‹¤.jpg',200 * 100,'/img/area/', 50
 );
 
 commit;
