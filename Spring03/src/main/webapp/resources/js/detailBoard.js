@@ -1,40 +1,33 @@
 $(document).ready(function(){
-//어디로갈까? 버튼 이벤트
-	$('#suggestBtn').click(function(){
-		$(location).attr('href','/www/suggest.jeju');
-	});
 
-/*##################### x버튼 이벤트 #########################*/
+/* ########################### */
+/* ### 모달창 x버튼 이벤트 ### */
+/* ########################### */
 
 	$('#xbutton').click(function(){
 		$('#id01').css('display', 'none');
 		$('.reviewRebtn').css('display','inline-block');
 		$('.reviewRebtn').parent().next().css('display','none');
-		//@@@@@@@@@
-		//@@@@@사진도 안보이게 추가
-		//@@@@@
+		$('.delImg').css('display','none');
 	});
-
-/*############################# Slider 관련 js #########################*/
+	
+/* ############## */
+/* ### Slider ### */
+/* ############## */
 		//current position
 		var pos = 0;
 		//number of slides
 		var leng = $('#slider-wrap ul li').length
-	
 		if(leng%2 == 0){
 			var totalSlides = leng/2;
 		}else if(leng%2 != 0){
 			var totalSlides =  leng/2-0.5;
 		}
-		
 		//get the slide width
 		var sliderWidth = $('#slider-wrap').width();
-	
 		$(document).ready(function(){
-		
-		/*****************
-		 BUILD THE SLIDER
-		*****************/
+
+		// BUILD THE SLIDER
 		//set width to be 'x' times the number of slides
 		$('#slider-wrap ul#slider').width(sliderWidth*totalSlides);
 		
@@ -48,9 +41,7 @@ $(document).ready(function(){
 		slideLeft();
 		});
 		
-		/*************************
-		 //*> OPTIONAL SETTINGS
-		************************/
+		//*> OPTIONAL SETTINGS
 		//automatic slider
 		var autoSlider = setInterval(slideRight, 4000);
 		
@@ -78,9 +69,7 @@ $(document).ready(function(){
 		
 		});
 
-		/***********
-		 SLIDE LEFT
-		************/
+		// SLIDE LEFT
 		function slideLeft(){
 		pos--;
 		if(pos==-1){ pos = totalSlides-1; }
@@ -90,9 +79,7 @@ $(document).ready(function(){
 		pagination();
 		}
 		
-		/************
-		 SLIDE RIGHT
-		*************/
+		// SLIDE RIGHT
 		function slideRight(){
 		pos++;
 		if(pos==totalSlides){ pos = 0; }
@@ -103,21 +90,19 @@ $(document).ready(function(){
 		pagination();
 		}
 
-		/************************
 		 //*> OPTIONAL SETTINGS
-//		************************/
 		function countSlides(){
-		$('#counter').html(pos+1 + ' / ' + totalSlides);
+			$('#counter').html(pos+1 + ' / ' + totalSlides);
 		}
 		
 		function pagination(){
-		$('#pagination-wrap ul li').removeClass('active');
-		$('#pagination-wrap ul li:eq('+pos+')').addClass('active');
+			$('#pagination-wrap ul li').removeClass('active');
+			$('#pagination-wrap ul li:eq('+pos+')').addClass('active');
 		}
 		
-		
-/*############################# 리뷰 별점 관련 js #########################*/		
-		// 리뷰 작성 별점주기 관련 js
+/* ################################# */		
+/* ### 리뷰 별점 숫자로 환원하기 ### */
+/* ################################# */		
 		let byul =0
 		$('#byul1').click(function(){
 			byul = 1
@@ -140,9 +125,10 @@ $(document).ready(function(){
            $(this).addClass("on").prevAll("a").addClass("on"); /* 클릭한 별과, 그 앞 까지 별점에 on 클래스 추가 */
            return false;
      	});
-		
-/*############################# 리뷰 파일 js #########################*/
-		/* 파일이 추가되면 파일선택 버튼이 늘어나도록 설정 */		
+
+/* ################################# */		
+/* ### 파일 추가 할 때 버튼 추가 ### */
+/* ################################# */		
 		$('#file1').change(function(){
 			$('#file2').css('display', 'inline-block');
 		});
@@ -154,9 +140,28 @@ $(document).ready(function(){
 		});
 		
 		
+/* ########################### */
+/* ### 리뷰 작성 관련 작업 ### */
+/* ########################### */
+	$('#wsend').click(function(){
+		var stitle = $('#reviewTitle').val();
+		var sbody = $('#reviewBody').val(); 
 
-/*############################# 리뷰 수정 작업 관련 js #########################*/	
-// 리뷰 수정 별점주기 관련 js
+		$('#reviewStar').val(byul);
+		
+		// 데이터가 입력되었는지 확인하고...
+		if((stitle.trim() == '') || (sbody.trim() == '') || byul == 0 ){
+			alert('모든 정보를 작성해주세요');
+			return;
+		};
+		
+		$('#wReviewfrm').submit();
+	});
+
+/* ########################### */
+/* ### 리뷰 수정 관련 작업 ### */
+/* ########################### */
+// 리뷰 수정 별점주기
 		$('.Rebyul1').click(function(){
 		    var Rebyul1Rno = $(this).attr('id');
 			var rebyul1rno = Rebyul1Rno.substring(7);
@@ -190,24 +195,7 @@ $(document).ready(function(){
      	});
 
 
-// 리뷰 작성 버튼을 눌렀을 경우 리뷰 작성!
-	$('#wsend').click(function(){
-		var stitle = $('#reviewTitle').val();
-		var sbody = $('#reviewBody').val(); 
-
-		$('#reviewStar').val(byul);
-		
-		// 데이터가 입력되었는지 확인하고...
-		if((stitle.trim() == '') || (sbody.trim() == '') || byul == 0 ){
-			alert('모든 정보를 작성해주세요');
-			return;
-		};
-		
-		$('#wReviewfrm').submit();
-	});
-//------------------------------리뷰작성-------------------	
 	
-
 	// 리뷰 수정 버튼 클릭했을 때, 수정 정보 보여주고 삭제버튼 띄워주기
 	$('.reviewRebtn').click(function(){
 		var rno = $(this).attr('id');
@@ -219,7 +207,7 @@ $(document).ready(function(){
 		$(imgrno).css('display','inline-block');
 	});
 	
-	// *파일이 추가되면 파일선택 버튼이 늘어나도록 설정
+	// 파일이 추가되면 파일선택 버튼이 늘어나도록 설정
 	$('.reFile1').change(function(){
 		$(this).next().css('display', 'inline-block');
 	});
@@ -229,7 +217,7 @@ $(document).ready(function(){
 	$('.refile3').change(function(){
 		$(this).next().css('display', 'inline-block');
 	});	
-	// *리뷰 다시쓰기 리셋 버튼
+	// 리뷰 다시쓰기 리셋 버튼
 	$('.rewriteResetBtn').click(function(){
 		var ResetRno = $(this).attr('id');
 		var resetrno = ResetRno.substring(5);
@@ -238,7 +226,7 @@ $(document).ready(function(){
 		$('#rewriteRtitle'+resetrno).text('');
 	});
 	
-	// *리뷰 다시쓰기 취소 버튼
+	// 리뷰 다시쓰기 취소 버튼
 	$('.rewriteCancelBtn').click(function(){
 		// 올린 리뷰의 내용을 rbody와 rtitle 변수에 담아둔다.
 		var rbody = $(this).parent().parent().children().eq(0).text().trim();
@@ -263,7 +251,7 @@ $(document).ready(function(){
 		$('.delfile'+rewriterno).remove();
 	});
 	
-	//* 리뷰 다시쓰기 작성 버튼
+	// 리뷰 다시쓰기 작성 버튼
 	$('.rewriteBtn').click(function(){
 		// 클릭 된 버튼의 id에 담긴 rno값을 구해온다.
 		var RewriteBtn = $(this).attr('id');
@@ -284,7 +272,7 @@ $(document).ready(function(){
 		$('#fr'+rewritebtn).submit();
 	})
 	
-	// *사진 삭제시 input태그 만들고, 사진 보이지 않도록 하기
+	// 사진 삭제시 input태그 만들고, 사진 보이지 않도록 하기
 	$('.delImg').click(function(){
 		var pno = $(this).prev().attr('id');
 		$(this).prev().css('display','none');
@@ -293,8 +281,10 @@ $(document).ready(function(){
 		var delimgrno = DelImgRno.substring(6);
 		$('#fr'+delimgrno).append('<input type="hidden" class="delfile delfile'+delimgrno+'" name="delfile" value="'+pno+'">')
 	})
-	
-//########################### 게시글 삭제 ##################################
+
+/* ############################# */	
+/* ### 게시글 삭제 버튼 작업 ### */
+/* ############################# */	
 	$('.reviewDelbtn').click(function(){
 		let check = confirm('정말 삭제하시겠습니까?', '예', '아니오');
 		if(check == true ){
@@ -323,6 +313,44 @@ $(document).ready(function(){
 		
 		}
 	})
+	
+/* ######################## */
+/* ### 찜하기 관련 기능 ### */
+/* ######################## */
+	//로그인 안 되어 있는데 찜하기 버튼 눌렀을 때
+	$('#nonLogfavor').click(function(){
+		alert('로그인해야 사용할 수 있습니다');
+	})
+	$('#alreadyfavor').click(function(){
+		alert('이미 찜하셨습니다');
+		return;
+	});
+	
+	// 찜하기 버튼 눌렀을때
+	$('#favor').click(function(){
+		var ano = $(this).attr('name');
+		var favform = {
+	        ANO : ano
+    	};
+		
+		$.ajax({
+			url: '/www/AddFavorite.jeju',
+			type: 'POST',
+			data: favform,
+			dataType: 'html',
+			contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+			success: function(obj){
+				if(obj=='NO'){
+					alert('이미 찜콩!')
+				}else if(obj =='OK'){
+					alert('찜하기에 성공했습니다');
+				}
+			},
+			error: function(){
+				alert('서버 통신에러');
+			}
+		});
+	});
 });
 
 

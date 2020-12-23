@@ -11,5 +11,6 @@
 	<!-- Service Bean처리 -->
 	<bean id="mService" class="jeju.increpas.www.service.MainService" />
 	<bean id="rService" class="jeju.increpas.www.service.ReviewService" />
+	<bean id="fService" class="jeju.increpas.www.service.FavoritService" />
 	
 </beans>

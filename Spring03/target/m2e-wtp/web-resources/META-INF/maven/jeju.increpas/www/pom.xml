@@ -216,11 +216,18 @@
 		</dependency>
 		
 		<!-- Spring-tx, @Transation -->
-	<dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-tx</artifactId>
-		<version>4.3.18.RELEASE</version>
-	</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>4.3.18.RELEASE</version>
+		</dependency>
+	    
+	    <!-- Spring-websocket -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-websocket</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
 	        
 	</dependencies>
 	

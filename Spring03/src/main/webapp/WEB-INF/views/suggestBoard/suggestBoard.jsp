@@ -9,13 +9,14 @@
 <link rel="stylesheet" type="text/css" href="/www/css/suggestBoard/suggestBoard.css" />
 <link rel="stylesheet" type="text/css" href="css/cls.css">
 <link rel="stylesheet" type="text/css" href="css/main/mainPage.css">
+<link rel="stylesheet" type="text/css" href="css/component/topHeader.css">
 <script type="text/javascript" src="/www/js/jquery-3.5.1.min.js"></script> 
 <script type="text/javascript" src="/www/js/suggestBoard/suggestBoard.js"></script>
-<script type="text/javascript" src="/www/js/mainPage.js"></script>
 <script type="text/javascript" src="/www/js/detailBoard.js"></script>
+<script type="text/javascript" src="/www/js/component/topHeader.js"></script>
 <script type="text/javascript" src="/www/js/memberLogin.js"></script>
 <link rel="stylesheet" type="text/css" href="/www/css/main/mainPage.css">
-<script src="https://kit.fontawesome.com/e6e9b86680.js"	crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/e6e9b86680.js"></script>
 </head>
 <body>
 <!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
@@ -68,10 +69,11 @@
     	<div class="topHeader__logoutForm">
 	       	<!-- 내 정보보기 -->
 	       	<div class="logoutForm_LeftCol logoutForm__Col">
-		       	<div class="topHeader__welcomeId">[  ${sessionScope.SID}  ] <i class="fas fa-dragon"></i> </div>
+		       	<div class="topHeader__welcomeId">[  ${sessionScope.SID}  ] </div>
 		       	<div class="topHeader__welcome">님 방문을 환영합니다</div>
 	       	</div>	       	
 	       	<div class="logoutForm_RightCol logoutForm__Col">
+	       		<div class="topHeader__btn w3-button w3-card" id="chatBtn"> 채팅서비스 </div>
 	      		<div class="topHeader__btn w3-button w3-card" id="suggestBtn"> 어디로 갈까?</div>
 	      		<div class="topHeader__btn w3-button w3-card" id="favoritBtn"> 찜 모아보기</div>
 		       	<div class="topHeader__btn w3-button w3-card" id="logoutbtn">로그아웃</div>
