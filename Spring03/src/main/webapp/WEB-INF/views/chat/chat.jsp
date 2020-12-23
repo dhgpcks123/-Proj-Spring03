@@ -11,6 +11,7 @@
 <link rel="stylesheet" type="text/css" href="css/chat/chat.css">
 <script defer type="text/javascript" src="js/chat/chat.js"></script>
 <script type="text/javascript" src="js/component/topHeader.js"></script>
+<script src="https://kit.fontawesome.com/e6e9b86680.js"></script>
 </head>
 <body>
 <!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
