@@ -36,6 +36,49 @@ $(document).ready(function(){
 		
 	});
 	
+	// 휴대폰번호 수정
+	$('button[name=edit1]').click(function(){
+	    $(this).hide();
+	    $('#telfrm').stop().slideDown(300);
+		$('button[name=save]').show();
+    });
+	  
+	$('button[name=save]').click(function(){
+		var sno = $('#no').text();
+		// 원데이터
+		var otel = $('#cTel').text();
+		// 수정데이터
+		var ttel = $('#tel').val();
+//		var ttel = $('.cryalTelno1:checked').val() +' - '+ $('.cryalTelno2').val() +' - ' + $('.cryalTelno3').val();
+
+		$('#telfrm').attr('method','POST');
+		$('#telfrm').attr('action','/www/member/memberEditProc.jeju');
+		$('#telfrm').submit();
+    });
+
+	// 혈액형 수정
+	$('button[name=edit2]').click(function(){
+	    $(this).hide();
+	    $('#bl1frm').stop().slideDown(300);
+		$('button[name=save]').show();
+    });
+	  
+	$('button[name=save]').click(function(){
+		var sno = $('#no').text();
+		// 원데이터
+		var obl1 = $('#cBl1').text();
+		// 수정데이터
+		var tbl1 = $('.bl1:checked').val();
+		
+		if(!tbl1){
+			tbl1 = obl1;
+		}
+		
+		$('#bl1frm').attr('method','POST');
+		$('#bl1frm').attr('action','/www/member/memberEditProc.jeju');
+		$('#bl1frm').submit();
+    });
+	
 	// 회원 탈퇴 처리
 	$('#dbtn').click(function(){
 		// 비밀번호 입력창 보이게 하고
@@ -52,7 +95,5 @@ $(document).ready(function(){
 		// 동기 방식 처리
 		var sno = $('#mno').val();
 		$('#dfrm').submit(); 
-		
-	
 	});
 });
