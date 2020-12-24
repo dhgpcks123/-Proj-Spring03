@@ -112,163 +112,155 @@ CREATE TABLE aphoto(
 
 
 INSERT INTO aphoto
-VALUES(1, 4, 1, 'test02.jpg', '송악산3.jpg', 20000, '/img/area/', 10)
+VALUES(10001, 4, 1, 'test02.jpg', '송악산3.jpg', 20000, '/img/area/', 10)
 ;
 
 INSERT INTO aphoto
-VALUES(2, 5, 1, 'test20.jpg', '제이힐.jpg', 20000, '/img/area/', 20)
+VALUES(10002, 5, 1, 'test20.jpg', '제이힐.jpg', 20000, '/img/area/', 20)
 ;
 
 INSERT INTO aphoto
-VALUES(3, 6, 1, 'test19.jpg', '사진.jpg', 20000, '/img/area/', 20)
+VALUES(10003, 6, 1, 'test19.jpg', '사진.jpg', 20000, '/img/area/', 20)
 ;
 
 INSERT INTO aphoto
-VALUES(4, 7, 1, 'test18.jpg', '사진2.jpg', 20000, '/img/area/', 20)
+VALUES(10004, 7, 1, 'test18.jpg', '사진2.jpg', 20000, '/img/area/', 20)
 ;
 
 INSERT INTO aphoto
-VALUES(5, 8, 1, 'test17.jpg', '사진3.jpg', 20000, '/img/area/', 30)
+VALUES(10005, 8, 1, 'test17.jpg', '사진3.jpg', 20000, '/img/area/', 30)
 ;
 
 INSERT INTO aphoto
-VALUES(6, 9, 1, 'test16.jpg', '사진1.jpg', 20000, '/img/area/', 30)
+VALUES(10006, 9, 1, 'test16.jpg', '사진1.jpg', 20000, '/img/area/', 30)
 ;
 INSERT INTO aphoto
-VALUES(7, 9, 1, 'test17.jpg', '사진1.jpg', 20000, '/img/area/', 30)
+VALUES(10007, 9, 1, 'test17.jpg', '사진1.jpg', 20000, '/img/area/', 30)
 ;
 INSERT INTO aphoto
-VALUES(8, 9, 1, 'test18.jpg', '사진1.jpg', 20000, '/img/area/', 30)
+VALUES(10008, 9, 1, 'test18.jpg', '사진1.jpg', 20000, '/img/area/', 30)
 ;
 INSERT INTO aphoto
-VALUES(9, 9, 1, 'test19.jpg', '사진1.jpg', 20000, '/img/area/', 30)
+VALUES(10009, 9, 1, 'test19.jpg', '사진1.jpg', 20000, '/img/area/', 30)
 ;
 
 INSERT INTO aphoto
-VALUES(10, 11, 1, 'test01.jpg', '사진2.jpg', 20000, '/img/area/', 40)
+VALUES(10010, 11, 1, 'test01.jpg', '사진2.jpg', 20000, '/img/area/', 40)
 ;
 INSERT INTO aphoto
-VALUES(11, 12, 1, 'test02.jpg', '사진3.jpg', 20000, '/img/area/', 40)
+VALUES(10011, 12, 1, 'test02.jpg', '사진3.jpg', 20000, '/img/area/', 40)
 ;
 INSERT INTO aphoto
-VALUES(12, 12, 1, 'test07.jpg', '사진3.jpg', 20000, '/img/area/', 40)
+VALUES(10012, 12, 1, 'test07.jpg', '사진3.jpg', 20000, '/img/area/', 40)
 ;
 INSERT INTO aphoto
-VALUES(13, 13, 1, 'test03.jpg', '사진4.jpg', 20000, '/img/area/', 40)
+VALUES(10013, 13, 1, 'test03.jpg', '사진4.jpg', 20000, '/img/area/', 40)
 ;
 INSERT INTO aphoto
-VALUES(14, 14, 1, 'test04.jpg', '사진53.jpg', 20000, '/img/area/', 50)
+VALUES(10014, 14, 1, 'test04.jpg', '사진53.jpg', 20000, '/img/area/', 50)
 ;
 INSERT INTO aphoto
-VALUES(15, 15, 1, 'test05.jpg', '사진6.jpg', 20000, '/img/area/', 50)
+VALUES(10015, 15, 1, 'test05.jpg', '사진6.jpg', 20000, '/img/area/', 50)
 ;
 INSERT INTO aphoto
-VALUES(16, 15, 1, 'test06.jpg', '사진7.jpg', 20000, '/img/area/', 50)
+VALUES(10016, 15, 1, 'test06.jpg', '사진7.jpg', 20000, '/img/area/', 50)
 ;
 INSERT INTO aphoto
-VALUES(17, 15, 1, 'test07.jpg', '사진8.jpg', 20000, '/img/area/', 50)
+VALUES(10017, 15, 1, 'test07.jpg', '사진8.jpg', 20000, '/img/area/', 50)
 ;
 
 INSERT INTO 
 aphoto
 VALUES(
-18, 1, 1, 'test01.jpg','섭지코지1.jpg',200 * 100,'/img/area/',10
+10018, 1, 1, 'test01.jpg','섭지코지1.jpg',200 * 100,'/img/area/',10
 );
 
 INSERT INTO 
 aphoto
 VALUES(
-19, 1, 1, 'test02.jpg','섭지코지2.jpg',200 * 100,'/img/area/',10
+10019, 1, 1, 'test02.jpg','섭지코지2.jpg',200 * 100,'/img/area/',10
 );
 
 INSERT INTO 
 aphoto
 VALUES(
-20, 2, 1, 'test03.jpg','사라오름1.jpg',200 * 100,'/img/area/',10
+10020, 2, 1, 'test03.jpg','사라오름1.jpg',200 * 100,'/img/area/',10
 );
 
 INSERT INTO 
 aphoto
 VALUES(
-21, 2, 1, 'test04.jpg','사라오름2.jpg',200 * 100,'/img/area/',10
+10021, 2, 1, 'test04.jpg','사라오름2.jpg',200 * 100,'/img/area/',10
 );
 
 INSERT INTO 
 aphoto
 VALUES(
-22, 3, 1, 'test05.jpg','가파도1.jpg',200 * 100,'/img/area/',10
-);
-
-
-INSERT INTO 
-aphoto
-VALUES(
-23, 3, 1, 'test06.jpg','가파도4.jpg',200 * 100,'/img/area/',10
-);
-
-INSERT INTO 
-aphoto
-VALUES(
-24, 4, 1, 'test07.jpg','송악산1.jpg',200 * 100,'/img/area/',10
+10022, 3, 1, 'test05.jpg','가파도1.jpg',200 * 100,'/img/area/',10
 );
 
 
 INSERT INTO 
 aphoto
 VALUES(
-25, 4, 1, 'test08.jpg','송악산2.jpg',200 * 100,'/img/area/',10
+10023, 3, 1, 'test06.jpg','가파도4.jpg',200 * 100,'/img/area/',10
 );
 
 INSERT INTO 
 aphoto
 VALUES(
-26, 5, 1, 'test09.jpg','제이힐호텔.jpg',200 * 100,'/img/area/',20
-);
-
-
-INSERT INTO 
-aphoto
-VALUES(
-27, 6, 1, 'test10.jpg','유탑유블레스호텔.jpg',200 * 100,'/img/area/',20
+10024, 4, 1, 'test07.jpg','송악산1.jpg',200 * 100,'/img/area/',10
 );
 
 
 INSERT INTO 
 aphoto
 VALUES(
-28, 7, 1, 'test11.jpg','더쇼어호텔.jpg',200 * 100,'/img/area/',20
+10025, 4, 1, 'test08.jpg','송악산2.jpg',200 * 100,'/img/area/',10
+);
+
+INSERT INTO 
+aphoto
+VALUES(
+10026, 5, 1, 'test09.jpg','제이힐호텔.jpg',200 * 100,'/img/area/',20
 );
 
 
 INSERT INTO 
 aphoto
 VALUES(
-29, 8, 1, 'test12.jpg','성산옥탑.jpg',200 * 100,'/img/area/', 30
+10027, 6, 1, 'test10.jpg','유탑유블레스호텔.jpg',200 * 100,'/img/area/',20
 );
-
-INSERT INTO 
-aphoto
-VALUES(
-30, 9, 1, 'test13.jpg','담아래 서귀포점.jpg',200 * 100,'/img/area/', 30
-);
-INSERT INTO 
-aphoto
-VALUES(
-31, 10, 1, 'test14.jpg','제주한라국수1.jpg',200 * 100,'/img/area/', 30
-);
-
-INSERT INTO 
-aphoto
-VALUES(
-32, 10, 1, 'test15.jpg','제주한라국수2.jpg',200 * 100,'/img/area/', 30
-);
-
 
 
 INSERT INTO 
 aphoto
 VALUES(
-33, 11, 1, 'test16.jpg','닥터양내과.jpg',200 * 100,'/img/area/',40
+10028, 7, 1, 'test11.jpg','더쇼어호텔.jpg',200 * 100,'/img/area/',20
+);
+
+
+INSERT INTO 
+aphoto
+VALUES(
+10029, 8, 1, 'test12.jpg','성산옥탑.jpg',200 * 100,'/img/area/', 30
+);
+
+INSERT INTO 
+aphoto
+VALUES(
+10030, 9, 1, 'test13.jpg','담아래 서귀포점.jpg',200 * 100,'/img/area/', 30
+);
+INSERT INTO 
+aphoto
+VALUES(
+10031, 10, 1, 'test14.jpg','제주한라국수1.jpg',200 * 100,'/img/area/', 30
+);
+
+INSERT INTO 
+aphoto
+VALUES(
+10032, 10, 1, 'test15.jpg','제주한라국수2.jpg',200 * 100,'/img/area/', 30
 );
 
 
@@ -276,7 +268,7 @@ VALUES(
 INSERT INTO 
 aphoto
 VALUES(
-34, 12, 1, 'test17.jpg','선치과의원.jpg',200 * 100,'/img/area/', 40
+10033, 11, 1, 'test16.jpg','닥터양내과.jpg',200 * 100,'/img/area/',40
 );
 
 
@@ -284,7 +276,7 @@ VALUES(
 INSERT INTO 
 aphoto
 VALUES(
-35, 13, 1, 'test18.jpg','다나한의원.jpg',200 * 100,'/img/area/', 40
+10034, 12, 1, 'test17.jpg','선치과의원.jpg',200 * 100,'/img/area/', 40
 );
 
 
@@ -292,21 +284,29 @@ VALUES(
 INSERT INTO 
 aphoto
 VALUES(
-36, 14, 1, 'test19.jpg','제주한라병원 응급실.jpg',200 * 100,'/img/area/', 50
+10035, 13, 1, 'test18.jpg','다나한의원.jpg',200 * 100,'/img/area/', 40
+);
+
+
+
+INSERT INTO 
+aphoto
+VALUES(
+10036, 14, 1, 'test19.jpg','제주한라병원 응급실.jpg',200 * 100,'/img/area/', 50
 );
 
 
 INSERT INTO 
 aphoto
 VALUES(
-37, 15, 1, 'test20.jpg','서귀포의료원 응급실.jpg',200 * 100,'/img/area/', 50
+10037, 15, 1, 'test20.jpg','서귀포의료원 응급실.jpg',200 * 100,'/img/area/', 50
 );
 
 
 INSERT INTO 
 aphoto
 VALUES(
-38, 16, 1, 'test01.jpg','제주대학교병원 응급실.jpg',200 * 100,'/img/area/', 50
+10038, 16, 1, 'test01.jpg','제주대학교병원 응급실.jpg',200 * 100,'/img/area/', 50
 );
 
 commit;
