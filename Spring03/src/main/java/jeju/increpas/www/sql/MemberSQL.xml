@@ -44,7 +44,7 @@
 
 	<select id="getInfo" resultType="mbVO" parameterType="string">
 		SELECT
-			mno, id, mname, mail, tel, joinDate,  gen, blood1, blood2, birth, sos
+			mno, id, mname, mail, tel, joinDate, gen, blood1, blood2, birth, sos, rel, addmsg
 		FROM
 			member
 		WHERE
@@ -54,7 +54,7 @@
 
 	<select id="getInfoNo" resultType="mbVO" parameterType="int">
 		SELECT
-			mno, mname, id, mail, gen, joinDate
+			mno, id, mname, mail, tel, joinDate, gen, blood1, blood2, birth, sos, rel, addmsg
 		FROM
 			member
 		WHERE
@@ -62,7 +62,7 @@
 			AND mno = #{tno}
 	</select>
 
-	<update id="del_memb" parameterType="mbVO">
+		<update id="del_memb" parameterType="mbVO">
 		UPDATE
 			member
 		SET
@@ -71,8 +71,6 @@
 			mno = #{mno}
 			AND pw = #{pw}
 	</update>
-
-
 
 	<insert id="addMember" parameterType="mbVO">
 		<selectKey keyProperty="mno" resultType="int" order="BEFORE">
@@ -95,6 +93,8 @@
 			<if test="mail neq null">mail = #{mail},</if>
 			<if test="tel neq null">tel = #{tel},</if>
 			<if test="sos neq null">sos = #{sos},</if>
+			<if test="rel neq null">rel = #{rel},</if>
+			<if test="addmsg neq null">addmsg = #{addmsg},</if>
 			<if test="blood1 neq null">blood1 = #{blood1},</if>
 			<if test="blood2 neq null">blood2 = #{blood2},</if>
 		</set>
