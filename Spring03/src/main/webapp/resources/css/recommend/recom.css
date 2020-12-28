@@ -15,3 +15,39 @@
 	width: 100%;
 	height: auto;
 }
+
+.title{
+	letter-spacing: 9px;
+    font-family:  WingDings;
+}
+.aname{
+	letter-spacing: 9px;
+    font-family:  WingDings;
+}
+
+.bbtn{
+    border: none;
+    display: inline-block;
+    padding: 20px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.hbtn{
+    border: none;
+    display: inline-block;
+    padding: 20px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+}
