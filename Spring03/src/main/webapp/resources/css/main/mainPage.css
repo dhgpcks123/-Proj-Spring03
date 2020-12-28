@@ -135,13 +135,12 @@ background: rgba(0, 0, 0, 0.8);
 }
 
 
-
 .map_wrap2{
 	background-color: rgba(255, 255, 255, 0.2);
-	position: absolute;
+	position: relative;
 	color: #008080;
-	bottom: 65px;
-	left:29%;
+	bottom: 120px;
+	left:80%;
 	z-index: 3;
 }
 

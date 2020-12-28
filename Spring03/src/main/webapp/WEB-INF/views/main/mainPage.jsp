@@ -439,14 +439,8 @@
 <!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
 <!-- Page content -->
 <div class="w3-main" style="margin-left: 420px;">
-    <!-- 주소 정보 -->
-	<div class="map_wrap2">
-		<div class="hAddr">   
-	        <span class="title" style="color:black!important;">주소 정보</span>
-	        <span id="centerAddr" style="color:black!important;"></span>
-    	</div>
-    	
-    </div>
+    
+	
     <!-- 카카오 맵 API -->
     <div class="map_wrap">
 		<!-- 지도를 표시할 div 입니다 -->
@@ -456,6 +450,13 @@
 	        <input id="btnStop" type="button" value="지속적인 추적 종료" />
 		</div>
 	    <!-- 검색창 -->
+	    <!-- 주소 정보 -->
+	    <div class="map_wrap2">
+			<div class="hAddr">   
+		        <span class="title" style="color:black!important;">주소 정보</span>
+		        <span id="centerAddr" style="color:black!important;"></span>
+	    	</div>
+	    </div>
         <div id="menu_wrap" class="bg_white" style="margin-left: 15px; margin-top: 15px;">
 			<div class="option">
 				<div>
