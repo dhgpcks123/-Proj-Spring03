@@ -33,5 +33,6 @@
  		<mapper resource="jeju/increpas/www/sql/ReviewSQL.xml" />
  		<mapper resource="jeju/increpas/www/sql/SuggestSQL.xml" />
  		<mapper resource="jeju/increpas/www/sql/FavoriteSQL.xml" />
+ 		<mapper resource="jeju/increpas/www/sql/RecommendSQL.xml" />
 	</mappers>
 </configuration>

@@ -20,7 +20,7 @@ body {
 </head>
 <body>
 		<h2>봄에 가면 좋은 여행지!</h2>
-	
+		<button type="button" id="bbtn">Back</button>
 		<!-- 타이틀 & 이미지 -->
 <c:forEach var="data" items="${STORE}" varStatus="status">
 	<c:if test="${data.stno == 100}">		

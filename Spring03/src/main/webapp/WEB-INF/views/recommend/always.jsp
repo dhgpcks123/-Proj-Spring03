@@ -22,7 +22,9 @@ body {
 <body>
 	<div> 
 		<h2>사계절 내내 가면 좋은 여행지!</h2>
-
+		<div>
+			<div class="w3-button" id="bbtn">Back</div>
+		</div>
 <c:forEach var="data" items="${STORE}" varStatus="status">
 	<c:if test="${data.stno == 500}">		
 			<!--  title  -->
@@ -31,7 +33,7 @@ body {
 				<h2 class="w3-center" >
 					<strong> ${data.aname}</strong>
 				</h2>
-				<img src="/area/${data.aponame}" class="season"/>
+				<img src="/www/img/area/${data.aponame}" class="season"/>
 			</div>
 		</div>
 	</c:if>

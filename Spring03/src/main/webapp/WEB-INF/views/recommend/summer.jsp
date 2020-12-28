@@ -21,6 +21,7 @@ body {
 <body>
 	<div> 
 		<h2>여름에 가면 좋은 여행지!</h2>
+		<button type="button" id="bbtn">Back</button>
 <c:forEach var="data" items="${STORE}" varStatus="status">
 	<c:if test="${data.stno == 200}">		
 			<!--  title  -->

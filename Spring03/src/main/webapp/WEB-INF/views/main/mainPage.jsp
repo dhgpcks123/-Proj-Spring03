@@ -76,7 +76,7 @@
 		       	<div class="topHeader__welcome">님 방문을 환영합니다</div>
 	       	</div>	       	
 	       	<div class="logoutForm_RightCol logoutForm__Col">
-	      		<div class="topHeader__btn w3-button w3-card" id="recomBtn"> 계절별 장소 추천 </div>
+	      		<div class="topHeader__btn w3-button w3-card" id="recomBtn"> 계절별 장소 </div>
 	      		<div class="topHeader__btn w3-button w3-card" id="chatBtn"> 채팅서비스 </div>
 	      		<div class="topHeader__btn w3-button w3-card" id="suggestBtn"> 어디로 갈까?</div>
 	      		<div class="topHeader__btn w3-button w3-card" id="favoritBtn"> 찜 모아보기</div>
@@ -146,7 +146,7 @@
 			<c:if test="${STORE.get(0).atno==40 || STORE.get(0).atno==50}">
 				<span class="sos">
 					<a href='tel:${STORE.get(0).atel}'>
-						<img src="/upload/sos.png" alt="sos 전화 걸기">
+						<img src="/www/img/member/sos.png" alt="sos 전화 걸기">
 					</a>
 				</span>	
 			</c:if>	
@@ -451,9 +451,9 @@
     <div class="map_wrap">
 		<!-- 지도를 표시할 div 입니다 -->
         <div id="map" style="width:97%; height:610px; position:relative; overflow:hidden"></div>
-	    <div class="w3-margin-top">
-	        <input id="btnStop" type="button" value="지속적인 추적 종료" />
+	    <div style="margin-right: 33px; display:flex; justify-content:flex-end;">
 			<input id="btnStart" type="button" value="실시간 위치 추적" />
+	        <input id="btnStop" type="button" value="지속적인 추적 종료" />
 		</div>
 	    <!-- 검색창 -->
         <div id="menu_wrap" class="bg_white" style="margin-left: 15px; margin-top: 15px;">
