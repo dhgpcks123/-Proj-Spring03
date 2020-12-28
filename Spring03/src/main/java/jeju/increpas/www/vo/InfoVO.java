@@ -1,7 +1,7 @@
 package jeju.increpas.www.vo;
 
 public class InfoVO {
-	private int ano, atno, apno;
+	private int ano, atno, apno, stno;
 	private String aname, aloc, atel, abody, apdir, aponame, apsname;
 	private Double ax, ay;
 
@@ -22,6 +22,13 @@ public class InfoVO {
 	}
 	public void setApno(int apno) {
 		this.apno = apno;
+	}
+	
+	public int getStno() {
+		return stno;
+	}
+	public void setStno(int stno) {
+		this.stno = stno;
 	}
 	public String getAname() {
 		return aname;

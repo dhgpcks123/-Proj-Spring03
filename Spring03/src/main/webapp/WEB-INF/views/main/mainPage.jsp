@@ -76,6 +76,7 @@
 		       	<div class="topHeader__welcome">님 방문을 환영합니다</div>
 	       	</div>	       	
 	       	<div class="logoutForm_RightCol logoutForm__Col">
+	      		<div class="topHeader__btn w3-button w3-card" id="recomBtn"> 계절별 장소 추천 </div>
 	      		<div class="topHeader__btn w3-button w3-card" id="chatBtn"> 채팅서비스 </div>
 	      		<div class="topHeader__btn w3-button w3-card" id="suggestBtn"> 어디로 갈까?</div>
 	      		<div class="topHeader__btn w3-button w3-card" id="favoritBtn"> 찜 모아보기</div>
@@ -450,6 +451,10 @@
     <div class="map_wrap">
 		<!-- 지도를 표시할 div 입니다 -->
         <div id="map" style="width:97%; height:610px; position:relative; overflow:hidden"></div>
+	    <div class="w3-margin-top">
+	        <input id="btnStop" type="button" value="지속적인 추적 종료" />
+			<input id="btnStart" type="button" value="실시간 위치 추적" />
+		</div>
 	    <!-- 검색창 -->
         <div id="menu_wrap" class="bg_white" style="margin-left: 15px; margin-top: 15px;">
 			<div class="option">
@@ -822,38 +827,40 @@
 	        el.removeChild (el.lastChild);
 	    }
 	}
-
-	
-
-/* ############################## 4. 내 위치 ############################## */
-/*
-// 현재 접속 위치가 기본 값일 때만 내 위치 찾기를 실행한다
-if( $('#ax').val() == 33.23574587023389 && $('#ay').val() == 126.36351258114277 ){
-	 // HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
+	/* ############################## 4. 내 위치 ############################## */
+	// HTML5의 geolocation으로 사용할 수 있는지 확인합니다
 	if (navigator.geolocation) {
+	 
+	    // 실시간 위치 추적 버튼 클릭시에만 동작합니다
+	     $('#btnStart').click(function() {
 	    
-	    // GeoLocation을 이용해서 접속 위치를 얻어옵니다
-	    navigator.geolocation.getCurrentPosition(function(position) {
-	        
-	        var lat = position.coords.latitude, // 위도
-	            lon = position.coords.longitude; // 경도
-	        	
-	        var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
-	            message = '<div style="padding:5px;">현재 내 위치에요 :-)</div>'; // 인포윈도우에 표시될 내용입니다
-	        
-	        // 마커와 인포윈도우를 표시합니다
-	        displayMarker(locPosition, message);
-	            
-	      });
-	    
-	} else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
-	    
+	    	// GeoLocation을 이용해서 지속적으로 접속 위치를 얻어옵니다
+		    var id = navigator.geolocation.watchPosition(function(position) {
+			    	
+			        var lat = position.coords.latitude, // 위도
+			            lon = position.coords.longitude; // 경도
+			        
+			         // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
+			         // 인포윈도우에 표시될 내용입니다
+			        var locPosition = new kakao.maps.LatLng(lat, lon), 
+			            message = '<div style="padding:5px;">현재 내 위치에요 :-)</div>'; 
+			        
+			        // 마커와 인포윈도우를 표시합니다
+			        displayMarker(locPosition, message);
+			        
+		      });
+		 	 // 버튼 클릭시 지속적인 위치 추적을 중지합니다. (새로운 위치를 검색하지 않는다.)
+	         $('#btnStop').click(function() {
+	              navigator.geolocation.clearWatch(id);
+	         });
+	     });  
+	} else { 
+		// HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
 	    var locPosition = new kakao.maps.LatLng(33.450701, 126.570667),    
-	        message = 'geolocation을 사용할수 없어요..'
+	        message = 'geolocation을 사용할수 없어요.'
 	        
 	    displayMarker(locPosition, message);
 	}
-}
 
 // 지도에 마커와 인포윈도우를 표시하는 함수입니다
 function displayMarker(locPosition, message) {
@@ -879,7 +886,6 @@ function displayMarker(locPosition, message) {
     // 지도 중심좌표를 접속위치로 변경합니다
     map.setCenter(locPosition);      
 }    
-*/
 	</script>
 </body>
 </html>
