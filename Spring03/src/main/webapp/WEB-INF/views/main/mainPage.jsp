@@ -182,7 +182,7 @@
 					<div>
 					<c:forEach var="data" items="${REVIEW.get(0).rphotovoList}">
 					<c:if test="${REVIEW.get(0).rno == data.rno}">
-						<img class="w3-col m6 l6 s6 reviewIMG" src="img/review/${data.rponame}"></img>
+						<img class="w3-col m6 l6 s6 reviewIMG" src="img/area/${data.rponame}"></img>
 					</c:if>
 					</c:forEach>
 					</div>
@@ -271,8 +271,8 @@
 							<ul id="slider">
 							<c:forEach var="data" items="${STORE}">
 								<li>
-									<a href="img/review/${data.aponame}">
-										<img class="StoreIMG w3-padding-right" src="img/review/${data.aponame}" >
+									<a href="img/area/${data.aponame}">
+										<img class="StoreIMG w3-padding-right" src="img/area/${data.aponame}" >
 									</a>
 								</li>
 							</c:forEach>	
@@ -331,7 +331,7 @@
 							<c:forEach var="data1" items="${REVIEW.get(0).rphotovoList}">
 							<c:if test="${data.rno == data1.rno}">
 								<div style="position: relative;">
-									<img class="reviewIMG reviewIMG${data.rno}" id="${data1.pno}" src="img/review/${data1.rponame}"></img>
+									<img class="reviewIMG reviewIMG${data.rno}" id="${data1.pno}" src="img/area/${data1.rponame}"></img>
 									<div class="w3-button w3-amber delImg delImg${data.rno} " id="delImg${data.rno}"style="display: none; position: absolute; top:110px; right: 5px;">사진삭제</div>
 								</div>								
 							</c:if>
