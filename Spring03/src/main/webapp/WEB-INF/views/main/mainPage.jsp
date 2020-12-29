@@ -445,7 +445,7 @@
     <div class="map_wrap">
 		<!-- 지도를 표시할 div 입니다 -->
         <div id="map" style="width:97%; height:610px; position:relative; overflow:hidden"></div>
-	    <div style="margin-top:1%; margin-right: 3%; display:flex; justify-content:flex-end;">
+	    <div style="margin-right: 3%; display:flex; justify-content:flex-end;">
 			<input id="btnStart" type="button" value="현재 내 위치 :-)" />
 	        <input id="btnStop" type="button" value="이제부터 위치는 비밀~" />
 		</div>
