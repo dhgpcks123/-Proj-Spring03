@@ -22,6 +22,7 @@
 			<exclude-mapping path="/logoutProc.jeju"/>
 			<exclude-mapping path="/markerlist.jeju"/>
 			<exclude-mapping path="/member/member*.jeju"/>
+			<exclude-mapping path="/member/*.jeju"/>
 			<!-- 인터셉터 빈 참조 -->
 			<beans:ref bean="loginCheck"/>
 		</interceptor>

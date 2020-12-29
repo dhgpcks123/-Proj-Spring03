@@ -47,5 +47,8 @@ $(document).ready(function(){
 	$('#chatBtn').click(function(){
 		$(location).attr('href','/www/chat.jeju');
 	});
+	$('#recomBtn').click(function(){
+		$(location).attr('href','/www/recommend/recommend.jeju');
+	});
 	
 });

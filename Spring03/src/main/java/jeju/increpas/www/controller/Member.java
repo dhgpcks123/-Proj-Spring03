@@ -186,14 +186,8 @@ public class Member {
 		}
 
 		// 회원가입 가입 처리 요청 
-		@RequestMapping(value="/joinProc.jeju" )
+		@RequestMapping(value="/joinProc.jeju", method=RequestMethod.POST)
 		public ModelAndView joinProc(ModelAndView mv, HttpSession session, MemberVO mbVO ) {
-			System.out.println("### cont vo id : " + mbVO.getId());
-
-			// VO 가 완성됬으니 데이터베이스 작업하고
-//			ArrayList<MemberVO> list = new ArrayList<MemberVO>();
-//			list.add(mbVO);
-//			list.add(new MemberVO());
 			int cnt = 0;
 			try {
 				cnt = mbDao.insertMember(mbVO);
@@ -201,20 +195,16 @@ public class Member {
 				e.printStackTrace();
 				cnt=0;
 			}
-			System.out.println("**************************** 로그인처리");
 			if(cnt == 1) {
 				// 성공하면 로그인처리하고
 				session.setAttribute("SID", mbVO.getId());
 				
-				System.out.println("**************************** 데이터");
 				// 데이터 가져오기 
 				String id = mbVO.getId();
 				if(id != null) {
 					mbVO=mbDao.getInfo(id);
 					mv.addObject("DATA",mbVO);
 				}
-				
-				System.out.println("**************************** 페이지이동");
 				// 가입완료페이지로 이동하고
 				mv.setViewName("member/memberJoinEnd");
 			} else {

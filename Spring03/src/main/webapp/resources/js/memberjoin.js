@@ -449,12 +449,11 @@ $(document).ready(function(){
 		$('#blood1').val(sabo);
 		$('#blood2').val(sph);
 		$('#birth').val(syear+'/'+smouth+'/'+sday);
-		
 		$('#memberJoinEnd').attr('method', 'POST'); 
 		$('#memberJoinEnd').attr('action', '/www/member/joinProc.jeju'); 
 //		$('#memberJoinEnd').attr('action', '/www/member/memberJoinEnd.jeju'); 
 		
-		return res;
+		return true;
     }
 
     function joinAgree() {
@@ -463,7 +462,6 @@ $(document).ready(function(){
         }
 		
         $("#memberJoinEnd").submit();
-        return true;
     }
 
 	

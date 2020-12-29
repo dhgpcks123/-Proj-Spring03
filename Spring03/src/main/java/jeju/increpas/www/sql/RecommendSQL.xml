@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+		PUBLIC  "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="recSQL">
+
+<!-- parameterType="iVO" -->
+	<select id="recommendList" resultType="iVO">
+		SELECT 
+		    aname, stno, i.apno apno, aponame, apsname
+		FROM
+		    areainfo i, aphoto p
+		WHERE
+		    i.apno = p.apno
+		    AND p.atno = 10
+		    AND p.subpno = 1
+		    
+	</select>
+			<!-- , p.subpno subpno, p.pno pno -->
+		    <!-- AND i.stno = #{stno} -->
+			<!-- parameterType="int" -->
+	
+	<!-- 참고 
+	<select id="nameList" resultType="mVO">
+		SELECT
+			mno, name
+		FROM
+			member
+		WHERE
+			isshow = 'Y'
+	</select>
+	
+	 -->
+	
+</mapper>

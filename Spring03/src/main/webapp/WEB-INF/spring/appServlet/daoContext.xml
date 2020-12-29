@@ -14,6 +14,6 @@
 	<bean id="rDao" class="jeju.increpas.www.dao.ReviewDao" />	
 	<bean id="suggestDao" class="jeju.increpas.www.dao.SuggestDao" />	
 	<bean id="fDao" class="jeju.increpas.www.dao.FavorDao" />
-
+	<bean id="recDao" class="jeju.increpas.www.dao.RecommendDao" />	
 	
 </beans>

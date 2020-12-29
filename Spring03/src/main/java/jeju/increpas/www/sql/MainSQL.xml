@@ -34,7 +34,9 @@
 	<!-- 자세히보기 가져오기 -->
 	<select id="getStoreInfo" resultType="iVO" parameterType="mVO">
 		SELECT  
-		    *  
+		    ano, aname, aloc, atel, areainfo.atno, areainfo.apno, 
+			abody, ahit, isshow, ax, ay, stno, pno, subpno, 
+			aponame, apsname, apsize, apdir  
 		FROM  
 		    areainfo, aphoto  
 		WHERE  
