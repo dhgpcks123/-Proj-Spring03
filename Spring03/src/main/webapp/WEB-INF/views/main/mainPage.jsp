@@ -91,6 +91,9 @@
 	<input type="hidden" name="id" value="${SID}">
 </form>
 
+
+
+
 <!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
 <!--	#				  사이드패널 					#	-->
 <!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
@@ -161,6 +164,16 @@
 			</div>
 		</div>
 		
+		<!-- 게시글 등록 후 리뷰 없을 시  -->
+		<c:if test="${ REVIEW.get(0).rbody eq null}" >
+			<div style="margin-top: 20px; display:flex; flex-direction: column; justify-content: center; align-items: center;">
+				<div> 등록 된 리뷰가 없습니다.</div>
+				<div> 가장 먼저 리뷰를 작성해보세요!</div>
+			</div>
+		</c:if>
+		
+		<!-- 게시글 등록 후 리뷰 있을 시 -->
+		<c:if test="${REVIEW.get(0).rbody != null}" >
 		<!-- 사이드패널 최근리뷰 -->
 		<div class="tbFont" style="padding: 15px; margin-top: 30px;">
 			<div style="text-align: center; margin-bottom: 9px; background-color: #ffcd36;">이 가게의 가장 최근리뷰</div>
@@ -191,8 +204,21 @@
 				<div class="tbFont" style="padding: 3px; margin-top: 5px;">${REVIEW.get(0).rbody}</div>
 			</div>
 		</div>
+		</c:if>
 	</section>
 	
+	
+	<!--  리뷰 없을 시  -->
+	<c:if test="${ REVIEW.get(0).rbody eq null}" >
+		<div class="w3-right tbFont" style=" margin-bottom: 130px;  margin-top :25px">
+			<a href="javascript:void(0)" class="w3-bar-item" style="font-size: 10pt;" onclick="document.getElementById('id01').style.display='block'">
+				<Strong>> 가장 먼저 리뷰 작성하기 </Strong>
+			</a>
+		</div>
+	</c:if>
+	
+	<!--  리뷰 있을 시 -->
+	<c:if test="${REVIEW.get(0).rbody != null}" >
 	<!-- 푸더 : 후기 더 보기 -->
 	<footer>
 		<div class="w3-right tbFont" style=" margin-bottom: 130px;  margin-top :15px">
@@ -201,6 +227,8 @@
 			</a>
 		</div>
 	</footer>
+	</c:if>
+	
 </nav>
 
 
@@ -264,6 +292,8 @@
 					</c:if>
 						</div>
 					</nav>
+					<!--  리뷰 있을 시 -->
+					<c:if test="${REVIEW.get(0).rbody != null}" >
 					<!-- 슬라이드 이미지 -->
 					<div id="wrapper">
 						<!-- 가게 이미지 -->
@@ -294,6 +324,7 @@
 							</div>
 						</div>
 					</div>
+					</c:if>
 
 					<!-- 사용자 리뷰 데이터 -->
 					<section style="display: flex; flex-direction: column; border-top: 1px solid #ECEAEB; margin: 50px 40px 0px 60px;" id="wReviewSuccess">
