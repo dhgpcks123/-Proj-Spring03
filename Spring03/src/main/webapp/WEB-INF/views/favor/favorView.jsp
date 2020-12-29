@@ -91,11 +91,11 @@
 		<!-- top -->
 		<div class="w3-col w3-center w3-card-4">
 			<!-- 타이틀 -->
-			<div class="w3-col w3-pink w3-padding txt24">${SID} 님의 찜 목록</div>
+			<div class="w3-col w3-sand w3-padding txt24">${SID} 님의 찜 목록</div>
 
 			<!-- 메뉴 -->
 			<div class="w3-col">
-				<div class="w3-col m1 w3-deep-orange w3-hover-lime w3-button w3-left"  style="width:130px;"
+				<div class="w3-w3-col m1 w3-deep-orange w3-hover-lime w3-button w3-left"  style="width:130px;"
 					id="hbtn">home</div>
 	<c:if test="${not empty SID}">
 				<div class="w3-col m1 w3-gray w3-hover-green w3-button w3-right sbtn" style="width:130px;"

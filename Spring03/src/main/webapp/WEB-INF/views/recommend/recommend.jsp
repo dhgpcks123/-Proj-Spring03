@@ -88,8 +88,8 @@ body {
 </div>
 
 	<div class="w3-center">
-		<button class="w3-button" style="float:right" type="button" id="hbtn">Home</button>
-		<h2 class="w3-pink w3-padding">계절별 장소 추천 & 코로나 사진 여행 </h2>
+		<button class="hbtn" style="float:right" type="button">Home</button>
+		<h2 class="w3-light-gray w3-padding title">계절별 장소 추천 & 코로나 사진 여행 </h2>
 	</div>	
 	<div class="w3-center w3-margin-top">
 		<div class="w3-third w3-center w3-padding">

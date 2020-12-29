@@ -439,23 +439,24 @@
 <!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
 <!-- Page content -->
 <div class="w3-main" style="margin-left: 420px;">
-    <!-- 주소 정보 -->
-	<div class="map_wrap2">
-		<div class="hAddr">   
-	        <span class="title" style="color:black!important;">주소 정보</span>
-	        <span id="centerAddr" style="color:black!important;"></span>
-    	</div>
-    	
-    </div>
+    
+	
     <!-- 카카오 맵 API -->
     <div class="map_wrap">
 		<!-- 지도를 표시할 div 입니다 -->
         <div id="map" style="width:97%; height:610px; position:relative; overflow:hidden"></div>
-	    <div style="margin-right: 33px; display:flex; justify-content:flex-end;">
-			<input id="btnStart" type="button" value="실시간 위치 추적" />
-	        <input id="btnStop" type="button" value="지속적인 추적 종료" />
+	    <div style="margin-top:1%; margin-right: 3%; display:flex; justify-content:flex-end;">
+			<input id="btnStart" type="button" value="현재 내 위치 :-)" />
+	        <input id="btnStop" type="button" value="이제부터 위치는 비밀~" />
 		</div>
 	    <!-- 검색창 -->
+	    <!-- 주소 정보 -->
+	    <div class="map_wrap2">
+			<div class="hAddr">   
+		        <span class="title" style="color:black!important;">주소 정보</span>
+		        <span id="centerAddr" style="color:black!important;"></span>
+	    	</div>
+	    </div>
         <div id="menu_wrap" class="bg_white" style="margin-left: 15px; margin-top: 15px;">
 			<div class="option">
 				<div>
@@ -843,7 +844,7 @@
 			         // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
 			         // 인포윈도우에 표시될 내용입니다
 			        var locPosition = new kakao.maps.LatLng(lat, lon), 
-			            message = '<div style="padding:5px;">현재 내 위치에요 :-)</div>'; 
+			            message = '<div style="padding:5px;">현재 내 위치 :-)</div>'; 
 			        
 			        // 마커와 인포윈도우를 표시합니다
 			        displayMarker(locPosition, message);
