@@ -7,13 +7,13 @@
 <title>MainPage</title>
 <link rel="shortcut icon" href="#">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/cls.css">
 <link rel="stylesheet" type="text/css" href="css/w3.css">
 <link rel="stylesheet" type="text/css" href="css/main/mapStyle.css">
 <link rel="stylesheet" type="text/css" href="css/detailBoard/detailBoard.css">
 <link rel="stylesheet" type="text/css" href="css/main/mainPage.css">
 <link rel="stylesheet" type="text/css" href="css/component/topHeader.css">
+<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0997e0901ce72cd4e333dc4602ad8e94&libraries=services"></script>
 <script type="text/javascript" src="/www/js/detailBoard.js"></script>
 <script type="text/javascript" src="/www/js/component/topHeader.js"></script>
@@ -85,7 +85,7 @@
 	       	</div>
     	</div>
     </div>
-</c:if>
+	</c:if>
 </div>
 <form method="POST" action="/www/member/memberInfo.jeju" id="frm" name="frm">
 	<input type="hidden" name="id" value="${SID}">
