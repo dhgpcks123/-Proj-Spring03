@@ -90,7 +90,7 @@
 								</td>
 							</tr>
 							<tr>
-								<th scope="row">혈액형</th>
+								<th scope="row">혈액형 (ABO)</th>
 								<!-- 
 								<td>
 									<div class="input-3cols">
@@ -118,7 +118,7 @@
 								</td>	
 							</tr>
 							<tr>
-								<th scope="row ">PH형</th>
+								<th scope="row ">혈액형 (PH)</th>
 						<!-- 
 								<td>
 									<div class="input-3cols">
@@ -259,8 +259,8 @@
 			 -->
 			<div class="btnGroup pdb10">
 				<button class="w3-button w3-cell m2 btnType1 w3-green w3-hover-lime" id="hbtn">Home</button>
-				<button class="w3-button w3-cell m2 btnType1 w3-orange w3-hover-deep-orange" id="iebtn">정보수정</button>
-				<button class="w3-button w3-cell m2 btnType1 w3-red w3-hover-pale-red" id="dbtn">탈 퇴</button>
+<!-- 				<button class="w3-button w3-cell m2 btnType1 w3-orange w3-hover-deep-orange" id="iebtn">Edit</button> -->
+				<button class="w3-button w3-cell m2 btnType1 w3-red w3-hover-pale-red" id="dbtn">Sign out</button>
 			
 				<!-- 탈퇴버튼 팝업 -->
 				<form method="POST" action="/www/member/memberDel.jeju"  
