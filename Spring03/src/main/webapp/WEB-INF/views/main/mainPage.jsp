@@ -471,13 +471,14 @@
     
 	
     <!-- 카카오 맵 API -->
-    <div class="map_wrap">
+    <div style="margin-right: 3%; display:flex; justify-content:flex-end;">
+		<input id="btnStart" type="button" value="내 위치 :-)" />
+        <input id="btnStop" type="button" value="추적 안함" />
+	</div>
+    <div class="map_wrap w3-margin-top">
 		<!-- 지도를 표시할 div 입니다 -->
         <div id="map" style="width:97%; height:610px; position:relative; overflow:hidden"></div>
-	    <div style="margin-right: 3%; display:flex; justify-content:flex-end;">
-			<input id="btnStart" type="button" value="현재 내 위치 :-)" />
-	        <input id="btnStop" type="button" value="이제부터 위치는 비밀~" />
-		</div>
+	    
 	    <!-- 검색창 -->
 	    <!-- 주소 정보 -->
 	    <div class="map_wrap2">
