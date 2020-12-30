@@ -37,6 +37,6 @@ $(document).ready(function(){
 			return;
 		}
 		$('#detailForm').submit();
-	})
+	});
 	
-})
+});

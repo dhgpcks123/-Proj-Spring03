@@ -194,6 +194,16 @@
 	font-size: 9pt;
 }
 
+.ft15 {
+	font-size: 15pt;
+}
+
+.pw{
+	padding: 17px 30px;
+	text-align: left;
+	letter-spacing : 5px;
+	font-family : "Jua","Poor Story","Single Day","Stylish";
+}
 .ft18px {
 	font-size: 16pt;
 }
@@ -383,6 +393,11 @@ span#wbtn {
 #subContentWrap .subContArea .headingTitleArea h3.headingTitle { padding:0 0 18px; font-size:32px; font-weight:500; text-align:center; color:#4e4f51; }
 #subContentWrap .subContArea .headingTitleArea .headingText { padding-bottom:35px; font-size:14px; color:#727476; text-align:center; }
 
+/* 글씨체 변경 */
+.headingTitle{
+	letter-spacing:5pt;
+	font-family : "Single Day","Stylish","Gamja Flower";
+}
 /* ==============================
 * table
 * ============================== */
@@ -401,8 +416,8 @@ span#wbtn {
 .tableArea .tableTitleArea .tableBtnSet { position:relative; display:table-cell; padding:0 0 7px 0; vertical-align:middle; text-align:right; }
 .tableNoti { font-size:12px; line-height:20px; color:#727476; }
 .tableArea table.view { width:100%; border-top:2px solid #727476; margin-bottom:20px; box-sizing:border-box; background: #fff;}
-.tableArea table.view th { background:#f0f0f2; /*width:210px;*/ border-bottom:1px solid #e2e2e4; padding:17px 30px; font-size: 18px; color:#222222; font-weight:400; text-align:left; box-sizing:border-box; }
-.tableArea table.view td { border-bottom:1px solid #e2e2e4; font-size: 14px; color:#727476; text-align:left; padding:12px;  box-sizing:border-box; line-height:22px;}
+.tableArea table.view th { font-family : "Jua","Do Hyeon","Single Day";letter-spacing : 1pt; background:#f0f0f2; /*width:210px;*/ border-bottom:1px solid #e2e2e4; padding:17px 30px; font-size: 15px; color:#222222; font-weight:400; text-align:left; box-sizing:border-box; }
+.tableArea table.view td { font-family : "Jua","Poor Story","Single Day","Stylish";letter-spacing : 2pt;border-bottom:1px solid #e2e2e4; font-size: 14px; color:#727476; text-align:left; padding:12px;  box-sizing:border-box; line-height:22px;}
 .tableArea table.view .note { font-size:13px; line-height:18px; color:#767676; padding:10px 0 0 0; }
 
 .tableArea table.view.tblCenterAlign th {width:auto; text-align:center;}
@@ -478,7 +493,12 @@ input[type="text"].error, input[type="password"].error, input[type="number"].err
 .btnGroup { display:block; text-align:center; }
 .btnArea{ display:inline-block; vertical-align:middle; }
 
-button.btnType1 , a.btnType1 { min-width:160px; display:inline-block; text-align:center; font-size:18px; line-height:50px; height:52px; padding:0 44px; }
+button.btnType1 , a.btnType1 {font-family : "Jua","Poor Story","Single Day","Stylish"; letter-spacing : 1pt; min-width:160px; display:inline-block; text-align:center; font-size:18px; line-height:50px; height:52px; padding:0 44px; }
 
+
+#del{
+	font-family : "Jua","Poor Story","Single Day","Stylish";
+	letter-spacing : 5pt;
+}
 /* HTML Default */
 table { border-collapse:collapse; border-spacing:0; table-layout:fixed; width:100%; }

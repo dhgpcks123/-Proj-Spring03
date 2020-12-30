@@ -5,6 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>어디로 갈까?</title>
+
+<!-- 글씨체 변경 -->
+<link href="https://fonts.googleapis.com/css?family=Single Day" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Gamja Flower" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Stylish" rel="stylesheet">
+
 <link rel="stylesheet" type="text/css" href="/www/css/w3.css">
 <link rel="stylesheet" type="text/css" href="/www/css/suggestBoard/suggestBoard.css" />
 <link rel="stylesheet" type="text/css" href="css/cls.css">
@@ -110,7 +116,7 @@
       <div class="suggest w3-card-4">
          <div class="suggest__body">
             <div class="suggest__number suggest__text" style="height: 30%!important">
-               <span>오늘의~ 행운 번호는&nbsp;&nbsp;</span>
+               <span>오늘의~ 행운 번호는</span>
                <span id=luckyNo></span>
             </div>
             <div class="suggest__menu suggest__text">
@@ -123,7 +129,7 @@
 	                  <input type="hidden" name="ay" id="ay" value="">
                   </form>
                </div>
-               <span id="abody" style="font-size: 14px; margin-top:10px;"></span>
+               <span id="abody" style="font-size: 16px; margin-top:24px;"></span>
             </div>
          </div>
          <div class="ipad__button"></div>

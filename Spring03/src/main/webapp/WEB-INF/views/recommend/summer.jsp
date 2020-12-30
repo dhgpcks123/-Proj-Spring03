@@ -5,8 +5,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Recommend Location</title>
+<title>summer</title>
 
+<link href="https://fonts.googleapis.com/css?family=Cute Font" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Single Day" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="/www/css/w3.css">
 <link rel="stylesheet" type="text/css" href="/www/css/cls.css">
 <link rel="stylesheet" type="text/css" href="/www/css/recommend/recom.css">
@@ -87,7 +89,7 @@
 <!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
 
 <div class="w3-margin-top w3-center">
-	<button class="hbtn" style="float:left" type="button">Home</button>
+	<button class="w3-text-blue-gray hbtn" style="float:left" type="button">Home</button>
 	<button class="bbtn" style="float:right" type="button">Back</button>
 	<h2 class="w3-light-gray w3-padding title">여름에 가면 좋은 여행지!</h2>
 </div>
@@ -117,7 +119,7 @@
 			</div>
 		</c:if>
 	</c:forEach>
-	<h5 class="w3-margin-top w3-right w3-padding info">사진 클릭시 자세한 정보를 보실 수 있습니다</h5>
+	<h5 class="w3-margin-top w3-right w3-padding info">사진을 클릭해주세요 :-)</h5>
 </div>
 </body>
 </html>

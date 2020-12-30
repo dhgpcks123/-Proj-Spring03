@@ -5,6 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Member Information</title>
+
+<!-- 글씨체 변경 -->
+<link href="https://fonts.googleapis.com/css?family=Single Day" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Do Hyeon" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Poor Story" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Stylish" rel="stylesheet">
+
 <link rel="stylesheet" type="text/css" href="/www/css/w3.css">
 <link rel="stylesheet" type="text/css" href="/www/css/cls.css">
 <link rel="stylesheet" type="text/css" href="/www/css/member/member.css">
@@ -16,11 +24,10 @@
 </style>
 <body>
 	<div id="subContentWrap" class="w3-center">
-		
 		<div class="subContArea ">
 			<div class="headingTitleArea">
 				<div class="w3-content w3-center">
-					<h1 class="headingTitle w3-teal w3-card-4">[ ${DATA.mname} ] 님 회원 정보</h1>
+					<h1 class="w3-teal w3-card-4 headingTitle">[ ${DATA.mname} ] 님 회원 정보</h1>
 				</div>
 			</div>
 			
@@ -29,7 +36,7 @@
 					<div class="tableArea">
 						<!-- 회원정보 -->
 						<div class="tableTitleArea mt10">
-							<div class="tableComment">"<span class="color01" title="필수입력값">＊</span>" 필수 사항 입니다.</div>
+							<div class="tableComment"><span class="color01" title="필수입력값">＊</span> : 필수 사항 입니다.</div>
 						</div>
 						<table class="view">
 							<colgroup>
@@ -40,22 +47,22 @@
 							<tr>
 								<th scope="row">성명 <span id="mberNmSpan" title="필수입력" class="color01">＊</span></th>
 								<td>
-									<div class="w3-col w3-text-grey ft18px mh3">
+									<div class="w3-col w3-text-grey ft15 mh3">
 										<span class="w3-twothird w3-center">${DATA.mname}  (아이디 : ${DATA.id})</span>
 										<input type="hidden" id="mberNm" name="mberNm" value="${DATA.mname}">
 									</div>	
 								</td>
 							</tr>
 							<tr>
-								<th scope="row">휴대폰번호<span id="mberNmSpan" title="필수입력" class="color01">＊</span></th>
+								<th scope="row">휴대폰번호<span id="mberNmSpan" title="필수입력" class="color01"> ＊</span></th>
 								<td class="edit">
 									<div class="w3-col w3-text-grey">
-										<span class="w3-twothird w3-center mt7 ft18px" id="cTel">${DATA.tel}</span>
+										<span class="w3-twothird w3-center mt7 ft15" id="cTel">${DATA.tel}</span>
 	                       				<button type="button" name="edit1" class="w3-button w3-cell m2 w3-orange w3-hover-deep-orange w3-right">Edit</button>
 									</div>
 									<form id="telfrm" name="telfrm" style="display: none;" class="w3-col w3-padding">
 										<input type="hidden" name="id" value="${SID}">
-										<input type="text" class="w3-col m8 w3-input w3-border w3-center ft18px" id="tel" name="tel" value="${DATA.tel}">
+										<input type="text" class="w3-col m8 w3-input w3-border w3-center ft15" id="tel" name="tel" value="${DATA.tel}">
 	                       				<button type="button" name="save1" class="w3-button w3-medium w3-red w3-hover-orange mt0 w3-right">Save</button>
 										<!-- 
 										<select title="핸드폰 번호 앞자리 선택" name="cryalTelno1" id="cryalTelno1" class="selectBox">
@@ -94,7 +101,7 @@
 								<!-- 
 								<td>
 									<div class="input-3cols">
-										<div class="w3-col w3-text-grey ft18px mh3">
+										<div class="w3-col w3-text-grey ft15 mh3">
 											<span class="w3-twothird w3-center" id="cBl1">${DATA.blood1}</span>
 										</div>
 									</div>
@@ -102,7 +109,7 @@
 								 -->
 								<td class="edit">
 									<div class="w3-col w3-text-grey">
-										<span class="w3-twothird w3-center mt7 ft18px" id="cBl1">${DATA.blood1}</span>
+										<span class="w3-twothird w3-center mt7 ft15" id="cBl1">${DATA.blood1}</span>
 	                       				<button type="button" name="edit2" class="w3-button w3-cell m2 w3-orange w3-hover-deep-orange w3-right">Edit</button>
 									</div>
 									<form id="bl1frm" name="bl1frm" style="display: none;" class="w3-col w3-padding">
@@ -122,7 +129,7 @@
 						<!-- 
 								<td>
 									<div class="input-3cols">
-										<div class="w3-col w3-text-grey ft18px mh3">
+										<div class="w3-col w3-text-grey ft15 mh3">
 											<span class="w3-twothird w3-center" id="cBl2">${DATA.blood2}</span>
 										</div>
 									</div>
@@ -130,7 +137,7 @@
 						 -->
 								<td class="edit ">
 									<div class="w3-col w3-text-grey">
-										<span class="w3-twothird w3-center mt7 ft18px" id="cBl1">${DATA.blood2}</span>
+										<span class="w3-twothird w3-center mt7 ft15" id="cBl1">${DATA.blood2}</span>
 	                       				<button type="button" name="edit3" class="w3-button w3-cell m2 w3-orange w3-hover-deep-orange w3-right">Edit</button>
 									</div>
 									<form id="bl2frm" name="bl2frm" style="display: none;" class="w3-col w3-padding">
@@ -149,7 +156,7 @@
 								<th scope="row">생년월일</th>
 								<td>
 									<div class="input-3cols">
-										<div class="w3-col w3-text-grey ft18px mh3">
+										<div class="w3-col w3-text-grey ft15 mh3">
 											<span class="w3-twothird w3-center">${DATA.birth}</span>
 										</div>
 									</div>
@@ -159,7 +166,7 @@
 								<th scope="row">성별</th>
 								<td>
 									<div class="input-3cols">
-										<div class="w3-col w3-text-grey ft18px mh3">
+										<div class="w3-col w3-text-grey ft15 mh3">
 											<span class="w3-twothird w3-center">
 												<c:if test="${DATA.gen == 'M'}">남 자</c:if>
 												<c:if test="${DATA.gen eq 'F'}">여 자</c:if>
@@ -174,7 +181,7 @@
 							<!-- 
 								<td>
 									<div class="input-3cols">
-										<div class="w3-col w3-text-grey ft18px mh3">
+										<div class="w3-col w3-text-grey ft15 mh3">
 											<span class="w3-twothird w3-center" id="cSos">${DATA.sos}</span>
 										</div>
 									</div>
@@ -182,12 +189,12 @@
 							 -->
 								<td class="edit">
 									<div class="w3-col w3-text-grey">
-										<span class="w3-twothird w3-center mt7 ft18px" id="cSos">${DATA.sos}</span>
+										<span class="w3-twothird w3-center mt7 ft15" id="cSos">${DATA.sos}</span>
 	                       				<button type="button" name="edit4" class="w3-button w3-cell m2 w3-orange w3-hover-deep-orange w3-right">Edit</button>
 									</div>
 									<form id="sosfrm" name="sosfrm" style="display: none;" class="w3-col w3-padding">
 										<input type="hidden" name="id" value="${SID}">
-										<input type="text" class="w3-col m8 w3-input w3-border w3-center ft18px" id="sos" name="sos" value="${DATA.sos}">
+										<input type="text" class="w3-col m8 w3-input w3-border w3-center ft15" id="sos" name="sos" value="${DATA.sos}">
 	                       				<button type="button" name="save4" class="w3-button w3-medium w3-red w3-hover-orange mt0 w3-right">Save</button>
 									</form>
 								</td>	
@@ -197,7 +204,7 @@
 							<!-- 
 								<td>
 									<div class="input-3cols">
-										<div class="w3-col w3-text-grey ft18px mh3">
+										<div class="w3-col w3-text-grey ft15 mh3">
 											<span class="w3-twothird w3-center">${DATA.rel}</span>
 										</div>
 									</div>
@@ -205,12 +212,12 @@
 							 -->	
 								<td class="edit">
 									<div class="w3-col w3-text-grey">
-										<span class="w3-twothird w3-center mt7 ft18px" id="cRel">${DATA.rel}</span>
+										<span class="w3-twothird w3-center mt7 ft15" id="cRel">${DATA.rel}</span>
 	                       				<button type="button" name="edit5" class="w3-button w3-cell m2 w3-orange w3-hover-deep-orange w3-right">Edit</button>
 									</div>
 									<form id="relfrm" name="relfrm" style="display: none;" class="w3-col w3-padding">
 										<input type="hidden" name="id" value="${SID}">
-										<input type="text" class="w3-col m8 w3-input w3-border w3-center ft18px" id="rel" name="rel" value="${DATA.rel}">
+										<input type="text" class="w3-col m8 w3-input w3-border w3-center ft15" id="rel" name="rel" value="${DATA.rel}">
 	                       				<button type="button" name="save5" class="w3-button w3-medium w3-red w3-hover-orange mt0 w3-right">Save</button>
 									</form>
 								</td>	
@@ -220,7 +227,7 @@
 							<!-- 
 								<td>
 									<div class="input-3cols">
-										<div class="w3-col w3-text-grey ft18px mh3">
+										<div class="w3-col w3-text-grey ft15 mh3">
 											<span class="w3-twothird w3-center">${DATA.addmsg}</span>
 										</div>
 									</div>
@@ -228,12 +235,12 @@
 							 -->	
 								<td class="edit">
 									<div class="w3-col w3-text-grey">
-										<span class="w3-twothird w3-center mt7 ft18px" id="cAddmsg">${DATA.addmsg}</span>
+										<span class="w3-twothird w3-center mt7 ft15" id="cAddmsg">${DATA.addmsg}</span>
 	                       				<button type="button" name="edit6" class="w3-button w3-cell m2 w3-orange w3-hover-deep-orange w3-right">Edit</button>
 									</div>
 									<form id="addmsgfrm" name="addmsgfrm" style="display: none;" class="w3-col w3-padding">
 										<input type="hidden" name="id" value="${SID}">
-										<input type="text" class="w3-col m8 w3-input w3-border w3-center ft18px" id="addmsg" name="addmsg" value="${DATA.addmsg}">
+										<input type="text" class="w3-col m8 w3-input w3-border w3-center ft15" id="addmsg" name="addmsg" value="${DATA.addmsg}">
 	                       				<button type="button" name="save6" class="w3-button w3-medium w3-red w3-hover-orange mt0 w3-right">Save</button>
 									</form>
 								</td>	
@@ -242,7 +249,7 @@
 								<th scope="row">가입일</th>
 								<td>
 									<div class="input-3cols">
-										<div class="w3-col w3-text-grey ft18px mh3"><span class="w3-twothird w3-center">${DATA.joindate}</span></div>
+										<div class="w3-col w3-text-grey ft15 mh3"><span class="w3-twothird w3-center">${DATA.joindate}</span></div>
 									</div>
 								</td>
 							</tr>					 
@@ -252,11 +259,7 @@
 				</div>
 			</div>
 
-			<!-- 버튼 
-			<div class="w3-col w3-border-bottom pdb10">
-				<button type="button" id="modifyUserInfoBtn" class="btnType1 primary">변경하기</button>
-			</div>
-			 -->
+			
 			<div class="btnGroup pdb10">
 				<button class="w3-button w3-cell m2 btnType1 w3-green w3-hover-lime" id="hbtn">Home</button>
 <!-- 				<button class="w3-button w3-cell m2 btnType1 w3-orange w3-hover-deep-orange" id="iebtn">Edit</button> -->
@@ -265,12 +268,12 @@
 				<!-- 탈퇴버튼 팝업 -->
 				<form method="POST" action="/www/member/memberDel.jeju"  
 						id="dfrm" name="dfrm" style="display: none;"
-						class="w3-col w3-card-4 w3-padding w3-margin-bottom">
+						class="w3-col w3-card-4 w3-padding w3-margin-top w3-margin-bottom">
 					<input type="hidden" name="mno" id="mno" value="${DATA.mno}">
-					<label for="pw" class="w3-col m3 w3-text-grey ft18px">비밀번호 : </label>
-					<input type="password" id="pw" name="pw" class="w3-col m7 w3-input w3-border">
-					<div class="w3-col m2 pdh10">
-						<div class="w3-col w3-button w3-medium w3-red w3-hover-orange w3-left mt0" id="del">탈퇴처리</div>
+					<label for="pw" class="w3-col m3 w3-text-grey pw ft15">비밀번호 : </label>
+					<input type="password" id="pw" name="pw" class="w3-col m7 w3-input w3-border w3-margin-top">
+					<div class="w3-col m2 pdh10 w3-margin-top">
+						<div class="w3-col w3-button w3-medium w3-red w3-hover-pale-red w3-left mt0" id="del">탈퇴처리</div>
 					</div>
 				</form>
 			</div>

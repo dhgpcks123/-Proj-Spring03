@@ -9,6 +9,9 @@
 	width: 100%;
 	height: auto;
 } 
+.sbtn{
+	font-family: "Single Day";
+}
 
 
 .season {
@@ -18,15 +21,19 @@
 
 .title{
 	letter-spacing: 9px;
-    font-family:  WingDings;
+    font-family: "Single Day";
 }
 
 .aname{
 	letter-spacing: 9px;
-    font-family:  WingDings;
+    font-family: "Single Day";
 }
-
+.info{
+	font-family: "Cute Font";
+	font-size : 18pt;
+}
 .bbtn{
+	font-family: "Single Day";
     border: none;
     display: inline-block;
     padding: 20px 16px;
@@ -40,6 +47,7 @@
     white-space: nowrap;
 }
 .hbtn{
+	font-family: "Single Day";
     border: none;
     display: inline-block;
     padding: 20px 16px;

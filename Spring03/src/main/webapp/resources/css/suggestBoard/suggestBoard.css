@@ -52,7 +52,12 @@ section{
 }
 
 /*  */
+#abody{
+	letter-spacing: 3px;
+}
 .suggest{
+	font-family : "Single Day","Gamja Flower","Stylish";
+	letter-spacing: 10px;
 	margin-bottom: 15px;
 	width: 800px;
 	height: 65vh;
@@ -92,6 +97,8 @@ section{
 	flex-direction: column;
 }
 .suggest__menu__box{
+	font-family : "Single Day","Stylish","Gamja Flower";
+	letter-spacing: 5px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -105,9 +112,11 @@ section{
 }
 .suggest__menu__name{
 	font-size: 30px;
+	margin-bottom : 3px;
 }
 .sugest__menu__loc{
 	font-size: 15px;
+	margin-top : 3px;
 }
 
 .lower-bar{

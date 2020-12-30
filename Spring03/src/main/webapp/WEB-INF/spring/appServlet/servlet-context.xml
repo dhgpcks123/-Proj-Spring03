@@ -23,6 +23,7 @@
 	<resources mapping="/css/**" location="/resources/css/" />
 	<resources mapping="/js/**" location="/resources/js/" />
 	<resources mapping="/img/**" location="/resources/img/" />
+	<resources mapping="/favor/**" location="/resources/img/favor/" />
 	
 	
 	<beans:import resource="socketContext.xml"/>

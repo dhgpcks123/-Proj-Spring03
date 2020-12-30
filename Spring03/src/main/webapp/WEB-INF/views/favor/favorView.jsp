@@ -5,6 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>File Board List</title>
+
+<link href="https://fonts.googleapis.com/css?family=Single Day" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Gamja Flower" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Stylish" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/cls.css">
 <link rel="stylesheet" type="text/css" href="css/w3.css">
 <link rel="stylesheet" type="text/css" href="css/component/topHeader.css">
@@ -93,43 +97,50 @@
 			<!-- 타이틀 -->
 			
 		<div class="w3-center">
-			<button class="hbtn" style="float:right" type="button">Home</button>
-			<h2 class="w3-sand w3-padding title">${SID} 님의 찜 목록 </h2>
+			<button class="w3-text-blue-gray hbtn" style="float:right" type="button"><strong>Home</strong></button>
+			<h2 class=" w3-sand w3-padding title"><strong>${SID} 님의 찜 목록</strong></h2>
 		</div>	
 			
 			<!-- 메뉴 -->
 			<div class="w3-col">
 	<c:if test="${not empty SID}">
-				<div class="m1 w3-deep-orange w3-hover-pink w3-button sbtn"  
+				<div class="m1 w3-pale-red w3-hover-pink w3-margin-bottom w3-button sbtn"  
 					id="sbtn1">관광모아보기</div>
-				<div class="m1 w3-orange w3-hover-red w3-button sbtn"  
+				<div class="m1 w3-pale-yellow w3-hover-red w3-margin-bottom w3-button sbtn"  
 					id="sbtn2">숙박모아보기</div>
-				<div class="m1 w3-yellow w3-hover-lime w3-button sbtn"  
+				<div class="m1 w3-pale-green w3-hover-lime w3-margin-bottom w3-button sbtn"  
 					id="sbtn3">식당모아보기</div>
-				<div class="m1 w3-green w3-hover-teal w3-button sbtn"  
+				<div class="m1 w3-pale-blue w3-hover-teal w3-margin-bottom w3-button sbtn"  
 					id="sbtn4">병원모아보기</div>
-				<div class="m1 w3-blue w3-hover-aqua w3-button sbtn" 
+				<div class="m1 w3-light-blue w3-hover-blue w3-margin-bottom w3-button sbtn" 
 					id="sbtn5">응급모아보기</div>
-				<div class="m1 w3-gray w3-hover-black w3-button sbtn" 
+				<div class="m1 w3-light-gray w3-hover-black w3-margin-bottom w3-button sbtn" 
 					id="sbtn6">전체보기</div>
 
 	</c:if>
-				<!-- <div class="w3-rest" style="opacity: 0.7; height: 39px;"> </div> -->
 			</div>
 		</div>
 
 		<!-- 게시글리스트 -->
 		<div class="w3-col w3-margin-top w3-padding w3-card-4">
 			<div class="w3-col w3-center w3-border w3-margin-top">
-				<div class="w3-col m3 w3-light-grey w3-border-right">장소이름</div>
-				<div class="w3-col m6 w3-light-grey w3-border-right">장소경로</div>
-				<div class="w3-col m3 w3-light-grey w3-border-right">전화번호</div>
+				<div class="w3-col m3 w3-light-grey w3-border-right type">장소이름</div>
+				<div class="w3-col m6 w3-light-grey w3-border-right type">장소경로</div>
+				<div class="w3-col m3 w3-light-grey w3-border-right type">전화번호</div>
 			</div>
 			<div class="w3-col w3-border-left w3-border-bottom w3-margin-bottom">
 				<c:forEach var="data" items="${LIST}">
 					<div class="w3-col m3 w3-border-right txt">${data.aname}</div>
 					<div class="w3-col m6 w3-border-right txt">${data.aloc}</div>
-					<div class="w3-col m3 w3-border-right txt">${data.atel}</div>
+					<div class="w3-col m3 w3-border-right txt">${data.atel}
+					
+					<!-- 전화 버튼 -->
+					<c:if test="${data.atel != '번호없음'}">
+						<a href='tel:${data.atel}'>
+							<img class="tel" src="/www/img/favor/tel.jpg" alt="전화걸기">
+						</a>
+					</c:if>
+					</div>
 				</c:forEach>
 			</div>
 		</div>
