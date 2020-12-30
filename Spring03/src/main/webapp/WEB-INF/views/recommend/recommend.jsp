@@ -6,12 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Recommend Location</title>
-<style>
-body {
-	text-align: center;
-}
 
-</style>
 <link rel="stylesheet" type="text/css" href="/www/css/w3.css">
 <link rel="stylesheet" type="text/css" href="/www/css/cls.css">
 <link rel="stylesheet" type="text/css" href="/www/css/recommend/recom.css">
@@ -37,12 +32,10 @@ body {
 				<div class="topHeader__eyesIcon">
 					<div class="topHeader__eyes">
 				    	<div class="topHeader__eye1 eye">
-				       		<div class="topHeader__dot">
-				       	</div>
+				       		<div class="topHeader__dot"></div>
 				        </div>
 				       	<div class="topHeader__eye2 eye">
-				    	   	<div class="topHeader__dot">
-				    	</div>
+				    	   	<div class="topHeader__dot"></div>
 					    </div>
 				    </div>
 				</div>
@@ -84,7 +77,7 @@ body {
 	       	</div>
     	</div>
     </div>
-	</c:if>
+</c:if>
 </div>
 
 	<div class="w3-center">

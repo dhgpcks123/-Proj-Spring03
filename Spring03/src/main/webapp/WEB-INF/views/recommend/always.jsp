@@ -7,12 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Recommend Location</title>
-<style>
-body {
-	text-align: center;
-}
 
-</style>
 <link rel="stylesheet" type="text/css" href="/www/css/w3.css">
 <link rel="stylesheet" type="text/css" href="/www/css/cls.css">
 <link rel="stylesheet" type="text/css" href="/www/css/recommend/recom.css">
