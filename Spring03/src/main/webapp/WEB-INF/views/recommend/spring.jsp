@@ -14,9 +14,13 @@
 <script type="text/javascript" src="/www/js/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="/www/js/component/topHeader.js"></script>
 <script type="text/javascript" src="/www/js/recommend.js"></script>
+
 <script src="https://kit.fontawesome.com/e6e9b86680.js"></script>
 </head>
 <body>
+		
+
+
 <!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
 <!--	#			 	메인 상단 헤더 부분			 	#	-->
 <!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
@@ -81,30 +85,41 @@
     </div>
 	</c:if>
 </div>
+<!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
+<!--	#			 			타이틀				 	#	-->
+<!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
 
-	<div class="w3-center">
-		<button class="hbtn" style="float:left" type="button">Home</button>
-		<button class="bbtn" style="float:right" type="button">Back</button>
-		<h2 class="w3-light-gray w3-padding title">봄에 가면 좋은 여행지!</h2>
-	</div>	
+<div class="w3-margin-top w3-center">
+	<button class="hbtn" style="float:left" type="button">Home</button>
+	<button class="bbtn" style="float:right" type="button">Back</button>
+	<h2 class="w3-light-gray w3-padding title">봄에 가면 좋은 여행지!</h2>
+</div>	
 		
-		<!-- 타이틀 & 이미지 -->
-<c:forEach var="data" items="${STORE}" varStatus="status">
-	<c:if test="${data.stno == 100}">		
-		<!--  title  -->
-		<div class="w3-third w3-center w3-padding">
-			<div class="w3-title">
-				<h2 class="w3-center aname" >
-					 <strong>${data.aname}</strong>
-				</h2>
-				<img src="/area/${data.aponame}" class="season"/>
+<!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
+<!--	#			 			사진 정보				 	#	-->
+<!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
+
+<div class="w3-margin-top w3-center">
+	<c:set var="no" value="${0}" />		
+	<c:forEach var="data" items="${STORE}" varStatus="status">
+		<c:if test="${data.stno == 100}">
+		<c:set var="no" value="${no + 1}" />		
+			<!--  title  -->
+			<div class="w3-third w3-center w3-padding">
+				<div class="w3-title">
+					<h2 class="w3-center aname" >
+						 <strong>${data.aname}</strong>
+					</h2>
+					<form action="/www/main.jeju" method="GET" id="detailForm${no}">
+			          <input type="hidden" name="ax" id="ax" value="${data.ax}">
+			          <input type="hidden" name="ay" id="ay" value="${data.ay}">
+			        </form>
+					<img src="/area/${data.aponame}" class="season" id="showDetailBtn${no}"/>
+				</div>
 			</div>
-		</div>
-	</c:if>
-</c:forEach>
+		</c:if>
+	</c:forEach>
+	<h5 class="w3-margin-top w3-right w3-padding info">사진 클릭시 자세한 정보를 보실 수 있습니다</h5>
+</div>
 </body>
 </html>
-
-<%-- 	<div class="w3-half w3-center w3-padding">
-			<img src="/img/area/${data.aponame}" class="imgbox" alt="봄">가파도(oname, aname 가져오기)
-		</div> --%>

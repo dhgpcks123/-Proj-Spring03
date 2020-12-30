@@ -81,26 +81,42 @@
     </div>
 	</c:if>
 </div>
-	<div> 
-		<div class="w3-center">
-			<button class="hbtn" style="float:left" type="button">Home</button>
-			<button class="bbtn" style="float:right" type="button">Back</button>
-			<h2 class="w3-light-gray w3-padding title">가을에 가면 좋은 여행지!</h2>
-		</div>	
-<c:forEach var="data" items="${STORE}" varStatus="status">
-	<c:if test="${data.stno == 300}">		
+
+<!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
+<!--	#			 			타이틀				 	#	-->
+<!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
+
+<div class="w3-margin-top w3-center">
+	<button class="hbtn" style="float:left" type="button">Home</button>
+	<button class="bbtn" style="float:right" type="button">Back</button>
+	<h2 class="w3-light-gray w3-padding title">가을에 가면 좋은 여행지!</h2>
+</div>	
+		
+<!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
+<!--	#			 			사진 정보				 	#	-->
+<!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
+
+<div class="w3-margin-top w3-center">
+	<c:set var="no" value="${0}" />		
+	<c:forEach var="data" items="${STORE}" varStatus="status">
+		<c:if test="${data.stno == 300}">
+		<c:set var="no" value="${no + 1}" />		
 			<!--  title  -->
-		<div class="w3-third w3-center w3-padding">
-			<div class="w3-title">
-				<h2 class="w3-center aname" >
-					<strong>${data.aname}</strong>
-				</h2>
-				<img src="/area/${data.aponame}" class="season"/>
+			<div class="w3-third w3-center w3-padding">
+				<div class="w3-title">
+					<h2 class="w3-center aname" >
+						 <strong>${data.aname}</strong>
+					</h2>
+					<form action="/www/main.jeju" method="GET" id="detailForm${no}">
+			          <input type="hidden" name="ax" id="ax" value="${data.ax}">
+			          <input type="hidden" name="ay" id="ay" value="${data.ay}">
+			        </form>
+					<img src="/area/${data.aponame}" class="season" id="showDetailBtn${no}"/>
+				</div>
 			</div>
-		</div>
-	</c:if>
-</c:forEach>
-	</div>
-	
+		</c:if>
+	</c:forEach>
+	<h5 class="w3-margin-top w3-right w3-padding info">사진 클릭시 자세한 정보를 보실 수 있습니다</h5>
+</div>
 </body>
 </html>
