@@ -13,13 +13,14 @@
 
 .season {
 	width: 100%;
-	height: auto;
+	height: 330px;
 }
 
 .title{
 	letter-spacing: 9px;
     font-family:  WingDings;
 }
+
 .aname{
 	letter-spacing: 9px;
     font-family:  WingDings;

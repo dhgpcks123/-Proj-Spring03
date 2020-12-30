@@ -90,7 +90,7 @@ body {
 		<div class="w3-center">
 			<button class="hbtn" style="float:left" type="button">Home</button>
 			<button class="bbtn" style="float:right" type="button">Back</button>
-			<h2 class="w3-light-gray w3-padding title">겨울에 가면 좋은 여행지! </h2>
+			<h2 class="w3-light-gray w3-padding title">겨울에 가면 좋은 여행지!</h2>
 		</div>	
 <c:forEach var="data" items="${STORE}" varStatus="status">
 	<c:if test="${data.stno == 400}">		
@@ -98,7 +98,7 @@ body {
 		<div class="w3-third w3-center w3-padding">
 			<div class="w3-title">
 				<h2 class="w3-center aname" >
-					<strong> ${data.aname}</strong>
+					<strong>${data.aname}</strong>
 				</h2>
 				<img src="/area/${data.aponame}" class="season"/>
 			</div>
