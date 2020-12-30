@@ -86,15 +86,20 @@ body {
     </div>
 	</c:if>
 </div>
-		<h2>봄에 가면 좋은 여행지!</h2>
-		<button type="button" id="bbtn">Back</button>
+
+	<div class="w3-center">
+		<button class="hbtn" style="float:left" type="button">Home</button>
+		<button class="bbtn" style="float:right" type="button">Back</button>
+		<h2 class="w3-light-gray w3-padding title">봄에 가면 좋은 여행지! </h2>
+	</div>	
+		
 		<!-- 타이틀 & 이미지 -->
 <c:forEach var="data" items="${STORE}" varStatus="status">
 	<c:if test="${data.stno == 100}">		
 		<!--  title  -->
 		<div class="w3-third w3-center w3-padding">
 			<div class="w3-title">
-				<h2 class="w3-center" >
+				<h2 class="w3-center aname" >
 					<strong> ${data.aname}</strong>
 				</h2>
 				<img src="/area/${data.aponame}" class="season"/>

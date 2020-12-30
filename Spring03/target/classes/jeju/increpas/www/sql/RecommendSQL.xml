@@ -5,7 +5,6 @@
 
 <mapper namespace="recSQL">
 
-<!-- parameterType="iVO" -->
 	<select id="recommendList" resultType="iVO">
 		SELECT 
 		    aname, stno, i.apno apno, aponame, apsname
@@ -17,20 +16,6 @@
 		    AND p.subpno = 1
 		    
 	</select>
-			<!-- , p.subpno subpno, p.pno pno -->
-		    <!-- AND i.stno = #{stno} -->
-			<!-- parameterType="int" -->
-	
-	<!-- 참고 
-	<select id="nameList" resultType="mVO">
-		SELECT
-			mno, name
-		FROM
-			member
-		WHERE
-			isshow = 'Y'
-	</select>
-	
-	 -->
+			
 	
 </mapper>

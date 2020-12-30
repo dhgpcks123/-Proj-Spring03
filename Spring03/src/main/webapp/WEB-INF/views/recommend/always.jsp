@@ -89,16 +89,17 @@ body {
 </div>
 
 	<div> 
-		<h2 class="w3-pink w3-padding">사계절 내내 가면 좋은 여행지!</h2>
-		<div>
-			<div class="w3-button" id="bbtn">Back</div>
-		</div>
+		<div class="w3-center">
+			<button class="hbtn" style="float:left" type="button">Home</button>
+			<button class="bbtn" style="float:right" type="button">Back</button>
+			<h2 class="w3-light-gray w3-padding title">사계절 내내 가면 좋은 여행지! </h2>
+		</div>	
 <c:forEach var="data" items="${STORE}" varStatus="status">
 	<c:if test="${data.stno == 500}">		
 			<!--  title  -->
 		<div class="w3-third w3-center w3-padding">
 			<div class="w3-title">
-				<h2 class="w3-center" >
+				<h2 class="w3-center aname" >
 					<strong> ${data.aname}</strong>
 				</h2>
 				<img src="/www/img/area/${data.aponame}" class="season"/>

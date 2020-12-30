@@ -1,11 +1,13 @@
 $(document).ready(function(){
 	
-	$('#hbtn').click(function(){
+	$('.hbtn').click(function(){
 		$(location).attr('href', '/www/main.jeju');
 	});
-	$('#bbtn').click(function(){
+	
+	$('.bbtn').click(function(){
 		$(location).attr('href', '/www/recommend/recommend.jeju');
 	});
+	
 	$('#sbtn').click(function(){
 		$(location).attr('href', '/www/recommend/spring.jeju');
 	});

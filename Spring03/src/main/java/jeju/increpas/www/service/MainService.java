@@ -28,13 +28,16 @@ public class MainService {
 		
 		List<RphotoVO> rphotovoList = mDao.getReviewPhoto(mVO);
 		
-		List<ReviewVO> review = mDao.getReviewInfo(mVO);
 		List<InfoVO> store = mDao.getStoreInfo(mVO);
-		review.get(0).setRphotovoList(rphotovoList);
+		List<ReviewVO> review;
+		try {
+			review = mDao.getReviewInfo(mVO);
+			review.get(0).setRphotovoList(rphotovoList);			
+			mv.addObject("REVIEW", review);
+		}catch(Exception e){};
 		
 		mv.addObject("MAPx", mVO.getAx());
 		mv.addObject("MAPy", mVO.getAy());
-		mv.addObject("REVIEW", review);
 		mv.addObject("STORE", store);
 		
 		mv.setViewName("main/mainPage");
