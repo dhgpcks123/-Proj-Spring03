@@ -1,3 +1,4 @@
+
 .mw400700 {
 	max-width: 450px;
 	height: 800px;
@@ -369,7 +370,7 @@ span#wbtn {
 }
 
 
-/* È¸¿øÁ¤º¸ */
+/* È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 .color01 {
     color: #f68b2e !important;
 }
@@ -473,10 +474,11 @@ input[type="text"].error, input[type="password"].error, input[type="number"].err
 /* ==============================
 * button
 * ============================== */
+
 .btnGroup { display:block; text-align:center; }
 .btnArea{ display:inline-block; vertical-align:middle; }
 
-button.btnType1 , a.btnType1 { min-width:136px; display:inline-block; text-align:center; font-size:18px; line-height:50px; height:52px; padding:0 44px; }
+button.btnType1 , a.btnType1 { min-width:160px; display:inline-block; text-align:center; font-size:18px; line-height:50px; height:52px; padding:0 44px; }
 
 /* HTML Default */
 table { border-collapse:collapse; border-spacing:0; table-layout:fixed; width:100%; }
