@@ -90,7 +90,7 @@
 
 <div class="w3-margin-top w3-center">
 	<button class="w3-text-blue-gray hbtn" style="float:left" type="button">Home</button>
-	<button class="bbtn" style="float:right" type="button">Back</button>
+	<button class="w3-text-blue-gray bbtn" style="float:right" type="button">Back</button>
 	<h2 class="w3-light-gray w3-padding title">겨울에 가면 좋은 여행지!</h2>
 </div>	
 
