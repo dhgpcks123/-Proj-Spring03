@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+.hbtn{
+    border: none;
+    display: inline-block;
+    padding: 20px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+
+.title{
+	font-family : "Single Day","Gamja Flower","Stylish";
+	letter-spacing: 10px;
+}
+.sbtn {
+	font-family : "Single Day","Gamja Flower","Stylish";
+	letter-spacing: 3px;
+	font-size : 15pt;
+}
+.hbtn{
+	font-family : "Single Day","Gamja Flower","Stylish";
+	letter-spacing: 3px;
+	font-size : 15pt;
+}
+.type, .txt{
+	font-size : 17pt;
+	text-align : center;
+	letter-spacing: 2px;
+	font-family : "Gamja Flower","Single Day","Stylish";
+}
+
+.tel{
+	width:20px;
+	height : auto;
+}
+
+#sbtn6{
+    letter-spacing: 10px;
+}

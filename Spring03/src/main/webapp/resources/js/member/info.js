@@ -214,7 +214,7 @@ $(document).ready(function(){
 	// 회원 탈퇴 처리
 	$('#dbtn').click(function(){
 		// 비밀번호 입력창 보이게 하고
-		$('#dfrm').stop().slideDown(300);
+		$('#dfrm').stop().slideToggle(300);
 	});
 	
 	$('#del').click(function(){

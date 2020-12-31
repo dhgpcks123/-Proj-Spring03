@@ -43,24 +43,16 @@
     .bAddr {padding:5px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
 
    #btnStart{ 
-   		font-family: 'Gugi', cursive;
-   		margin-top : 50px;
-   		font-size : 12pt;
-   		width : 15%;
-   		height : 5%;
-   		background :dimgray;
-   		color:white;
+	   	background-color: #ffcd36;
+		max-width: 125px;
+		border-radius: 5px;
 		margin: 0px 3px;
 		border: 2px solid rgba(255, 255, 255, 0.3);
    }
    #btnStop{ 
-   		font-family: 'Gugi', cursive;
-   		margin-top : 50px;
-   		font-size : 12pt;
-   		width : 15%;
-   		height : 5%;
-   		background :dimgray;
-   		color:white;
+ 		background-color: #ffcd36;
+		max-width: 125px;
+		border-radius: 5px;
 		margin: 0px 3px;
 		border: 2px solid rgba(255, 255, 255, 0.3);
    }

@@ -1,10 +1,16 @@
 $(document).ready(function(){
-	$('#hbtn').click(function(){
+	$('.hbtn').click(function(){
 		$(location).attr('href', '/www/main.jeju');
 	});
 	$('#obtn').click(function(){
 		$(location).attr('href', '/www/LogoutProc.jeju');		
 	});
+	
+	/* 전 체 보 기 */
+	$('#sbtn6').click(function(){
+		$(location).attr('href', '/www/FavorView.jeju');		
+	});
+	
 	$('.sbtn').click(function(){
 		var id = $(this).attr('id');
 		$(this).append(

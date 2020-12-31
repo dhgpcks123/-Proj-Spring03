@@ -6,12 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Recommend Location</title>
-<style>
-body {
-	text-align: center;
-}
 
-</style>
+<link href="https://fonts.googleapis.com/css?family=Cute Font" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Single Day" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="/www/css/w3.css">
 <link rel="stylesheet" type="text/css" href="/www/css/cls.css">
 <link rel="stylesheet" type="text/css" href="/www/css/recommend/recom.css">
@@ -37,12 +34,10 @@ body {
 				<div class="topHeader__eyesIcon">
 					<div class="topHeader__eyes">
 				    	<div class="topHeader__eye1 eye">
-				       		<div class="topHeader__dot">
-				       	</div>
+				       		<div class="topHeader__dot"></div>
 				        </div>
 				       	<div class="topHeader__eye2 eye">
-				    	   	<div class="topHeader__dot">
-				    	</div>
+				    	   	<div class="topHeader__dot"></div>
 					    </div>
 				    </div>
 				</div>
@@ -84,39 +79,38 @@ body {
 	       	</div>
     	</div>
     </div>
-	</c:if>
+</c:if>
 </div>
 
+<!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
+<!--	#			 			타이틀				 	#	-->
+<!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
+
 	<div class="w3-center">
-		<button class="hbtn" style="float:right" type="button">Home</button>
+		<button class="w3-text-blue-gray hbtn" style="float:right" type="button">Home</button>
 		<h2 class="w3-light-gray w3-padding title">계절별 장소 추천 & 코로나 사진 여행 </h2>
 	</div>	
+	
+<!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
+<!--	#			 		계절 리스트 				 	#	-->
+<!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
 	<div class="w3-center w3-margin-top">
 		<div class="w3-third w3-center w3-padding">
-			<button type="button" id="sbtn">
-				<img src="/www/img/area/spring.jpg" class="imgbox" alt="봄">spring
-			</button>
+			<img src="/www/img/area/spring.jpg" class="imgbox" alt="봄" id="sbtn"><strong>spring</strong>
 		</div>
 		<div class="w3-third w3-center w3-padding locfr">
-			<button type="button" id="mbtn">
-				<img src="/www/img/area/summer.jpg" class="imgbox" alt="여름">summer
-			</button>
+			<img src="/www/img/area/summer.jpg" class="imgbox" alt="여름" id="mbtn"><strong>summer</strong>
 		</div>
 		<div class="w3-third w3-center w3-padding locfr">
-			<button type="button"  id="fbtn">
-				<img src="/www/img/area/fall.jpg" class="imgbox" alt="가을">fall
-			</button>
+			<img src="/www/img/area/fall.jpg" class="imgbox" alt="가을" id="fbtn"><strong>fall</strong>
 		</div>
 		<div class="w3-third w3-center w3-padding locfr">
-			<button type="button" id="wtbtn">
-				<img src="/www/img/area/winter.jpg" class="imgbox" alt="겨울">winter
-			</button>
+			<img src="/www/img/area/winter.jpg" class="imgbox" alt="겨울" id="wtbtn"><strong>winter</strong>
 		</div>
 		<div class="w3-third w3-center w3-padding">
-			<button type="button" id="abtn">
-				<img src="/www/img/area/always.jpg" class="imgbox" alt="사계절내내">always
-			</button>
+			<img src="/www/img/area/always.jpg" class="imgbox" alt="사계절내내" id="abtn"><strong>always</strong>
 		</div>
+		<h5 class="w3-margin-top w3-right w3-padding info">사진을 클릭해주세요 :-)</h5>
 	</div>
 </body>
 </html>

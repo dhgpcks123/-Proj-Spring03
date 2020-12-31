@@ -38,12 +38,10 @@
 				<div class="topHeader__eyesIcon">
 					<div class="topHeader__eyes">
 				    	<div class="topHeader__eye1 eye">
-				       		<div class="topHeader__dot">
-				       	</div>
+				       		<div class="topHeader__dot"></div>
 				        </div>
 				       	<div class="topHeader__eye2 eye">
-				    	   	<div class="topHeader__dot">
-				    	</div>
+				    	   	<div class="topHeader__dot"></div>
 					    </div>
 				    </div>
 				</div>
@@ -149,7 +147,7 @@
 			<c:if test="${STORE.get(0).atno==40 || STORE.get(0).atno==50}">
 				<span class="sos">
 					<a href='tel:${STORE.get(0).atel}'>
-						<img src="/www/img/member/sos.png" alt="sos 전화 걸기">
+						<img src="/www/img/main/sos.png" alt="sos 전화 걸기">
 					</a>
 				</span>	
 			</c:if>	
@@ -473,13 +471,14 @@
     
 	
     <!-- 카카오 맵 API -->
-    <div class="map_wrap">
+    <div style="margin-right: 3%; display:flex; justify-content:flex-end;">
+		<input id="btnStart" type="button" value="내 위치 :-)" />
+        <input id="btnStop" type="button" value="추적 안함" />
+	</div>
+    <div class="map_wrap w3-margin-top">
 		<!-- 지도를 표시할 div 입니다 -->
         <div id="map" style="width:97%; height:610px; position:relative; overflow:hidden"></div>
-	    <div style="margin-right: 3%; display:flex; justify-content:flex-end;">
-			<input id="btnStart" type="button" value="현재 내 위치 :-)" />
-	        <input id="btnStop" type="button" value="이제부터 위치는 비밀~" />
-		</div>
+	    
 	    <!-- 검색창 -->
 	    <!-- 주소 정보 -->
 	    <div class="map_wrap2">
