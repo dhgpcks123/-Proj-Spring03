@@ -116,7 +116,7 @@
       <div class="suggest w3-card-4">
          <div class="suggest__body">
             <div class="suggest__number suggest__text" style="height: 30%!important">
-               <span>오늘의~ 행운 번호는</span>
+               <span>오늘의~ 행운 번호는&nbsp;&nbsp;</span>
                <span id=luckyNo></span>
             </div>
             <div class="suggest__menu suggest__text">

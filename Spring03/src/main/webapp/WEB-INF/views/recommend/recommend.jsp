@@ -9,6 +9,7 @@
 
 <link href="https://fonts.googleapis.com/css?family=Cute Font" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Single Day" rel="stylesheet">
+
 <link rel="stylesheet" type="text/css" href="/www/css/w3.css">
 <link rel="stylesheet" type="text/css" href="/www/css/cls.css">
 <link rel="stylesheet" type="text/css" href="/www/css/recommend/recom.css">
@@ -87,7 +88,7 @@
 <!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
 
 	<div class="w3-center">
-		<button class="w3-text-blue-gray hbtn" style="float:right" type="button">Home</button>
+		<button class="w3-text-blue-gray hbtn" style="float:right" type="button"><strong>Home</strong></button>
 		<h2 class="w3-light-gray w3-padding title">계절별 장소 추천 & 코로나 사진 여행 </h2>
 	</div>	
 	
