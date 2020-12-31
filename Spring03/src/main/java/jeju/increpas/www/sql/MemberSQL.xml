@@ -44,7 +44,7 @@
 
 	<select id="getInfo" resultType="mbVO" parameterType="string">
 		SELECT
-			mno, id, mname, mail, tel, joinDate, gen, blood1, blood2, birth, sos, rel, addmsg
+			mno, id, mname, mail, tel, joinDate, gen, blood1, blood2,birth, sos, rel, addmsg
 		FROM
 			member
 		WHERE
@@ -82,7 +82,7 @@
 		INSERT INTO 
 			member(mno, id, mname, pw, mail, tel, joindate, gen, blood1, blood2, birth, sos, rel, addmsg)
 		VALUES( 
-			#{mno}, #{id}, #{mname}, #{pw}, #{mail}, #{tel}, sysdate, #{gen}, #{blood1}, #{blood2}, TO_DATE(#{birth}), #{sos}, #{rel}, #{addmsg} 
+			#{mno}, #{id}, #{mname}, #{pw}, #{mail}, #{tel}, sysdate, #{gen}, #{blood1}, #{blood2}, #{birth}, #{sos}, #{rel}, #{addmsg} 
 		) 
 	</insert>
 

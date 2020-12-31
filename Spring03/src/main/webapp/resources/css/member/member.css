@@ -489,7 +489,7 @@ input[type="text"].error, input[type="password"].error, input[type="number"].err
 /* ==============================
 * button
 * ============================== */
-
+#birthday { width:100px;}
 .btnGroup { display:block; text-align:center; }
 .btnArea{ display:inline-block; vertical-align:middle; }
 

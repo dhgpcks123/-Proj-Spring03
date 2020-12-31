@@ -6,22 +6,13 @@ import java.text.*;
 
 public class MemberVO {
    private int mno;
-   private String id, mname, pw, mail, tel, gen, isshow, joindate, blood1, blood2,birth, sos, msg, rel, addmsg;
-   private Date  joinDate;
+   private String id, mname, pw, mail, tel, gen, isshow, joindate, blood1, blood2, sos, msg, rel, addmsg;
+   private Date birth, joinDate;
    
    public int getMno() {
       return mno;
    }
-   
-   public String getBirth() {
-		return birth;
-	}
-	
-	public void setBirth(String birth) {
-		this.birth = birth;
-	}
-
-public void setMno(int mno) {
+   public void setMno(int mno) {
       this.mno = mno;
    }
    public String getId() {
@@ -108,7 +99,12 @@ public void setMno(int mno) {
       setJoindate();
    }
 
-	
+	public Date getBirth() {
+		return birth;
+	}
+	public void setBirth(Date birth) {
+		this.birth = birth;
+	}
 	public String getRel() {
 		return rel;
 	}

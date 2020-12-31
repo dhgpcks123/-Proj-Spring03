@@ -78,12 +78,12 @@
 						<input class="w3-input w3-padding-16 w3-border" type="text" placeholder="이름" name="mname" required id="mname">
 						<span class="w3-col w3-center" id="namemsg" style="display: none;"></span>
 					</div>
+					
 					<!-- 생년월일  -->
-					<div class="w3-col brith pb20">
-						<input class="w3-third  w3-input w3-padding-16  w3-border" type="number" name="year" id="year" value="1988" min="1900" max="2020">
-						<input class="w3-third  w3-input w3-padding-16  w3-border" type="number" name="mouth" id="mouth" value="6" min="1" max="12">
-						<input class="w3-third  w3-input w3-padding-16  w3-border" type="number" name="day" id="day" value="15" min="1" max="31">
+					<div class="w3-col pb20">
+						<input class="w3-input w3-padding-16  w3-border" type="date" name="birthday" id="birthday" style="text-align:left; width:100%; height:40px; letter-spacing: 5px">
 					</div>
+					
 					<!-- 전화번호 -->
 					<div class="w3-col pb20">
 						<input class="w3-input w3-padding-16 w3-border" type="text" placeholder="숫자만 입력하세요." required id="tel" name="tel">
@@ -122,7 +122,7 @@
 						   
 					<!-- 혈액형  -->
 					<div class="w3-col  pb20">
-						<span class="w3-col m12 w3-border" id="blood"  >혈액형</span>
+						<span class="w3-col m12 w3-border" id="blood">혈액형</span>
 						<div class="w3-col m5 mt5  w3-border w3-left">
 							<input type="radio" class="w3-radio-medium ph" id="phP" name="ph" value="RH+"><span>&nbsp;RH+</span><br>
 							<input type="radio" class="w3-radio-medium ph" id="phM" name="ph" value="RH-"><span>&nbsp;RH-</span><br>

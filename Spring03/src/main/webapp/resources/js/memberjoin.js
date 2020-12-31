@@ -424,23 +424,17 @@ $(document).ready(function(){
 		var spw = $('#pw').val();
 		var smail = $('#mail').val();
 		var sname = $('#mname').val();
-		var syear = $('#year').val();
-		var smouth = $('#mouth').val();
-		var sday = $('#day').val();
+	
+		var sbirthday = $('#birthday').val();
 		var stel = $('#tel').val();
 		var sgen = $('.gen:checked').val();
 		var sph = $('.ph:checked').val();
 		var sabo = $('.abo:checked').val();
 		var ssos = $('#sos').val();
 		var srel = $('#srel').val();
-//		var smag = $('#mag').val();
 
-		/*
-		alert(sid + '|' + spw + '|' + smail + '|' + 
-				sname + '|' + syear + '|' + smouth + '|' + sday + '|' + stel + '|' + sgen + '|' + 
-				sph + '|' + sabo + '|' + sstel + '|' + sstel_name + '|' + smag);
-		*/	
-			
+		
+
 		if(!(sid && spw && smail && sname && stel && sgen)){
 			alert('입력에 이상이 없는지 확인해주세요.');
 			res = false;
@@ -448,7 +442,7 @@ $(document).ready(function(){
 		
 		$('#blood1').val(sabo);
 		$('#blood2').val(sph);
-		$('#birth').val(syear+'/'+smouth+'/'+sday);
+		$('#birth').val(sbirthday);
 		$('#memberJoinEnd').attr('method', 'POST'); 
 		$('#memberJoinEnd').attr('action', '/www/member/joinProc.jeju'); 
 //		$('#memberJoinEnd').attr('action', '/www/member/memberJoinEnd.jeju'); 
