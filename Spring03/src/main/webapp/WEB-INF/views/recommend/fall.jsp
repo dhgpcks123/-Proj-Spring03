@@ -83,7 +83,9 @@
     </div>
 	</c:if>
 </div>
-
+<form method="POST" action="/www/member/memberInfo.jeju" id="frm" name="frm">
+	<input type="hidden" name="id" value="${SID}">
+</form>
 <!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->
 <!--	#			 			타이틀				 	#	-->
 <!--	▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼	-->

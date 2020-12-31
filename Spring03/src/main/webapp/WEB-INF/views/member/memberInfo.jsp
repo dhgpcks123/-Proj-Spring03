@@ -93,8 +93,7 @@
 										<input type="text" title="핸드폰 마지막 번호" name="cryalTelno3" id="cryalTelno3" maxlength="4">
 										<input type="hidden" id="cryalTelno" name="cryalTelno" value="010-5069-8600">
 								 -->
-									</div>
-								</td>
+									
 							</tr>
 							<tr>
 								<th scope="row">혈액형 (ABO)</th>
@@ -125,7 +124,7 @@
 								</td>	
 							</tr>
 							<tr>
-								<th scope="row ">혈액형 (PH)</th>
+								<th scope="row">혈액형 (PH)</th>
 						<!-- 
 								<td>
 									<div class="input-3cols">
