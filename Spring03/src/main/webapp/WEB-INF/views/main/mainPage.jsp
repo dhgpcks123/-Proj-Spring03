@@ -477,7 +477,7 @@
 	</div>
     <div class="map_wrap w3-margin-top">
 		<!-- 지도를 표시할 div 입니다 -->
-        <div id="map" style="width:97%; height:610px; position:relative; overflow:hidden"></div>
+        <div id="map" style="width:97%; height:600px; position:relative; overflow:hidden"></div>
 	    
 	    <!-- 검색창 -->
 	    <!-- 주소 정보 -->

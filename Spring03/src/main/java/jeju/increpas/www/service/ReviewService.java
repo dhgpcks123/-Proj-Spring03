@@ -38,7 +38,7 @@ public class ReviewService {
 	
 	// < 리뷰 게시판 - 리뷰 수정 proc 요청 > 서비스 함수
 	public void reWriteProc(ModelAndView mv, ReviewVO rVO, MapVO mVO) {
-		String rdir = "img/review/";
+		String rdir = "img/area/";
 		ArrayList<FileVO> list = fileUtil.saveProc(rVO.getFile(), rdir);
 		rVO.setList(list);
 		try {
