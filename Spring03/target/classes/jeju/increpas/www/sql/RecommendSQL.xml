@@ -7,15 +7,13 @@
 
 	<select id="recommendList" resultType="iVO">
 		SELECT 
-		    aname, stno, i.apno apno, aponame, apsname
+		    aname, stno, i.apno apno, aponame, apsname, ax, ay
 		FROM
 		    areainfo i, aphoto p
 		WHERE
 		    i.apno = p.apno
 		    AND p.atno = 10
 		    AND p.subpno = 1
-		    
 	</select>
-			
 	
 </mapper>

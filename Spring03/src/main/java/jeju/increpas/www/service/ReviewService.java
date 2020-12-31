@@ -19,7 +19,7 @@ public class ReviewService {
 	
 	// < 리뷰 게시판 - 리뷰쓰기 proc 요청 > 서비스함수
 	public void wReviewProc(ModelAndView mv, ReviewVO rVO, MapVO mVO) {
-		String rdir = "img/review/";
+		String rdir = "img/area/";
 		ArrayList<FileVO> list = fileUtil.saveProc(rVO.getFile(), rdir);
 		
 		//BoardVO의 list에 채워주고

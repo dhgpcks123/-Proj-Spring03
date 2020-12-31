@@ -116,7 +116,7 @@
 			          <input type="hidden" name="ax" id="ax" value="${data.ax}">
 			          <input type="hidden" name="ay" id="ay" value="${data.ay}">
 			        </form>
-					<img src="/area/${data.aponame}" class="season" id="showDetailBtn${no}"/>
+					<img src="/www/img/area/${data.aponame}" class="season" id="showDetailBtn${no}"/>
 				</div>
 			</div>
 		</c:if>
